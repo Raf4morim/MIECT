@@ -1,3 +1,4 @@
+
 function [PL , APD , MPD , TT] = Simulator1(lambda,C,f,P)
 % INPUT PARAMETERS:
 %  lambda - packet rate (packets/sec)
@@ -44,7 +45,7 @@ while TRANSMITTEDPACKETS<P               % Stopping criterium
     Event_List(1,:)= [];                 % Eliminate first event
     if Event == ARRIVAL         % If first event is an ARRIVAL
         TOTALPACKETS= TOTALPACKETS+1;
-        tmp= Clock + exprnd(1/lambda);
+        tmp= Clock + exprnd(1/lambda); % clock atual mais um tempo distribuido
         Event_List = [Event_List; ARRIVAL, tmp, GeneratePacketSize(), tmp];
         if STATE==0
             STATE= 1;
@@ -54,22 +55,22 @@ while TRANSMITTEDPACKETS<P               % Stopping criterium
                 QUEUE= [QUEUE;Packet_Size , Clock];
                 QUEUEOCCUPATION= QUEUEOCCUPATION + Packet_Size;
             else
-                LOSTPACKETS= LOSTPACKETS + 1;
+                LOSTPACKETS= LOSTPACKETS + 1; % Se não couber é descartado
             end
         end
-    else                        % If first event is a DEPARTURE
+    else  % If first event is a DEPARTURE
         TRANSMITTEDBYTES= TRANSMITTEDBYTES + Packet_Size;
-        DELAYS= DELAYS + (Clock - Arrival_Instant);
+        DELAYS= DELAYS + (Clock - Arrival_Instant); % tempo atual menos o instante em que chegou ao sistema
         if Clock - Arrival_Instant > MAXDELAY
             MAXDELAY= Clock - Arrival_Instant;
         end
         TRANSMITTEDPACKETS= TRANSMITTEDPACKETS + 1;
-        if QUEUEOCCUPATION > 0
+        if QUEUEOCCUPATION > 0 % QUEUE(1,1) TAMANHO DO PRIMEIRO PACOTE DA FILA DE ESPERA
             Event_List = [Event_List; DEPARTURE, Clock + 8*QUEUE(1,1)/(C*10^6), QUEUE(1,1), QUEUE(1,2)];
             QUEUEOCCUPATION= QUEUEOCCUPATION - QUEUE(1,1);
-            QUEUE(1,:)= [];
+            QUEUE(1,:)= []; % Depois elimina a linha do pacote
         else
-            STATE= 0;
+            STATE= 0; % Quando n há pacotes para serem transmitidos passa para o estado 0
         end
     end
 end
