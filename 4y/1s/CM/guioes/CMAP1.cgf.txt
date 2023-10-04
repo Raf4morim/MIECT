@@ -1,0 +1,118 @@
+version 15.3
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+!
+hostname CMAP2
+!
+!
+logging rate-limit console 9
+enable secret 5 $1$djsH$3n6GTf66HeJlEOiXbMp/Y/
+!
+no aaa new-model
+no ip source-route
+no ip cef
+ip dhcp excluded-address 10.0.1.0 10.0.1.99
+!
+ip dhcp pool wlan1
+ network 10.0.1.0 255.255.255.0
+ default-router 10.0.1.2
+ lease 0 0 1
+!
+!
+!
+!
+dot11 pause-time 100
+dot11 syslog
+!
+dot11 ssid ComMoveis.331.2400
+   authentication open
+   guest-mode
+!
+dot11 ssid ComMoveis.331.5000
+   authentication open
+   authentication key-management wpa version 2
+   guest-mode
+   wpa-psk ascii 7 13291610452F0B27651321153C
+!
+!
+!
+no ipv6 cef
+!
+!
+username Cisco password 7 112A1016141D
+!
+!
+bridge irb
+!
+!
+!
+interface Dot11Radio0
+ no ip address
+ !
+ ssid ComMoveis.331.2400
+ !
+ antenna gain 0
+ stbc
+ channel 2447
+ station-role root access-point
+ bridge-group 1
+ bridge-group 1 subscriber-loop-control
+ bridge-group 1 spanning-disabled
+ bridge-group 1 block-unknown-source
+ no bridge-group 1 source-learning
+ no bridge-group 1 unicast-flooding
+!
+interface Dot11Radio1
+ no ip address
+ !
+ encryption mode ciphers aes-ccm
+ !
+ ssid ComMoveis.331.5000
+ !
+ antenna gain 0
+ peakdetect
+ no dfs band block
+ stbc
+ channel width 40-below
+ channel 5500
+ station-role root access-point
+ bridge-group 1
+ bridge-group 1 subscriber-loop-control
+ bridge-group 1 spanning-disabled
+ bridge-group 1 block-unknown-source
+ no bridge-group 1 source-learning
+ no bridge-group 1 unicast-flooding
+!
+interface GigabitEthernet0
+ no ip address
+ duplex auto
+ speed auto
+ bridge-group 1
+ bridge-group 1 spanning-disabled
+ no bridge-group 1 source-learning
+!
+interface BVI1
+ mac-address a493.4cc1.2998
+ ip address 10.0.1.1 255.255.255.0
+ ipv6 address dhcp
+ ipv6 address autoconfig
+ ipv6 enable
+!
+ip forward-protocol nd
+ip http server
+no ip http secure-server
+ip http help-path http://www.cisco.com/warp/public/779/smbiz/prodconfig/help/eag
+!
+!
+bridge 1 route ip
+!
+!
+!
+line con 0
+line vty 0 4
+ login local
+ transport input all
+!
+end
