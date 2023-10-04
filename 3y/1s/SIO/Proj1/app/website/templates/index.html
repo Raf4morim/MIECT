@@ -1,0 +1,336 @@
+{% extends "primary.html" %} {% block title %}Index{% endblock %} {% block content%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>CliniCare™</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="{{url_for('static',filename = 'assets/icons8-heart-health-64')}}" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+
+    <!-- Custom styles for this template-->
+    <link href="{{url_for('static', filename = 'css/sb-admin-2.css')}}" rel="stylesheet">
+
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{{url_for('static', filename = 'css/styles.css')}}" rel="stylesheet" />
+    <link href="{{url_for('static', filename = 'css/style2.css')}}" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead-heading" style="top:1000px">Bemvindos ao CliniCare™</div>
+        </div>
+
+    </header>
+
+    <!--   Como podemos ajudar?    -->
+
+    <section id="te-ayudamos" class="bg-dark text-white text-center jarallax" data-jarallax data-type="scroll-opacity">
+        <!-- <img class="jarallax-img w-100"  src="https://www.sararodriguezpoyo.com/wp-content/uploads/2018/06/3124.jpg" alt="Fondo parallax" > -->
+        <div class="container py-5">
+            <div class="row py-3 text-center">
+                <div class="col-12">
+                    <h2 class="display-4 font-weight-bold ">
+                        Como podemos ajudar?
+                    </h2>
+                    <p>Oferecemos uma ampla gama de procedimentos para o ajudar a sentir-se melhor consigo mesmo.</p>
+
+                    <div class="conteudoPopup">
+                        <a type="submit" href="#bruh" class="btn btn-primary mt-3">Inicie uma consulta</a>
+                    </div>
+                    <div class="overlayAmorim" id="bruh">
+                        <div class="wrapperAmorim">
+                            <h2>Por favor <br>Preencha os seguintes campos</h2><a class="close" href="#">&times;</a>
+                            <div class="content">
+                                <div class="containerAmorim">
+                                    <form>
+                                        <div class="col-12 ">
+                                            <!--col-lg-6-->
+                                            <!-- <h3 class="h3 font-weight-bold text-secondary text-center py-4 py-lg-0 pb-lg-4">Separa una cita:</h3> -->
+                                            <form action="#" id="formulario">
+                                                <!-- Nome-->
+                                                <div class="form-group row">
+                                                    <label for="nome" class="col-12 col-md-3 col-form-label">Nome:</label>
+                                                    <div class="input-group col-12 col-md-9">
+                                                        <input type="text" class="form-control" placeholder="Insira o seu nome" id="nome" required>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Mail-->
+                                                <div class="form-group row">
+                                                    <label for="email" class="col-12 col-md-3 col-form-label">Email:</label>
+                                                    <div class="input-group col-12 col-md-9">
+                                                        <input type="email" class="form-control" placeholder="Insira o seu email" id="email" required>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Tele-->
+                                                <div class="form-group row">
+                                                    <label for="telemovel" class="col-12 col-md-3 col-form-label">Telemóvel:</label>
+                                                    <div class="input-group col-12 col-md-9">
+                                                        <input type="tel" class="form-control" placeholder="Insira o seu nº" id="telemovel" required>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Campo Mensagem-->
+                                                <div class="form-group row">
+                                                    <label for="mensagem" class="col-12 col-md-3 col-form-label">Mensagem</label>
+                                                    <div class="input-group col-12 col-md-9">
+                                                        <textarea name="mensagem" id="mensagem" rows="4" placeholder="Insira a sua mensagem" class="form-control"></textarea>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Campo Fecha-->
+                                                <div class="form-group row">
+                                                    <label for="fecha" class="col-12 col-md-3 col-form-label">Fechar</label>
+                                                    <div class="col-12 col-md-9">
+                                                        <div class="input-group">
+                                                            <input type="date" name="fecha" id="fecha" class="form-control">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">
+                                                              <i class="far fa-calendar-alt"></i>
+                                                           </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Campo Hora-->
+                                                <div class="form-group row">
+                                                    <label for="hora" class="col-12 col-md-3 col-form-label">Hora</label>
+                                                    <div class="col-12 col-md-9">
+                                                        <div class="input-group">
+                                                            <input type="tetx" name="hora" id="hora" class="form-control">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">
+                                                              <i class="fas fa-history"></i>
+                                                           </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Campo Boton-->
+                                                <div class="form-group row">
+
+                                                    <div class="col-12 col-lg-9 offset-lg-3 mt-2">
+                                                        <button href="#" type="submit" class="btn btn-primary1 btn-block btn-lg">Submeter</button>
+                                                    </div>
+
+                                                </div>
+
+
+                                            </form>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Services-->
+    <section class="page-section " id="services">
+        <div class="container ">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Services</h2>
+                <h3 class="section-subheading text-muted">Serviços da CliniCare™.</h3>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-6 border-5 border-start border-primary shadow">
+                    <span class="fa-solid fa-1 fa-6x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">Ressonância Magnética</h4>
+                    <p class="text-muted">
+                        <li>Para obter o documento das askjncakscnjkasncja</li>
+                        <li>Serviços podem ser marcados sem antecedência</li>
+                        <a class="btn btn-secondary btn-xl text-uppercase" href="{{ url_for('views.home') }}">Obter Resultados</a>
+                    </p>
+                </div>
+                <div class="col-md-6 border-5 border-end border-primary shadow">
+                    <span class="fa-solid fa-2 fa-6x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">Ecografia</h4>
+                    <p class="text-muted">
+                        <li>Para obter o documento das askjncakscnjkasncja</li>
+                        <li>Serviços podem ser marcados sem antecedência</li>
+
+                        <a class="btn btn-secondary btn-xl text-uppercase" href="{{ url_for('views.home') }}">Obter Resultados</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About-->
+    <section class="page-section " id="about ">
+        <div class="container ">
+            <div class="text-center ">
+                <h2 class="section-heading text-uppercase ">About</h2>
+
+            </div>
+            <ul class="timeline ">
+                <li>
+                    <div class="timeline-image "><img class="rounded-circle img-fluid " src="{{url_for( 'static', filename='assets/img/about/1.jpg' )}} " alt="... " /></div>
+                    <div class="timeline-panel ">
+                        <div class="timeline-heading ">
+                            <h4>Início</h4>
+                            <h4 class="subheading ">O Início da CliniCare™</h4>
+                        </div>
+                        <div class="timeline-body ">
+                            <p class="text-muted ">CliniCare™ é uma empresa que passou recentemente por uma transformação digital </p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted ">
+                    <div class="timeline-image "><img class="rounded-circle img-fluid " src="{{url_for( 'static', filename='assets/img/about/2.jpg' )}} " alt="... " /></div>
+                    <div class="timeline-panel ">
+                        <div class="timeline-heading ">
+                            <h4>Cuidar dos pacientes</h4>
+                            <h4 class="subheading ">Objetivo</h4>
+                        </div>
+                        <div class="timeline-body ">
+                            <p class="text-muted "> A CliniCare™ é uma empresa que tem como objetivo providenciar o bem estar dos seus pacientes </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-image "><img class="rounded-circle img-fluid " src="{{url_for( 'static', filename='assets/img/about/3.jpg' )}} " alt="... " /></div>
+                    <div class="timeline-panel ">
+                        <div class="timeline-heading ">
+
+                            <h4 class="subheading ">Localidades</h4>
+                        </div>
+                        <div class="timeline-body ">
+                            <p class="text-muted ">A CliniCare™ encontra-se disponível apenas em Aveiro, Porto, Lisboa, Coimbra, Faro e Braga.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted ">
+                    <div class="timeline-image "><img class="rounded-circle img-fluid " src="{{url_for( 'static', filename='assets/img/about/4.jpg' )}} " alt="... " /></div>
+                    <div class="timeline-panel ">
+                        <div class="timeline-heading ">
+                            <h4>Mudança</h4>
+                            <h4 class="subheading ">Impulso para a mudança</h4>
+                        </div>
+                        <div class="timeline-body ">
+                            <p class="text-muted ">Atualmente as plataformas digitais são bastante úteis, uma vez que tornam os serviços mais eficientes, mais visíveis e mais rápidos para os clientes. Assim sendo, esta transformação digital aos serviços da CliniCare™ surgiu
+                                no desejo de criar um serviço mais rápido e de mais fácil comunicação com o consumidor, o que beneficiará tanto o cliente como a CliniCare™. Ao oferecer estes serviços, também irá abranger o mercado, uma vez que trará melhor
+                                acessibilidade a clientes situados em cidades mais remotas, porém terá um custo superior, já que se situa fora das áreas de atuação da CliniCare™.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted ">
+                    <div class="timeline-image ">
+                        <h4>
+                            Be Part
+                            <br /> Of Our
+                            <br /> Story!
+                        </h4>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="pieDepagina " class="text-truncate ">
+        <div class="container text-white ">
+            <div class="row align-items-center ">
+                <div class="col-12 col-md-6 col-lg-5 py-4 ">
+                    <div class="row soporte ">
+                        <div class="col-12 ">
+                            <h1 class="h1 text-white ">Suporte</h1>
+                        </div>
+                        <div class="col-auto text-black-50 ">
+                            <i class="fas fa-medkit fa-3x " style="color: rgb(237, 85, 19) "></i>
+                        </div>
+                        <div class="col-auto text-black-50 pl-0 ">
+                            <h3 class="h3 mb-0 " style="color: rgb(213, 203, 123) ">+351 969 696 696</h3>
+                            <p class="mb-0 " style="color: rgb(213, 203, 123) ">Ajuda disponível 24hrs/7.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 text-center text-lg-right text-white py-4 small ">
+                        <a class="btn btn-outline-primary btn-xl text-uppercase " href="">Contacte-nos</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-7 text-center text-lg-right text-white py-4 small ">
+                    <ul class="list-unstyled enlaces d-inline-flex ">
+                        <li><a class=" " style="color: rgb(213, 203, 123) " href="# ">Inicio</a></li>
+                        <li><a class=" " style="color: rgb(213, 203, 123) " href="# ">Politica de Privacidade</a></li>
+                    </ul>
+                    <p class="mb-0 " style="color: rgb(213, 203, 123) ">©2022. Todos os direitos reservados.</p>
+                    <p class="mb-0 " style="color: rgb(213, 203, 123) ">Feito por grupo 18 de Segurança, Universidade de Aveiro</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer-->
+    <footer class="footer py-4 ">
+        <div class="container ">
+            <div class="row align-items-center ">
+                <div class="col-lg-4 text-lg-start ">Copyright &copy; Your Website 2022</div>
+                <div class="col-lg-4 my-3 my-lg-0 ">
+                    <a class="btn btn-dark btn-social mx-2 " href="#! " aria-label="Twitter "><i
+                            class="fab fa-twitter "></i></a>
+                    <a class="btn btn-dark btn-social mx-2 " href="#! " aria-label="Facebook "><i
+                            class="fab fa-facebook-f "></i></a>
+                    <a class="btn btn-dark btn-social mx-2 " href="#! " aria-label="LinkedIn "><i
+                            class="fab fa-linkedin-in "></i></a>
+                </div>
+                <div class="col-lg-4 text-lg-end ">
+                    <a class="link-dark text-decoration-none me-3 " href="#! ">Política de privacidade</a>
+                    <a class="link-dark text-decoration-none " href="#! ">Termos de uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- <footer id="pieDepagina " class="text-truncate ">
+        
+     </footer> -->
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js "></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js "></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js "></script>
+
+    <!-- <script type="text/javascript ">
+        function toggle() {
+            var blur = document.getElementById('blur');
+            blur.classList.toggle('active')
+        }
+        function toggle() {
+            var blur = document.getElementById('blur');
+            blur.classList.toggle('active')
+        } -->
+    </script>
+</body>
+
+</html>
+
+{% endblock %}

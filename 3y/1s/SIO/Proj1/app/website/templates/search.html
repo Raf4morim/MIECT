@@ -1,0 +1,61 @@
+{% extends "primary.html" %} {% block title %}Home{% endblock %} {% block content%}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>CliniCare™</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="{{url_for('static',filename = 'assets/icons8-heart-health-64')}}" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+
+    <!-- Custom styles for this template-->
+    <link href="{{url_for('static', filename = 'css/sb-admin-2.css')}}" rel="stylesheet">
+
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{{url_for('static', filename = 'css/styles.css')}}" rel="stylesheet" />
+    <link href="{{url_for('static', filename = 'css/style2.css')}}" rel="stylesheet" />
+</head>
+
+<div class="pageTitle" align="center">
+    <h1>Resultados</h1>
+</div>
+{% for publication in publications %}
+<div class="panel-body">
+    <div class="row">
+        <div class="col-lg-4">
+            <h3 class="panel-title">
+                <font size="+2">
+                    <a href="{{ url_for('views.publication', publication_id=publication.id) }}" style="font-size: 18px;" class="blue">
+                            {{ publication.title }}
+                        </a>
+                </font>
+            </h3>
+        </div>
+        <div class="col-lg-4">
+            <font size="+1">
+                <p>
+                    <em>
+                            {{ publication.description }}
+                        </em>
+                </p>
+            </font>
+        </div>
+
+        <div class="col-lg-4">
+            <p>
+                <i class="glyphicon glyphicon-calendar"></i>
+                <font size="+1">{{ publication.lastDate().strftime('%d %B, %Y') }} &nbsp;</font>
+                <a href="{{ url_for('views.home', publication_id=publication.id) }}">
+                    <i class="glyphicon glyphicon-comment"></i> Descarregar
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
+{% endfor %} {% endblock %}

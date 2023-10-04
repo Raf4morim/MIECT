@@ -1,0 +1,65 @@
+{% extends "primary.html" %} {% block title %}Post{% endblock %}
+{% block content %}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>CliniCare™</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="{{url_for('static',filename = 'assets/icons8-heart-health-64')}}" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+
+    <!-- Custom styles for this template-->
+    <link href="{{url_for('static', filename = 'css/sb-admin-2.css')}}" rel="stylesheet">
+
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{{url_for('static', filename = 'css/styles.css')}}" rel="stylesheet" />
+    <link href="{{url_for('static', filename = 'css/style2.css')}}" rel="stylesheet" />
+</head>
+
+<br />
+<p align="right">
+    <a href="{{ url_for('views.home') }}" class="btn btn-primary">
+        <i class="glyphicon glyphicon-arrow-left"><span>&#8617;</span></i> 
+    </a>
+</p>
+
+<div class="row pad">
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p class="big"><font size="+3">Resultados: </font><font size="+1">{{ publication.title }}</font></p>
+                    </div>
+                    <div class="col-lg-12">
+                        <p class="big"><font size="+2">Descrição: </font><font size="+1">{{ publication.description }}</font></p>
+                    </div>
+
+                    <div class="col-lg-12"> 
+                        <i class="glyphicon glyphicon-calendar"></i> 
+                        {{ publication.date.strftime('%d %B, %Y') }}&nbsp;   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<h3 class=""><font size="+2">Descarregar</font></h3>
+<div class="col-sm-6">
+    <a class="btn btn-primary btn-user btn-block" id="button_">
+        <input type="file" id="myFileInput" style="display:none;">
+        <label for="myFileInput">Tranfira o documento</label>
+        <i class="fa fa-download" style="font-size:24px"></i>
+    </a>
+
+</div>
+                 
+{% endblock %}
