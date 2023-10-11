@@ -7,6 +7,7 @@ function [PL , APD , MPD , TT] = Simulator2(lambda,C,f,P, b)
 %  C      - link bandwidth (Mbps)
 %  f      - queue size (Bytes)
 %  P      - number of packets (stopping criterium)
+%  b      - bit error rate
 % OUTPUT PARAMETERS:
 %  PL   - packet loss (%)
 %  APD  - average packet delay (milliseconds)
@@ -60,13 +61,19 @@ while TRANSMITTEDPACKETS<P               % Stopping criterium
                 LOSTPACKETS= LOSTPACKETS + 1; % Se não couber é descartado
             end
         end
+%----------------------------------------->
     else  % If first event is a DEPARTURE
-        TRANSMITTEDBYTES= TRANSMITTEDBYTES + Packet_Size;
-        DELAYS= DELAYS + (Clock - Arrival_Instant); % tempo atual menos o instante em que chegou ao sistema
-        if Clock - Arrival_Instant > MAXDELAY
-            MAXDELAY= Clock - Arrival_Instant;
+        if (rand() < (1-b)^(Packet_Size*8))    
+            TRANSMITTEDBYTES= TRANSMITTEDBYTES + Packet_Size;
+            DELAYS= DELAYS + (Clock - Arrival_Instant); % tempo atual menos o instante em que chegou ao sistema
+            if Clock - Arrival_Instant > MAXDELAY
+                MAXDELAY= Clock - Arrival_Instant;
+            end
+            TRANSMITTEDPACKETS= TRANSMITTEDPACKETS + 1;
+        else
+            LOSTPACKETS = LOSTPACKETS + 1;
         end
-        TRANSMITTEDPACKETS= TRANSMITTEDPACKETS + 1;
+%<-----------------------------------------
         if QUEUEOCCUPATION > 0 % QUEUE(1,1) TAMANHO DO PRIMEIRO PACOTE DA FILA DE ESPERA
             Event_List = [Event_List; DEPARTURE, Clock + 8*QUEUE(1,1)/(C*10^6), QUEUE(1,1), QUEUE(1,2)];
             QUEUEOCCUPATION= QUEUEOCCUPATION - QUEUE(1,1);
