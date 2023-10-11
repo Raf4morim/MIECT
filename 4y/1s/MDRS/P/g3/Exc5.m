@@ -189,7 +189,8 @@ for i = 1:length(sizePacket)
     end
 end
 
-PLost = ((nMedio*cap_bytes)/((f * cap_bytes) + cap_bits)) * 100;
+% Como a fila de espera M/G/1 é infinita ent não ha pacotes perdidos
+PLost = 0;
 fprintf('O PL (%%) = %.2f\n',PLost);
 
 Y = 1800; %pps
