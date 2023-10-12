@@ -1,0 +1,10 @@
+/mnt/c/Users/repol/Documents/GitHub/IC/Lab1/sndfile-example-src/build/CMakeFiles/wav_cp.dir
+/mnt/c/Users/repol/Documents/GitHub/IC/Lab1/sndfile-example-src/build/CMakeFiles/wav_hist.dir
+/mnt/c/Users/repol/Documents/GitHub/IC/Lab1/sndfile-example-src/build/CMakeFiles/wav_dct.dir
+/mnt/c/Users/repol/Documents/GitHub/IC/Lab1/sndfile-example-src/build/CMakeFiles/wav_quant.dir
+/mnt/c/Users/repol/Documents/GitHub/IC/Lab1/sndfile-example-src/build/CMakeFiles/wav_cmp.dir
+/mnt/c/Users/repol/Documents/GitHub/IC/Lab1/sndfile-example-src/build/CMakeFiles/wav_effects.dir
+/mnt/c/Users/repol/Documents/GitHub/IC/Lab1/sndfile-example-src/build/CMakeFiles/encoder.dir
+/mnt/c/Users/repol/Documents/GitHub/IC/Lab1/sndfile-example-src/build/CMakeFiles/decoder.dir
+/mnt/c/Users/repol/Documents/GitHub/IC/Lab1/sndfile-example-src/build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/repol/Documents/GitHub/IC/Lab1/sndfile-example-src/build/CMakeFiles/rebuild_cache.dir

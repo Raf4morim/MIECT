@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -std=c++17 -O3 CMakeFiles/wav_quant.dir/wav_quant.cpp.o -o /mnt/c/Users/repol/Documents/GitHub/IC/Lab1/sndfile-example-bin/wav_quant  -lsndfile 
