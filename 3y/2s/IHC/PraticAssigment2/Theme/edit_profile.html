@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+
+    <link rel="icon" href="assets/img/logo.png" type="image/x-icon">
+    <title>Movie Tracker</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+            margin-top: 20px;
+            color: #1a202c;
+            text-align: left;
+            background-color: #e2e8f0;
+        }
+
+        .card {
+            position: relative;
+            display: flex;
+            top: 5%;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 0 solid transparent;
+            border-radius: .25rem;
+            margin: 3.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
+        }
+
+        .me-2 {
+            margin-right: .5rem !important;
+        }
+
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .edit-icon {
+            font-size: 20px;
+            position: absolute;
+            top: 70%;
+            left: 70%;
+            transform: translate(-30%, -30%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-container:hover .edit-icon {
+            opacity: 1;
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+            /* Ajuste a opacidade do overlay conforme necessário */
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-container:hover .image-overlay {
+            opacity: 1;
+        }
+
+        :target {
+            margin-top: -70px;
+            padding-top: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="container">
+        <!-- **********************************************************************************************************************************************************
+        TOP BAR CONTENT & NOTIFICATIONS
+        *********************************************************************************************************************************************************** -->
+        <!--header start-->
+        <header class="header black-bg">
+            <div class="sidebar-toggle-box">
+                <div style="color:#797979" class="fa fa-bars tooltips" data-placement="right"
+                    data-original-title="Toggle Navigation"></div>
+            </div>
+            <!--logo start-->
+            <a href="index.html" class="logo">
+                <b style="color: rgb(230, 185, 2);left:50%; transform: translateX(-50%);">MOVIE
+                    TRACKER&nbsp;&nbsp;&nbsp;</b>
+                <i class="fa fa-film"
+                    style="color:rgb(230, 185, 2); rotate: 30deg; font-size: 30px; transform: scaleX(0.8);"></i>
+            </a>
+
+            <!--logo end-->
+            <div class="nav notify-row" id="top_menu">
+                <!--  notification start -->
+                <ul class="nav top-menu">
+                    <!-- settings start -->
+                    <li class="dropdownNotif">
+                        <a data-toggle="dropdownNotif" class="dropdownNotif-toggle" href="index.html#">
+                            <i class="fa fa-tasks"></i>
+                            <span class="badge bg-theme">4</span>
+                        </a>
+                        <ul class="dropdownNotif-menu extended tasks-bar">
+                            <div class="notify-arrow notify-arrow-green"></div>
+                            <li>
+                                <p class="green" style="color: black">Novos lançamentos por ver dos guardados</p>
+                            </li>
+                            <li>
+                                <a href="index.html#">
+                                    <div class="task-info">
+                                        <div class="desc">Breaking Bad</div>
+                                        <div class="percent">3</div>
+                                    </div>
+                                    <div class="progress progress-striped">
+                                        <div class="progress-bar progress-bar-success" role="progressbar"
+                                            aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
+                                            <span class="sr-only">10% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="index.html#">
+                                    <div class="task-info">
+                                        <div class="desc">The Walking Dad</div>
+                                        <div class="percent">5</div>
+                                    </div>
+                                    <div class="progress progress-striped">
+                                        <div class="progress-bar progress-bar-info" role="progressbar"
+                                            aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                            <span class="sr-only">60% Complete (warning)</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="index.html#">
+                                    <div class="task-info">
+                                        <div class="desc">One Piece</div>
+                                        <div class="percent">20</div>
+                                    </div>
+                                    <div class="progress progress-striped">
+                                        <div class="progress-bar progress-bar-warning" role="progressbar"
+                                            aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                            <span class="sr-only">80% Complete</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="index.html#">
+                                    <div class="task-info">
+                                        <div class="desc">Game of Thrones</div>
+                                        <div class="percent">+</div>
+                                    </div>
+                                    <div class="progress progress-striped">
+                                        <div class="progress-bar progress-bar-danger" role="progressbar"
+                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                                            style="width: 100%">
+                                            <span class="sr-only">70% Complete (Important)</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="external">
+                                <a href="index.html">Ver todos os episódios guardados</a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+
+                    <!-- settings end -->
+                    <!-- inbox dropdown start-->
+                    <li id="header_inbox_bar" class="dropdownNotif">
+                        <a data-toggle="dropdownNotif" class="dropdownNotif-toggle" href="index.html#">
+                            <i class="fa fa-envelope-o"></i>
+                            <span class="badge bg-theme">5</span>
+                        </a>
+                        <ul class="dropdownNotif-menu extended inbox">
+                            <div class="notify-arrow notify-arrow-green"></div>
+                            <li>
+                                <p class="green" style="color: black">Tens 5 comentários das tuas séries</p>
+                            </li>
+                            <li>
+                                <a href="index.html#">
+                                    <span class="photo"><img alt="avatar" src="assets/img/ui-zac.jpg"></span>
+                                    <span class="subject">
+                                        <span class="from">Manel Matos</span>
+                                        <span class="time">Just now</span>
+                                    </span>
+                                    <span class="message">
+                                        Incrivel!
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="index.html#">
+                                    <span class="photo"><img alt="avatar" src="assets/img/ui-divya.jpg"></span>
+                                    <span class="subject">
+                                        <span class="from">Tiago Silvestre</span>
+                                        <span class="time">40 mins.</span>
+                                    </span>
+                                    <span class="message">
+                                        Não gostei muito.
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="index.html#">
+                                    <span class="photo"><img alt="avatar" src="assets/img/ui-danro.jpg"></span>
+                                    <span class="subject">
+                                        <span class="from">Nuno Vidal</span>
+                                        <span class="time">2 hrs.</span>
+                                    </span>
+                                    <span class="message">
+                                        Eu fazia melhor.
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="index.html#">
+                                    <span class="photo"><img alt="avatar" src="assets/img/ui-sherman.jpg"></span>
+                                    <span class="subject">
+                                        <span class="from">Gonçalo Silva</span>
+                                        <span class="time">4 hrs.</span>
+                                    </span>
+                                    <span class="message">
+                                        Uaaaaaaaaaaaaaaaaaau.
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="index.html#">Ver todas os comentários</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- inbox dropdown end -->
+                    <li id="header_inbox_bar" class="dropdownNotif">
+                        <a data-toggle="dropdownNotif" class="dropdownNotif-toggle" href="index.html#">
+                            <i class="fa fa-user" style="color:#68dff0"></i>
+                        </a>
+                        <ul class="dropdownNotif-menu extended inbox">
+                            <div class="notify-arrow notify-arrow-green"></div>
+                            <li>
+                                <p class="green" style="color:black">Sobre a sua conta</p>
+                            </li>
+                            <li>
+                                <a href="profile.html">
+                                    <span>
+                                        Gerir perfil
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="index.html#">
+                                    <span>
+                                        Mudar conta
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="login.html">
+                                    <span>
+                                        Terminar sessão
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Create icon of user and dropdown menu -->
+
+                <!--  notification end -->
+            </div>
+
+
+        </header>
+        <!--header end-->
+
+        <!-- **********************************************************************************************************************************************************
+      MAIN SIDEBAR MENU
+      *********************************************************************************************************************************************************** -->
+        <!--sidebar start-->
+        <aside>
+            <div id="sidebar" class="nav-collapse ">
+                <!-- sidebar menu start-->
+                <ul class="sidebar-menu" id="nav-accordion">
+
+                    <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle"
+                                width="60"></a></p>
+                    <h5 class="centered">Vanessa Santos</h5>
+                    <li class="mt">
+                        <a href="index.html">
+                            <i class="fa fa-floppy-o"></i>
+                            <span>Guardados</span>
+                        </a>
+                    </li>
+
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class=" fa fa-search"></i>
+                            <span>Explorar</span>
+                            <i class="fa fa-angle-up angle-icon" style="position: absolute; right: 10px"></i>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="explorar.html#pesq">Pesquisa</a></li>
+                            <li><a href="explorar.html#mais-vistos">Mais Vistos</a></li>
+                            <li><a href="explorar.html#favoritos">Favoritos</a></li>
+                            <li><a href="explorar.html#mais-recentes">Mais Recentes</a></li>
+                            <li><a href="explorar.html#mais-polemicos">Mais Polémicos</a></li>
+                            <li><a href="explorar.html#mais-elogiados">Mais Elogiados</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sub-menu">
+                        <a href="calendar.html">
+                            <i class="fa fa-calendar"></i>
+                            <span>Calendário</span>
+                        </a>
+                    </li>
+
+                    <li class="sub-menu">
+                        <a href="news.html">
+                            <i class="fa fa-book"></i>
+                            <span>Últimas notícias</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="settings.html">
+                            <i class="fa fa-tasks"></i>
+                            <span>Definições</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="help.html">
+                            <i class="fa fa-question-circle"></i>
+                            <span>Ajuda</span>
+                        </a>
+                    </li>
+
+                </ul>
+                <!-- sidebar menu end-->
+            </div>
+        </aside>
+        <!--sidebar end-->
+
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper site-min-height">
+
+                <div class="main-body">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-body ">
+                                    <div id="textBox" class="d-flex flex-column align-items-center text-center">
+                                        <input type="file" accept="image/*" name="image" id="file"
+                                            style="display: none;" onchange="loadFile(event)">
+                                        <label for="file" style="cursor: pointer;">
+                                            <div class="image-container">
+                                                <img src="../Theme/assets/img/ui-sam.jpg" alt="Admin"
+                                                    class="rounded-circle" width="150" id="uploadedImage">
+                                                <div class="image-overlay"></div>
+                                                <div class="edit-icon">
+                                                    <i class="fa fa-pencil"></i>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <div class="mt-3">
+                                            <h4>Vanessa Santos</h4>
+                                            <p class="text-secondary mb-1">Amante de Séries</p>
+                                            <p class="text-muted font-size-sm">Cidade de Aveiro</p>
+                                        </div>
+                                        <button style="display:none" onclick="saveImage()">Guardar</button>
+                                    </div>
+
+
+                                    <hr class="my-5">
+                                    <ul class="list-group list-group-flush">
+                                        <li
+                                            class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                            <h4 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="feather feather-twitter me-2 icon-inline text-info">
+                                                    <path
+                                                        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                                                    </path>
+                                                </svg>Twitter</h4>
+                                            <span class="text-secondary">@mrWhite</span>
+                                        </li>
+                                        <li
+                                            class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                            <h4 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="feather feather-instagram me-2 icon-inline text-danger">
+                                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                                </svg>Instagram</h4>
+                                            <span class="text-secondary">diogosilva_as</span>
+                                        </li>
+                                        <li
+                                            class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                            <h4 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="feather feather-facebook me-2 icon-inline text-primary">
+                                                    <path
+                                                        d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z">
+                                                    </path>
+                                                </svg>Facebook</h4>
+                                            <span class="text-secondary">dioguito</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row mb-3">
+                                        <div class="col-sm-3">
+                                            <h4 class="mb-0">Nome Completo</h4>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary">
+                                            <input type="text" class="form-control" value="Vanessa Santos">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-sm-3">
+                                            <h4 class="mb-0">Email</h4>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary">
+                                            <input type="text" class="form-control" value="DS@ua.pt">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-sm-3">
+                                            <h4 class="mb-0">Telefone</h4>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary">
+                                            <input type="text" class="form-control" value="(239) 999999999">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-sm-3">
+                                            <h4 class="mb-0">Telemóvel</h4>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary">
+                                            <input type="text" class="form-control" value="(+351) 912345678">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-sm-3">
+                                            <h4 class="mb-0">Morada</h4>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary">
+                                            <input type="text" class="form-control"
+                                                value="Av. Dt Lourenço Peixinho, Aveiro">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3"></div>
+                                        <!-- href="profile.html" -->
+                                        <div class="col-sm-9 text-primary">
+                                            <input type="button" class="btn btn-primary px-4" value="Salvar"
+                                                onclick="window.location.href='profile.html'">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 mt-3">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h3 class="d-flex align-items-center mb-3">Preferências por Géneros</h3>
+                                            <h4>Romance</h4>
+                                            <div class="progress mb-3" style="height: 5px">
+                                                <div class="progress-bar bg-primary" role="progressbar"
+                                                    style="width: 80%" aria-valuenow="80" aria-valuemin="0"
+                                                    aria-valuemax="100"></div>
+                                            </div>
+                                            <h4>Terror</h4>
+                                            <div class="progress mb-3" style="height: 5px">
+                                                <div class="progress-bar bg-danger" role="progressbar"
+                                                    style="width: 72%" aria-valuenow="72" aria-valuemin="0"
+                                                    aria-valuemax="100"></div>
+                                            </div>
+                                            <h4>Comédia</h4>
+                                            <div class="progress mb-3" style="height: 5px">
+                                                <div class="progress-bar bg-success" role="progressbar"
+                                                    style="width: 89%" aria-valuenow="89" aria-valuemin="0"
+                                                    aria-valuemax="100"></div>
+                                            </div>
+                                            <h4>Animação</h4>
+                                            <div class="progress mb-3" style="height: 5px">
+                                                <div class="progress-bar bg-warning" role="progressbar"
+                                                    style="width: 55%" aria-valuenow="55" aria-valuemin="0"
+                                                    aria-valuemax="100"></div>
+                                            </div>
+                                            <h4>Drama</h4>
+                                            <div class="progress" style="height: 5px">
+                                                <div class="progress-bar bg-info" role="progressbar" style="width: 66%"
+                                                    aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </section>
+            <!--/wrapper -->
+        </section><!-- /MAIN CONTENT -->
+
+        <!--main content end-->
+        <!--footer start-->
+        <footer class="site-footer">
+            <div class="text-center">
+                IHC - P4
+                <a href="edit_profile.html#" class="go-top">
+                    <i class="fa fa-angle-up"></i>
+                </a>
+            </div>
+        </footer>
+        <!--footer end-->
+    </section>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery-1.8.3.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.sparkline.js"></script>
+
+
+    <!--common script for all pages-->
+    <script src="assets/js/common-scripts.js"></script>
+
+    <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
+
+    <!--script for this page-->
+    <script src="assets/js/sparkline-chart.js"></script>
+    <script src="assets/js/zabuto_calendar.js"></script>
+
+    <!-- <script type="text/javascript">
+        $(document).ready(function () {
+        var unique_id = $.gritter.add({
+            // (string | mandatory) the heading of the notification
+            title: 'Welcome to MovieTracker!',
+            // (string | mandatory) the text inside the notification
+            text: 'Hover me to enable the Close Button. You can hide the left sidebar clicking on the button next to the logo. Free version for <a href="http://blacktie.co" target="_blank" style="color:#11114e">BlackTie.co</a>.',
+            // (string | optional) the image to display on the left
+            image: 'assets/img/ui-sam.jpg',
+            // (bool | optional) if you want it to fade out on its own or just sit there
+            sticky: true,
+            // (int | optional) the time you want it to be alive for before fading out
+            time: '',
+            // (string | optional) the class name you want to apply to that specific message
+            class_name: 'my-sticky-class'
+        });
+
+        return false;
+        });
+	</script> -->
+
+    <script type="application/javascript">
+        function loadFile(event) {
+            var image = document.getElementById('uploadedImage');
+            image.src = URL.createObjectURL(event.target.files[0]);
+        }
+
+        function saveImage() {
+            var image = document.getElementById('uploadedImage');
+            var canvas = document.createElement('canvas');
+            var context = canvas.getContext('2d');
+            context.drawImage(image, 0, 0);
+            var imageData = canvas.toDataURL(); // A imagem está agora codificada em base64 na variável imageData
+
+            // Aqui você pode enviar a variável imageData para o servidor ou fazer outra manipulação
+            // para guardar a imagem.
+        }
+
+        $(document).ready(function () {
+            $("#date-popover").popover({ html: true, trigger: "manual" });
+            $("#date-popover").hide();
+            $("#date-popover").click(function (e) {
+                $(this).hide();
+            });
+
+            $("#my-calendar").zabuto_calendar({
+                action: function () {
+                    return myDateFunction(this.id, false);
+                },
+                action_nav: function () {
+                    return myNavFunction(this.id);
+                },
+                ajax: {
+                    url: "show_data.php?action=1",
+                    modal: true
+                },
+                legend: [
+                    { type: "text", label: "Special event", badge: "00" },
+                    { type: "block", label: "Regular event", }
+                ]
+            });
+        });
+
+
+        function myNavFunction(id) {
+            $("#date-popover").hide();
+            var nav = $("#" + id).data("navigation");
+            var to = $("#" + id).data("to");
+            console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+        }
+
+        $('.sub-menu').click(function () {
+            $(this).find('.angle-icon').toggleClass('fa-angle-up fa-angle-down');
+        });
+    </script>
+
+
+</body>
+
+</html>

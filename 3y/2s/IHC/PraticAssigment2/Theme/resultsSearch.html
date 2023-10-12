@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="Dashboard">
+	<meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+	<link rel="icon" href="assets/img/logo.png" type="image/x-icon">
+	<title>Movie Tracker</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="assets/css/bootstrap.css" rel="stylesheet">
+	<!--external css-->
+	<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+	<!-- Custom styles for this template -->
+	<link href="assets/css/style.css" rel="stylesheet">
+	<link href="assets/css/style-responsive.css" rel="stylesheet">
+
+	<script src="assets/js/chart-master/Chart.js"></script>
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<script>
+		function showPopup() {
+			var popup = document.getElementById("popup");
+			popup.style.display = "block";
+			setTimeout(hidePopup, 3000); // Hide the popup after 3 seconds (3000 milliseconds)
+		}
+
+		function hidePopup() {
+			var popup = document.getElementById("popup");
+			popup.style.display = "none";
+			window.location.href = "saved.html"; // Redirect to saved.html
+		}
+
+		function showPopup() {
+			var popup = document.getElementById("popup");
+			popup.style.display = "block";
+			setTimeout(hidePopup, 3000); // Hide the popup after 3 seconds (3000 milliseconds)
+		}
+
+		function hidePopup() {
+			var popup = document.getElementById("popup");
+			popup.style.display = "none";
+			window.location.href = "saved.html"; // Redirect to saved.html
+		}
+
+	</script>
+
+	<style type="text/css">
+		body {
+			overflow-x: hidden;
+		}
+
+		.sidebar-search {
+			margin-top: 20px;
+			margin-bottom: 20px;
+			position: relative;
+		}
+
+		.sidebar-search .form-group {
+			display: flex;
+			align-items: center;
+			margin-bottom: 0;
+		}
+
+		.sidebar-search input {
+			width: 100%;
+			padding: 10px 40px 10px 15px;
+			border: none;
+			border-radius: 3px;
+			background-color: #fff;
+			font-size: 14px;
+		}
+
+		.sidebar-search input:focus {
+			outline: none;
+			background-color: #fff;
+			box-shadow: none;
+		}
+
+		.sidebar-search .search-btn {
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+			width: 40px;
+			height: 100%;
+			background-color: transparent;
+			border: none;
+			outline: none;
+			cursor: pointer;
+		}
+
+		.sidebar-search .search-btn i {
+			color: #777;
+			font-size: 16px;
+			line-height: 20px;
+		}
+
+		.sidebar-search .search-btn:hover i {
+			color: #333;
+		}
+
+		/* Deslocamento de 10 pixels acima do ID */
+		:target {
+			margin-top: -70px;
+			padding-top: 70px;
+		}
+
+		.sub-menu {
+			list-style-type: none;
+		}
+	</style>
+</head>
+
+<body>
+
+	<section id="container">
+		<!-- **********************************************************************************************************************************************************
+      TOP BAR CONTENT & NOTIFICATIONS
+      *********************************************************************************************************************************************************** -->
+		<!--header start-->
+		<header class="header black-bg">
+			<div class="sidebar-toggle-box">
+				<div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+			</div>
+			<!--logo start-->
+			<a href="index.html" class="logo">
+				<b style="color: rgb(230, 185, 2);left:50%; transform: translateX(-50%);">MOVIE
+					TRACKER&nbsp;&nbsp;&nbsp;</b>
+				<i class="fa fa-film"
+					style="color:rgb(230, 185, 2); rotate: 30deg; font-size: 30px; transform: scaleX(0.8);"></i>
+			</a>
+
+			<!--logo end-->
+			<div class="nav notify-row" id="top_menu">
+				<!--  notification start -->
+				<ul class="nav top-menu">
+					<!-- settings start -->
+					<li class="dropdownNotif">
+						<a data-toggle="dropdownNotif" class="dropdownNotif-toggle" href="index.html#">
+							<i class="fa fa-tasks"></i>
+							<span class="badge bg-theme">4</span>
+						</a>
+						<ul class="dropdownNotif-menu extended tasks-bar">
+							<div class="notify-arrow notify-arrow-green"></div>
+							<li>
+								<p class="green" style="color: black">Novos lançamentos por ver dos guardados</p>
+							</li>
+							<li>
+								<a href="index.html#">
+									<div class="task-info">
+										<div class="desc">Breaking Bad</div>
+										<div class="percent">3</div>
+									</div>
+									<div class="progress progress-striped">
+										<div class="progress-bar progress-bar-success" role="progressbar"
+											aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
+											<span class="sr-only">10% Complete (success)</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="index.html#">
+									<div class="task-info">
+										<div class="desc">The Walking Dad</div>
+										<div class="percent">5</div>
+									</div>
+									<div class="progress progress-striped">
+										<div class="progress-bar progress-bar-info" role="progressbar"
+											aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+											<span class="sr-only">60% Complete (warning)</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="index.html#">
+									<div class="task-info">
+										<div class="desc">One Piece</div>
+										<div class="percent">20</div>
+									</div>
+									<div class="progress progress-striped">
+										<div class="progress-bar progress-bar-warning" role="progressbar"
+											aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+											<span class="sr-only">80% Complete</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="index.html#">
+									<div class="task-info">
+										<div class="desc">Game of Thrones</div>
+										<div class="percent">+</div>
+									</div>
+									<div class="progress progress-striped">
+										<div class="progress-bar progress-bar-danger" role="progressbar"
+											aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+											style="width: 100%">
+											<span class="sr-only">70% Complete (Important)</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li class="external">
+								<a href="index.html">Ver todos os episódios guardados</a>
+							</li>
+						</ul>
+					</li>
+
+
+
+					<!-- settings end -->
+					<!-- inbox dropdown start-->
+					<li id="header_inbox_bar" class="dropdownNotif">
+						<a data-toggle="dropdownNotif" class="dropdownNotif-toggle" href="index.html#">
+							<i class="fa fa-envelope-o"></i>
+							<span class="badge bg-theme">5</span>
+						</a>
+						<ul class="dropdownNotif-menu extended inbox">
+							<div class="notify-arrow notify-arrow-green"></div>
+							<li>
+								<p class="green" style="color: black">Tens 5 comentários das tuas séries</p>
+							</li>
+							<li>
+								<a href="index.html#">
+									<span class="photo"><img alt="avatar" src="assets/img/ui-zac.jpg"></span>
+									<span class="subject">
+										<span class="from">Manel Matos</span>
+										<span class="time">Just now</span>
+									</span>
+									<span class="message">
+										Incrivel!
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="index.html#">
+									<span class="photo"><img alt="avatar" src="assets/img/ui-divya.jpg"></span>
+									<span class="subject">
+										<span class="from">Tiago Silvestre</span>
+										<span class="time">40 mins.</span>
+									</span>
+									<span class="message">
+										Não gostei muito.
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="index.html#">
+									<span class="photo"><img alt="avatar" src="assets/img/ui-danro.jpg"></span>
+									<span class="subject">
+										<span class="from">Nuno Vidal</span>
+										<span class="time">2 hrs.</span>
+									</span>
+									<span class="message">
+										Eu fazia melhor.
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="index.html#">
+									<span class="photo"><img alt="avatar" src="assets/img/ui-sherman.jpg"></span>
+									<span class="subject">
+										<span class="from">Gonçalo Silva</span>
+										<span class="time">4 hrs.</span>
+									</span>
+									<span class="message">
+										Uaaaaaaaaaaaaaaaaaau.
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="index.html#">Ver todas os comentários</a>
+							</li>
+						</ul>
+					</li>
+					<!-- inbox dropdown end -->
+					<li id="header_inbox_bar" class="dropdownNotif">
+						<a data-toggle="dropdownNotif" class="dropdownNotif-toggle" href="index.html#">
+							<i class="fa fa-user"></i>
+						</a>
+						<ul class="dropdownNotif-menu extended inbox">
+							<div class="notify-arrow notify-arrow-green"></div>
+							<li>
+								<p class="green" style="color:black">Sobre a sua conta</p>
+							</li>
+							<li>
+								<a href="profile.html">
+									<span>
+										Gerir perfil
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="index.html#">
+									<span>
+										Mudar conta
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="login.html">
+									<span>
+										Terminar sessão
+									</span>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+
+				<!-- Create icon of user and dropdown menu -->
+
+				<!--  notification end -->
+			</div>
+
+
+		</header>
+		<!--header end-->
+
+		<!-- **********************************************************************************************************************************************************
+      MAIN SIDEBAR MENU
+      *********************************************************************************************************************************************************** -->
+		<!--sidebar start-->
+		<aside>
+			<div id="sidebar" class="nav-collapse ">
+				<!-- sidebar menu start-->
+				<ul class="sidebar-menu" id="nav-accordion">
+
+					<p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle"
+								width="60"></a></p>
+					<h5 class="centered">Vanessa Santos</h5>
+
+					<li class="mt">
+						<a href="index.html">
+							<i class="fa fa-floppy-o"></i>
+							<span>Guardados</span>
+						</a>
+					</li>
+
+					<li class="sub-menu">
+						<a class="active" href="javascript:;">
+							<i class=" fa fa-search"></i>
+							<span>Explorar</span>
+						</a>
+						<ul class="sub">
+							<li><a href="explorar.html#pesq">Pesquisa</a></li>
+							<li><a href="explorar.html#mais-vistos">Mais Vistos</a></li>
+							<li><a href="explorar.html#favoritos">Favoritos</a></li>
+							<li><a href="explorar.html#mais-recentes">Mais Recentes</a></li>
+							<li><a href="explorar.html#mais-polemicos">Mais Polémicos</a></li>
+							<li><a href="explorar.html#mais-elogiados">Mais Elogiados</a></li>
+						</ul>
+					</li>
+
+					<li class="sub-menu">
+						<a href="calendar.html">
+							<i class="fa fa-calendar"></i>
+							<span>Calendário</span>
+						</a>
+					</li>
+
+					<li class="sub-menu">
+						<a href="news.html">
+							<i class="fa fa-book"></i>
+							<span>Últimas notícias</span>
+						</a>
+					</li>
+					<!-- <ul class="sub">
+						<li><a  href="news.html">Blank Page</a></li>
+						<li><a  href="login.html">Login</a></li>
+						<li><a  href="lock_screen.html">Lock Screen</a></li>
+					</ul> -->
+
+					<li class="sub-menu">
+						<a href="settings.html">
+							<i class="fa fa-tasks"></i>
+							<span>Definições</span>
+						</a>
+						<!-- <ul class="sub">
+						<li><a  href="settings.html">Form Components</a></li>
+					</ul> -->
+					</li>
+					<li class="sub-menu">
+						<a href="help.html">
+							<i class="fa fa-question-circle"></i>
+							<span>Ajuda</span>
+						</a>
+					</li>
+
+				</ul>
+				<!-- sidebar menu end-->
+			</div>
+		</aside>
+		<!--sidebar end-->
+
+		<!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+		<!--main content start-->
+		<section id="main-content">
+			<section class="wrapper site-min-height">
+				<!-- Pop up ao GUARDAR série -->
+				<div id="popup">
+					<div id="popup-inner">
+						<a href="saved.html"><i onclick="hidePopup()" class="fa fa-times-circle"></i></a>
+						<h4 style="margin-top: 20px; margin-right:20px">A série foi guardada com sucesso.</h4>
+					</div>
+				</div>
+
+				<h3 id="pesq">Resultados da pesquisa</h3>
+
+				<li class="sub-menu" style="position: relative; left:10px; text-decoration: none; width: 50%;">
+					<form id="search-form" class="sidebar-search" action="info.html" method="get">
+						<div class="form-group">
+							<input type="text" class="form-control"
+								placeholder="Pesquisar por Séries, Notícias, Géneros, etc" name="search">
+							<button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
+						</div>
+					</form>
+				</li>
+
+
+				<div class="row mt">
+					<div class="col-lg-12">
+						<div class="form-panel">
+							<h2 id="mais-vistos" class="mb">Pesquisas relacionadas com: Breaking Bad</h2>
+							<!-- 5TH ROW OF PANELS -->
+							<div class="row">
+								<div class="col-md-4 col-sm-4 mb">
+									<div class="content-panel pn">
+										<div id="bbad">
+											<div class="col-xs-4 col-xs-offset-8">
+												<button class="btn btn-sm btn-clear-g" onclick="showPopup()"
+													style="color:Black; background-color: rgba(255, 255, 255, 10);">GUARDAR</button>
+											</div>
+											<div class="sp-title">
+												<h3>Breaking Bad</h3>
+											</div>
+											<img src="assets/img/netflix.png"
+												style="width: 20%; height: 20%; margin-top: 5px;"></img>
+											<div class="play">
+												<a href="https://www.netflix.com/title/70143836">
+													<i class="fa fa-play-circle fa-3x" style="color:white"></i>
+												</a>
+											</div>
+										</div>
+										<a href="info.html">
+											<p class="followers" style="text-align: center;"></i>Informação</p>
+										</a>
+									</div>
+								</div>
+								<!--/col-md-4-->
+
+								<div class="col-lg-4 col-md-4 col-sm-4 mb">
+									<div class="content-panel pn">
+										<div id="camino">
+											<div class="col-xs-4 col-xs-offset-8">
+												<button class="btn btn-sm btn-clear-g"
+													style="color:Black; background-color: rgba(255, 255, 255, 10);">GUARDAR</button>
+											</div>
+											<div class="sp-title">
+												<h3>Camino</h3>
+											</div>
+											<div class="play">
+												<i class="fa fa-play-circle fa-3x"></i>
+											</div>
+										</div>
+										<a href="info.html">
+											<p class="followers" style="text-align: center;">
+												</i>Informação</p>
+										</a>
+									</div>
+								</div>
+								<!--/col-md-4-->
+
+								<div class="col-md-4 col-sm-4 mb">
+									<div class="content-panel pn">
+										<div id="betterCallSaul">
+											<div class="col-xs-4 col-xs-offset-8">
+												<button class="btn btn-sm btn-clear-g"
+													style="color:Black; background-color: rgba(255, 255, 255, 10);">GUARDAR</button>
+											</div>
+											<div class="sp-title">
+												<h3>Better Call Saul</h3>
+											</div>
+											<img src="assets/img/hboLogo.png"
+												style="width: 13%; height: 13%; margin-top: 10px; margin-left: 15px;"></img>
+											<div class="play">
+												<a
+													href="https://www.hbomax.com/pt/pt/series/urn:hbo:series:GVU2cggagzYNJjhsJATwo">
+													<i class="fa fa-play-circle fa-3x" style="color:white"></i>
+												</a>
+											</div>
+										</div>
+										<a href="info.html">
+											<p class="followers" style="text-align: center;">
+												</i>Informação</p>
+										</a>
+									</div>
+								</div>
+							</div> <!--/col-md-4-->
+						</div><!-- /END 5TH ROW OF PANELS -->
+					</div><!-- col-lg-12-->
+				</div><!-- /row -->
+			</section>
+			<!--/wrapper -->
+		</section><!-- /MAIN CONTENT -->
+
+		<!--main content end-->
+		<!--footer start-->
+		<footer class="site-footer">
+			<div class="text-center">
+				IHC - P4
+				<a href="explorar.html#" class="go-top">
+					<i class="fa fa-angle-up"></i>
+				</a>
+			</div>
+		</footer>
+		<!--footer end-->
+	</section>
+
+	<!-- js placed at the end of the document so the pages load faster -->
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+	<script src="assets/js/jquery.scrollTo.min.js"></script>
+	<script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+	<script src="assets/js/jquery.sparkline.js"></script>
+	<script src="assets/js/collapsabled.js"></script>
+
+	<!--common script for all pages-->
+	<script src="assets/js/common-scripts.js"></script>
+
+	<!--script for this page-->
+	<script src="assets/js/sparkline-chart.js"></script>
+
+
+	<script>
+		//custom select box
+
+		$(function () {
+			$('select.styled').customSelect();
+		});
+
+		// FICAR UM POUCO ACIMA NO SALTO
+
+	</script>
+
+</body>
+
+</html>
