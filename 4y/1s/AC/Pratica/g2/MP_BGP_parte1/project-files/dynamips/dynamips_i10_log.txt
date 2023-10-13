@@ -1,0 +1,71 @@
+Oct 12 12:40:20.039 HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
+Oct 12 12:40:20.039 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 34805.
+Oct 12 12:40:20.048 HYPERVISOR: exec_cmd: hypervisor version 
+Oct 12 12:40:20.048 HYPERVISOR: exec_cmd: hypervisor working_dir /home/rafael/GNS3/projects/MP_BGP_parte1/project-files/dynamips 
+Oct 12 12:40:20.048 GENERAL: working_dir=/home/rafael/GNS3/projects/MP_BGP_parte1/project-files/dynamips
+Oct 12 12:40:20.048 HYPERVISOR: exec_cmd: hypervisor working_dir /home/rafael/GNS3/projects/MP_BGP_parte1/project-files/dynamips/2200815e-a4f2-4646-8b26-c8e55a4bfc64 
+Oct 12 12:40:20.048 GENERAL: working_dir=/home/rafael/GNS3/projects/MP_BGP_parte1/project-files/dynamips/2200815e-a4f2-4646-8b26-c8e55a4bfc64
+Oct 12 12:40:20.048 HYPERVISOR: exec_cmd: vm create R4 4 c7200 
+Oct 12 12:40:20.049 VM: VM R4 created.
+Oct 12 12:40:20.049 HYPERVISOR: exec_cmd: vm set_con_tcp_port R4 5009 
+Oct 12 12:40:20.049 HYPERVISOR: exec_cmd: c7200 get_mac_addr R4 
+Oct 12 12:40:20.049 HYPERVISOR: exec_cmd: vm get_status R4 
+Oct 12 12:40:20.049 HYPERVISOR: exec_cmd: vm slot_add_binding R4 0 0 C7200-IO-FE 
+Oct 12 12:40:20.050 HYPERVISOR: exec_cmd: vm set_ios R4 /home/rafael/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Oct 12 12:40:20.051 HYPERVISOR: exec_cmd: vm set_ram R4 512 
+Oct 12 12:40:20.051 HYPERVISOR: exec_cmd: vm set_nvram R4 512 
+Oct 12 12:40:20.051 HYPERVISOR: exec_cmd: vm set_disk0 R4 0 
+Oct 12 12:40:20.052 HYPERVISOR: exec_cmd: vm get_status R4 
+Oct 12 12:40:20.052 HYPERVISOR: exec_cmd: vm slot_remove_binding R4 0 0 
+Oct 12 12:40:20.052 HYPERVISOR: exec_cmd: vm get_status R4 
+Oct 12 12:40:20.053 HYPERVISOR: exec_cmd: vm slot_add_binding R4 0 0 C7200-IO-2FE 
+Oct 12 12:40:20.053 HYPERVISOR: exec_cmd: vm get_status R4 
+Oct 12 12:40:20.053 HYPERVISOR: exec_cmd: vm slot_add_binding R4 1 0 PA-2FE-TX 
+Oct 12 12:40:20.140 HYPERVISOR: exec_cmd: vm set_ios R4 /home/rafael/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Oct 12 12:40:21.249 HYPERVISOR: exec_cmd: vm set_ios R4 /home/rafael/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Oct 12 12:41:24.644 HYPERVISOR: exec_cmd: nio create_udp udp-7b2f8e22-9e3a-4ddf-b98a-f0f73c8a08d4 10002 127.0.0.1 10003 
+Oct 12 12:41:24.859 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R4 0 0 udp-7b2f8e22-9e3a-4ddf-b98a-f0f73c8a08d4 
+Oct 12 12:41:24.859 HYPERVISOR: exec_cmd: vm get_status R4 
+Oct 12 12:41:40.682 HYPERVISOR: exec_cmd: nio create_udp udp-bd618aeb-b3ac-469f-8a1b-6ce019097545 10006 127.0.0.1 10007 
+Oct 12 12:41:40.683 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R4 0 1 udp-bd618aeb-b3ac-469f-8a1b-6ce019097545 
+Oct 12 12:41:40.684 HYPERVISOR: exec_cmd: vm get_status R4 
+Oct 12 12:41:58.357 HYPERVISOR: exec_cmd: nio create_udp udp-87381af7-eb90-42f1-99d5-be0bcc76c307 10010 127.0.0.1 10011 
+Oct 12 12:41:58.358 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R4 1 0 udp-87381af7-eb90-42f1-99d5-be0bcc76c307 
+Oct 12 12:41:58.358 HYPERVISOR: exec_cmd: vm get_status R4 
+Oct 12 12:44:58.266 HYPERVISOR: exec_cmd: nio create_udp udp-a8459153-160f-41b5-bb4d-f40cc2cd1c2e 10062 127.0.0.1 10063 
+Oct 12 12:44:58.267 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R4 1 1 udp-a8459153-160f-41b5-bb4d-f40cc2cd1c2e 
+Oct 12 12:44:58.267 HYPERVISOR: exec_cmd: vm get_status R4 
+Oct 12 12:45:43.385 HYPERVISOR: exec_cmd: vm set_ghost_status R4 2 
+Oct 12 12:45:43.385 HYPERVISOR: exec_cmd: vm set_ghost_file R4 /home/rafael/GNS3/projects/MP_BGP_parte1/project-files/dynamips/c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
+Oct 12 12:45:43.386 HYPERVISOR: exec_cmd: vm get_status R4 
+Oct 12 12:45:43.386 HYPERVISOR: exec_cmd: vm set_config R4 configs/i4_startup-config.cfg 
+Oct 12 12:45:43.386 HYPERVISOR: exec_cmd: vm start R4 
+Oct 12 12:46:13.622 HYPERVISOR: exec_cmd: vm extract_config R4 
+Oct 12 12:50:02.527 HYPERVISOR: exec_cmd: vm set_ios R4 /home/rafael/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Oct 12 12:59:47.056 HYPERVISOR: exec_cmd: vm get_status R4 
+Oct 12 12:59:47.057 HYPERVISOR: exec_cmd: vm stop R4 
+Oct 12 12:59:47.196 VM: VM R4 shutdown.
+Oct 12 12:59:47.196 HYPERVISOR: exec_cmd: vm extract_config R4 
+Oct 12 13:00:23.336 HYPERVISOR: exec_cmd: vm set_ios R4 /home/rafael/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Oct 12 13:00:23.336 HYPERVISOR: exec_cmd: vm rename R4 RouterA 
+Oct 12 13:00:23.435 HYPERVISOR: exec_cmd: vm set_ios RouterA /home/rafael/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Oct 12 13:00:32.723 HYPERVISOR: exec_cmd: vm set_ios RouterA /home/rafael/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Oct 12 13:01:03.507 HYPERVISOR: exec_cmd: vm set_ghost_status RouterA 2 
+Oct 12 13:01:03.508 HYPERVISOR: exec_cmd: vm set_ghost_file RouterA /home/rafael/GNS3/projects/MP_BGP_parte1/project-files/dynamips/c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
+Oct 12 13:01:03.509 HYPERVISOR: exec_cmd: vm get_status RouterA 
+Oct 12 13:01:03.510 HYPERVISOR: exec_cmd: vm set_config RouterA configs/i4_startup-config.cfg 
+Oct 12 13:01:03.511 HYPERVISOR: exec_cmd: vm start RouterA 
+Oct 12 13:39:33.833 HYPERVISOR: exec_cmd: vm extract_config RouterA 
+Oct 12 14:04:03.902 HYPERVISOR: exec_cmd: vm extract_config RouterA 
+Oct 12 14:22:33.950 HYPERVISOR: exec_cmd: vm extract_config RouterA 
+Oct 12 14:57:31.018 HYPERVISOR: exec_cmd: vm get_status RouterA 
+Oct 12 14:57:31.020 HYPERVISOR: exec_cmd: vm stop RouterA 
+Oct 12 14:57:31.151 VM: VM RouterA shutdown.
+Oct 12 14:57:31.152 HYPERVISOR: exec_cmd: vm extract_config RouterA 
+Oct 13 21:20:51.880 HYPERVISOR: exec_cmd: vm get_status RouterA 
+Oct 13 21:20:51.881 HYPERVISOR: exec_cmd: vm extract_config RouterA 
+Oct 13 21:20:51.883 HYPERVISOR: exec_cmd: vm delete RouterA 
+Oct 13 21:20:51.884 VM: VM RouterA destroyed.
+Oct 13 21:20:51.884 HYPERVISOR: exec_cmd: hypervisor stop 
+Oct 13 21:20:52.197 HYPERVISOR: Stopped.
+Oct 13 21:20:52.197 GENERAL: reset done.

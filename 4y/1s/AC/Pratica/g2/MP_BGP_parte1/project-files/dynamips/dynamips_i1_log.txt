@@ -1,0 +1,77 @@
+Oct 12 12:38:33.566 HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
+Oct 12 12:38:33.566 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 47849.
+Oct 12 12:38:33.571 HYPERVISOR: exec_cmd: hypervisor version 
+Oct 12 12:38:33.572 HYPERVISOR: exec_cmd: hypervisor working_dir /home/rafael/GNS3/projects/MP_BGP_parte1/project-files/dynamips 
+Oct 12 12:38:33.572 GENERAL: working_dir=/home/rafael/GNS3/projects/MP_BGP_parte1/project-files/dynamips
+Oct 12 12:38:33.572 HYPERVISOR: exec_cmd: hypervisor working_dir /home/rafael/GNS3/projects/MP_BGP_parte1/project-files/dynamips/2862fb1d-70c3-4ca3-8dcf-28de4060013c 
+Oct 12 12:38:33.572 GENERAL: working_dir=/home/rafael/GNS3/projects/MP_BGP_parte1/project-files/dynamips/2862fb1d-70c3-4ca3-8dcf-28de4060013c
+Oct 12 12:38:33.572 HYPERVISOR: exec_cmd: vm create R1 1 c7200 
+Oct 12 12:38:33.572 VM: VM R1 created.
+Oct 12 12:38:33.573 HYPERVISOR: exec_cmd: vm set_con_tcp_port R1 5000 
+Oct 12 12:38:33.573 HYPERVISOR: exec_cmd: c7200 get_mac_addr R1 
+Oct 12 12:38:33.573 HYPERVISOR: exec_cmd: vm get_status R1 
+Oct 12 12:38:33.574 HYPERVISOR: exec_cmd: vm slot_add_binding R1 0 0 C7200-IO-FE 
+Oct 12 12:38:33.575 HYPERVISOR: exec_cmd: vm set_ios R1 /home/rafael/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Oct 12 12:38:33.575 HYPERVISOR: exec_cmd: vm set_ram R1 512 
+Oct 12 12:38:33.576 HYPERVISOR: exec_cmd: vm set_nvram R1 512 
+Oct 12 12:38:33.576 HYPERVISOR: exec_cmd: vm set_disk0 R1 0 
+Oct 12 12:38:33.577 HYPERVISOR: exec_cmd: vm get_status R1 
+Oct 12 12:38:33.577 HYPERVISOR: exec_cmd: vm slot_remove_binding R1 0 0 
+Oct 12 12:38:33.578 HYPERVISOR: exec_cmd: vm get_status R1 
+Oct 12 12:38:33.578 HYPERVISOR: exec_cmd: vm slot_add_binding R1 0 0 C7200-IO-2FE 
+Oct 12 12:38:33.578 HYPERVISOR: exec_cmd: vm get_status R1 
+Oct 12 12:38:33.579 HYPERVISOR: exec_cmd: vm slot_add_binding R1 1 0 PA-2FE-TX 
+Oct 12 12:38:33.651 HYPERVISOR: exec_cmd: vm set_ios R1 /home/rafael/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Oct 12 12:40:03.825 HYPERVISOR: exec_cmd: vm set_ios R1 /home/rafael/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Oct 12 12:42:06.605 HYPERVISOR: exec_cmd: nio create_udp udp-f528f912-500d-4bc3-b482-f938f15f33c5 10014 127.0.0.1 10015 
+Oct 12 12:42:06.818 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R1 1 0 udp-f528f912-500d-4bc3-b482-f938f15f33c5 
+Oct 12 12:42:06.819 HYPERVISOR: exec_cmd: vm get_status R1 
+Oct 12 12:42:13.994 HYPERVISOR: exec_cmd: nio create_udp udp-6a5420be-eff6-4f60-b6a6-81e0dc1b9474 10018 127.0.0.1 10019 
+Oct 12 12:42:13.995 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R1 0 0 udp-6a5420be-eff6-4f60-b6a6-81e0dc1b9474 
+Oct 12 12:42:13.995 HYPERVISOR: exec_cmd: vm get_status R1 
+Oct 12 12:42:18.547 HYPERVISOR: exec_cmd: nio create_udp udp-a89a0d43-6642-4c92-858b-acf5c5d7bbb5 10022 127.0.0.1 10023 
+Oct 12 12:42:18.548 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R1 0 1 udp-a89a0d43-6642-4c92-858b-acf5c5d7bbb5 
+Oct 12 12:42:18.549 HYPERVISOR: exec_cmd: vm get_status R1 
+Oct 12 12:45:42.711 HYPERVISOR: exec_cmd: vm create Ghost 0 c7200 
+Oct 12 12:45:42.711 VM: VM Ghost created.
+Oct 12 12:45:42.714 HYPERVISOR: exec_cmd: vm set_ios Ghost /home/rafael/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Oct 12 12:45:42.714 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Oct 12 12:45:42.715 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost /home/rafael/GNS3/projects/MP_BGP_parte1/project-files/dynamips/c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
+Oct 12 12:45:42.715 HYPERVISOR: exec_cmd: vm set_ram Ghost 512 
+Oct 12 12:45:42.716 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Oct 12 12:45:42.721 HYPERVISOR: exec_cmd: vm set_config Ghost configs/i0_startup-config.cfg 
+Oct 12 12:45:42.721 HYPERVISOR: exec_cmd: vm start Ghost 
+Oct 12 12:45:43.034 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Oct 12 12:45:43.034 HYPERVISOR: exec_cmd: vm stop Ghost 
+Oct 12 12:45:43.141 VM: VM Ghost shutdown.
+Oct 12 12:45:43.142 HYPERVISOR: exec_cmd: vm extract_config Ghost 
+Oct 12 12:45:43.144 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Oct 12 12:45:43.144 VM: VM Ghost destroyed.
+Oct 12 12:45:43.145 HYPERVISOR: exec_cmd: vm set_ghost_status R1 2 
+Oct 12 12:45:43.146 HYPERVISOR: exec_cmd: vm set_ghost_file R1 /home/rafael/GNS3/projects/MP_BGP_parte1/project-files/dynamips/c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
+Oct 12 12:45:43.146 HYPERVISOR: exec_cmd: vm get_status R1 
+Oct 12 12:45:43.147 HYPERVISOR: exec_cmd: vm set_config R1 configs/i1_startup-config.cfg 
+Oct 12 12:45:43.147 HYPERVISOR: exec_cmd: vm start R1 
+Oct 12 12:46:13.363 HYPERVISOR: exec_cmd: vm extract_config R1 
+Oct 12 12:59:46.918 HYPERVISOR: exec_cmd: vm get_status R1 
+Oct 12 12:59:46.924 HYPERVISOR: exec_cmd: vm stop R1 
+Oct 12 12:59:47.041 VM: VM R1 shutdown.
+Oct 12 12:59:47.042 HYPERVISOR: exec_cmd: vm extract_config R1 
+Oct 12 13:01:03.241 HYPERVISOR: exec_cmd: vm set_ghost_status R1 2 
+Oct 12 13:01:03.244 HYPERVISOR: exec_cmd: vm set_ghost_file R1 /home/rafael/GNS3/projects/MP_BGP_parte1/project-files/dynamips/c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
+Oct 12 13:01:03.244 HYPERVISOR: exec_cmd: vm get_status R1 
+Oct 12 13:01:03.245 HYPERVISOR: exec_cmd: vm set_config R1 configs/i1_startup-config.cfg 
+Oct 12 13:01:03.246 HYPERVISOR: exec_cmd: vm start R1 
+Oct 12 13:37:03.596 HYPERVISOR: exec_cmd: vm extract_config R1 
+Oct 12 14:57:03.836 HYPERVISOR: exec_cmd: vm extract_config R1 
+Oct 12 14:57:30.917 HYPERVISOR: exec_cmd: vm get_status R1 
+Oct 12 14:57:30.919 HYPERVISOR: exec_cmd: vm stop R1 
+Oct 12 14:57:30.981 VM: VM R1 shutdown.
+Oct 12 14:57:30.982 HYPERVISOR: exec_cmd: vm extract_config R1 
+Oct 13 21:20:51.818 HYPERVISOR: exec_cmd: vm get_status R1 
+Oct 13 21:20:51.819 HYPERVISOR: exec_cmd: vm extract_config R1 
+Oct 13 21:20:51.821 HYPERVISOR: exec_cmd: vm delete R1 
+Oct 13 21:20:51.821 VM: VM R1 destroyed.
+Oct 13 21:20:51.822 HYPERVISOR: exec_cmd: hypervisor stop 
+Oct 13 21:20:52.317 HYPERVISOR: Stopped.
+Oct 13 21:20:52.317 GENERAL: reset done.
