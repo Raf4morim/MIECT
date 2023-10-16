@@ -1,72 +1,37 @@
-Oct 12 12:40:27.142 HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
-Oct 12 12:40:27.142 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 48765.
-Oct 12 12:40:27.151 HYPERVISOR: exec_cmd: hypervisor version 
-Oct 12 12:40:27.151 HYPERVISOR: exec_cmd: hypervisor working_dir /home/rafael/GNS3/projects/MP_BGP_parte1/project-files/dynamips 
-Oct 12 12:40:27.151 GENERAL: working_dir=/home/rafael/GNS3/projects/MP_BGP_parte1/project-files/dynamips
-Oct 12 12:40:27.152 HYPERVISOR: exec_cmd: hypervisor working_dir /home/rafael/GNS3/projects/MP_BGP_parte1/project-files/dynamips/e8e1fa66-f567-4e78-be3a-8d3997e30095 
-Oct 12 12:40:27.152 GENERAL: working_dir=/home/rafael/GNS3/projects/MP_BGP_parte1/project-files/dynamips/e8e1fa66-f567-4e78-be3a-8d3997e30095
-Oct 12 12:40:27.152 HYPERVISOR: exec_cmd: vm create R5 5 c7200 
-Oct 12 12:40:27.152 VM: VM R5 created.
-Oct 12 12:40:27.152 HYPERVISOR: exec_cmd: vm set_con_tcp_port R5 5010 
-Oct 12 12:40:27.153 HYPERVISOR: exec_cmd: c7200 get_mac_addr R5 
-Oct 12 12:40:27.153 HYPERVISOR: exec_cmd: vm get_status R5 
-Oct 12 12:40:27.153 HYPERVISOR: exec_cmd: vm slot_add_binding R5 0 0 C7200-IO-FE 
-Oct 12 12:40:27.154 HYPERVISOR: exec_cmd: vm set_ios R5 /home/rafael/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
-Oct 12 12:40:27.154 HYPERVISOR: exec_cmd: vm set_ram R5 512 
-Oct 12 12:40:27.154 HYPERVISOR: exec_cmd: vm set_nvram R5 512 
-Oct 12 12:40:27.155 HYPERVISOR: exec_cmd: vm set_disk0 R5 0 
-Oct 12 12:40:27.155 HYPERVISOR: exec_cmd: vm get_status R5 
-Oct 12 12:40:27.156 HYPERVISOR: exec_cmd: vm slot_remove_binding R5 0 0 
-Oct 12 12:40:27.156 HYPERVISOR: exec_cmd: vm get_status R5 
-Oct 12 12:40:27.156 HYPERVISOR: exec_cmd: vm slot_add_binding R5 0 0 C7200-IO-2FE 
-Oct 12 12:40:27.157 HYPERVISOR: exec_cmd: vm get_status R5 
-Oct 12 12:40:27.157 HYPERVISOR: exec_cmd: vm slot_add_binding R5 1 0 PA-2FE-TX 
-Oct 12 12:40:27.248 HYPERVISOR: exec_cmd: vm set_ios R5 /home/rafael/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
-Oct 12 12:40:31.057 HYPERVISOR: exec_cmd: vm set_ios R5 /home/rafael/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
-Oct 12 12:44:30.849 HYPERVISOR: exec_cmd: nio create_udp udp-b1b75263-838c-4392-ada9-28415385aa8e 10046 127.0.0.1 10047 
-Oct 12 12:44:31.065 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R5 1 0 udp-b1b75263-838c-4392-ada9-28415385aa8e 
-Oct 12 12:44:31.066 HYPERVISOR: exec_cmd: vm get_status R5 
-Oct 12 12:44:36.993 HYPERVISOR: exec_cmd: nio create_udp udp-ecfda8d6-eac9-4402-81d9-0546c80bc43b 10050 127.0.0.1 10051 
-Oct 12 12:44:36.994 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R5 0 0 udp-ecfda8d6-eac9-4402-81d9-0546c80bc43b 
-Oct 12 12:44:36.994 HYPERVISOR: exec_cmd: vm get_status R5 
-Oct 12 12:44:43.464 HYPERVISOR: exec_cmd: nio create_udp udp-ac9b3976-df69-48fa-b700-4068a4500e15 10054 127.0.0.1 10055 
-Oct 12 12:44:43.465 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R5 0 1 udp-ac9b3976-df69-48fa-b700-4068a4500e15 
-Oct 12 12:44:43.465 HYPERVISOR: exec_cmd: vm get_status R5 
-Oct 12 12:44:51.739 HYPERVISOR: exec_cmd: nio create_udp udp-bf150466-8d27-47f2-9c3b-ae78fb4aaf76 10058 127.0.0.1 10059 
-Oct 12 12:44:51.740 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R5 1 1 udp-bf150466-8d27-47f2-9c3b-ae78fb4aaf76 
-Oct 12 12:44:51.740 HYPERVISOR: exec_cmd: vm get_status R5 
-Oct 12 12:45:43.386 HYPERVISOR: exec_cmd: vm set_ghost_status R5 2 
-Oct 12 12:45:43.386 HYPERVISOR: exec_cmd: vm set_ghost_file R5 /home/rafael/GNS3/projects/MP_BGP_parte1/project-files/dynamips/c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Oct 12 12:45:43.387 HYPERVISOR: exec_cmd: vm get_status R5 
-Oct 12 12:45:43.387 HYPERVISOR: exec_cmd: vm set_config R5 configs/i5_startup-config.cfg 
-Oct 12 12:45:43.387 HYPERVISOR: exec_cmd: vm start R5 
-Oct 12 12:46:13.621 HYPERVISOR: exec_cmd: vm extract_config R5 
-Oct 12 12:50:00.729 HYPERVISOR: exec_cmd: vm set_ios R5 /home/rafael/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
-Oct 12 12:59:47.058 HYPERVISOR: exec_cmd: vm get_status R5 
-Oct 12 12:59:47.059 HYPERVISOR: exec_cmd: vm stop R5 
-Oct 12 12:59:47.138 VM: VM R5 shutdown.
-Oct 12 12:59:47.139 HYPERVISOR: exec_cmd: vm extract_config R5 
-Oct 12 13:00:38.180 HYPERVISOR: exec_cmd: vm set_ios R5 /home/rafael/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
-Oct 12 13:00:47.863 HYPERVISOR: exec_cmd: vm set_ios R5 /home/rafael/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
-Oct 12 13:00:47.863 HYPERVISOR: exec_cmd: vm rename R5 RouterB 
-Oct 12 13:00:47.956 HYPERVISOR: exec_cmd: vm set_ios RouterB /home/rafael/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
-Oct 12 13:00:52.504 HYPERVISOR: exec_cmd: vm set_ios RouterB /home/rafael/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
-Oct 12 13:01:03.511 HYPERVISOR: exec_cmd: vm set_ghost_status RouterB 2 
-Oct 12 13:01:03.512 HYPERVISOR: exec_cmd: vm set_ghost_file RouterB /home/rafael/GNS3/projects/MP_BGP_parte1/project-files/dynamips/c7200-advipservicesk9-mz.152-4.S5.image-512.ghost 
-Oct 12 13:01:03.514 HYPERVISOR: exec_cmd: vm get_status RouterB 
-Oct 12 13:01:03.514 HYPERVISOR: exec_cmd: vm set_config RouterB configs/i5_startup-config.cfg 
-Oct 12 13:01:03.515 HYPERVISOR: exec_cmd: vm start RouterB 
-Oct 12 13:35:33.845 HYPERVISOR: exec_cmd: vm extract_config RouterB 
-Oct 12 14:04:33.923 HYPERVISOR: exec_cmd: vm extract_config RouterB 
-Oct 12 14:21:33.968 HYPERVISOR: exec_cmd: vm extract_config RouterB 
-Oct 12 14:57:31.019 HYPERVISOR: exec_cmd: vm get_status RouterB 
-Oct 12 14:57:31.020 HYPERVISOR: exec_cmd: vm stop RouterB 
-Oct 12 14:57:31.101 VM: VM RouterB shutdown.
-Oct 12 14:57:31.101 HYPERVISOR: exec_cmd: vm extract_config RouterB 
-Oct 13 21:20:51.911 HYPERVISOR: exec_cmd: vm get_status RouterB 
-Oct 13 21:20:51.912 HYPERVISOR: exec_cmd: vm extract_config RouterB 
-Oct 13 21:20:51.914 HYPERVISOR: exec_cmd: vm delete RouterB 
-Oct 13 21:20:51.914 VM: VM RouterB destroyed.
-Oct 13 21:20:51.915 HYPERVISOR: exec_cmd: hypervisor stop 
-Oct 13 21:20:52.312 HYPERVISOR: Stopped.
-Oct 13 21:20:52.312 GENERAL: reset done.
+Oct 14 00:43:00.500 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Oct 14 00:43:00.502 HYPERVISOR: Started on IP = localhost, TCP port = 52742.
+Oct 14 00:43:00.975 HYPERVISOR: exec_cmd: hypervisor version 
+Oct 14 00:43:00.975 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\repol\Documents\github\MIECT\4y\1s\AC\Pratica\g2\MP_BGP_parte1\project-files\dynamips 
+Oct 14 00:43:00.975 GENERAL: working_dir=C:\Users\repol\Documents\github\MIECT\4y\1s\AC\Pratica\g2\MP_BGP_parte1\project-files\dynamips
+Oct 14 00:43:00.975 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\repol\Documents\github\MIECT\4y\1s\AC\Pratica\g2\MP_BGP_parte1\project-files\dynamips\e8e1fa66-f567-4e78-be3a-8d3997e30095 
+Oct 14 00:43:00.975 GENERAL: working_dir=C:\Users\repol\Documents\github\MIECT\4y\1s\AC\Pratica\g2\MP_BGP_parte1\project-files\dynamips\e8e1fa66-f567-4e78-be3a-8d3997e30095
+Oct 14 00:43:00.975 HYPERVISOR: exec_cmd: vm create RouterB 5 c7200 
+Oct 14 00:43:01.043 VM: VM RouterB created.
+Oct 14 00:43:01.045 HYPERVISOR: exec_cmd: vm set_con_tcp_port RouterB 5010 
+Oct 14 00:43:01.045 HYPERVISOR: exec_cmd: c7200 get_mac_addr RouterB 
+Oct 14 00:43:01.045 HYPERVISOR: exec_cmd: vm get_status RouterB 
+Oct 14 00:43:01.046 HYPERVISOR: exec_cmd: vm slot_add_binding RouterB 0 0 C7200-IO-FE 
+Oct 14 00:43:01.048 HYPERVISOR: exec_cmd: vm set_disk0 RouterB 0 
+Oct 14 00:43:01.050 HYPERVISOR: exec_cmd: vm set_exec_area RouterB 64 
+Oct 14 00:43:01.051 HYPERVISOR: exec_cmd: vm set_ios RouterB C:/Users/repol/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Oct 14 00:43:01.053 HYPERVISOR: exec_cmd: c7200 set_mac_addr RouterB ca05.1f8e.0000 
+Oct 14 00:43:01.053 HYPERVISOR: exec_cmd: vm set_nvram RouterB 512 
+Oct 14 00:43:01.055 HYPERVISOR: exec_cmd: vm set_ram RouterB 512 
+Oct 14 00:43:01.057 HYPERVISOR: exec_cmd: vm get_status RouterB 
+Oct 14 00:43:01.057 HYPERVISOR: exec_cmd: vm slot_remove_binding RouterB 0 0 
+Oct 14 00:43:01.058 HYPERVISOR: exec_cmd: vm get_status RouterB 
+Oct 14 00:43:01.058 HYPERVISOR: exec_cmd: vm slot_add_binding RouterB 0 0 C7200-IO-2FE 
+Oct 14 00:43:01.058 HYPERVISOR: exec_cmd: vm get_status RouterB 
+Oct 14 00:43:01.058 HYPERVISOR: exec_cmd: vm slot_add_binding RouterB 1 0 PA-2FE-TX 
+Oct 14 00:43:06.765 HYPERVISOR: exec_cmd: nio create_udp udp-3d5c7f88-38fb-4d29-bf8a-6a9c56391ca5 10046 127.0.0.1 10047 
+Oct 14 00:43:07.048 HYPERVISOR: exec_cmd: vm slot_add_nio_binding RouterB 1 0 udp-3d5c7f88-38fb-4d29-bf8a-6a9c56391ca5 
+Oct 14 00:43:07.049 HYPERVISOR: exec_cmd: vm get_status RouterB 
+Oct 14 00:43:07.166 HYPERVISOR: exec_cmd: nio create_udp udp-80638f17-c553-4aae-ac2e-22c49d0646dc 10050 127.0.0.1 10051 
+Oct 14 00:43:07.171 HYPERVISOR: exec_cmd: vm slot_add_nio_binding RouterB 0 0 udp-80638f17-c553-4aae-ac2e-22c49d0646dc 
+Oct 14 00:43:07.172 HYPERVISOR: exec_cmd: vm get_status RouterB 
+Oct 14 00:43:07.261 HYPERVISOR: exec_cmd: nio create_udp udp-9c866cd7-b96e-49df-a32e-46ca956e929f 10054 127.0.0.1 10055 
+Oct 14 00:43:07.266 HYPERVISOR: exec_cmd: vm slot_add_nio_binding RouterB 0 1 udp-9c866cd7-b96e-49df-a32e-46ca956e929f 
+Oct 14 00:43:07.266 HYPERVISOR: exec_cmd: vm get_status RouterB 
+Oct 14 00:43:07.387 HYPERVISOR: exec_cmd: nio create_udp udp-98628c06-ed64-494e-bb96-95e8a25e561f 10058 127.0.0.1 10059 
+Oct 14 00:43:07.393 HYPERVISOR: exec_cmd: vm slot_add_nio_binding RouterB 1 1 udp-98628c06-ed64-494e-bb96-95e8a25e561f 
+Oct 14 00:43:07.396 HYPERVISOR: exec_cmd: vm get_status RouterB 

@@ -9,6 +9,7 @@ def extractStats(data):
     nSamp=data.shape
     print(data)
 
+    # media, mediana e desvio padrao/var
     M1=np.mean(data,axis=0)
     Md1=np.median(data,axis=0)
     Std1=np.std(data,axis=0)
@@ -16,6 +17,7 @@ def extractStats(data):
 #   Pr1=np.array(np.percentile(data,p,axis=0))
     
     features=np.hstack((M1,Md1,Std1))
+    # hstack junta horizontalmente linhas
     return(features)
 
 def extractStatsAdv(data,threshold=0):
@@ -62,14 +64,19 @@ def extratctSilenceActivity(data,threshold=0):
             a[-1]+=1
     return(s,a)
 
-
+# pacotesUpload pacotesDownload bytesDownload bytesUpload 
 def seqObsWindow(data,lengthObsWindow):
     iobs=0
     nSamples,nMetrics=data.shape
     while iobs*lengthObsWindow<nSamples-lengthObsWindow:
         obsFeatures=np.array([])
         for m in np.arange(nMetrics):
+            # Data tem linhas e colunas
+            # linhas tempos 
+            # colunas coisas de medida upload downl
             wmFeatures=extractStats(data[iobs*lengthObsWindow:(iobs+1)*lengthObsWindow,m])
+            # extract junta linhas 
+            # vai buscar cada 1 das colunas
             obsFeatures=np.hstack((obsFeatures,wmFeatures))
         iobs+=1
         
@@ -114,6 +121,7 @@ def slidingMultObsWindow(data,allLengthsObsWindow,slidingValue):
     return(allFeatures)
 
 def main():
+
     parser=argparse.ArgumentParser()
     parser.add_argument('-i', '--input', nargs='?',required=True, help='input file')
     parser.add_argument('-m', '--method', nargs='?',required=False, help='obs. window creation method',default=2)
@@ -132,6 +140,8 @@ def main():
     else:
         fname=''.join(fileInput.split('.')[:-1])+"_features_m{}_w{}_s{}".format(method,lengthObsWindow,slidingValue)
     
+    # Dividir os 3 metodos
+    # janelas sequenciais/deslizante e
     if method==1:
         print("\n\n### SEQUENTIAL Observation Windows with Length {} ###".format(lengthObsWindow[0]))
         features=seqObsWindow(data,lengthObsWindow[0])
@@ -150,8 +160,6 @@ def main():
         print(features)
         print(fname)
         np.savetxt(fname,features,fmt='%d')
-            
-        
 
 if __name__ == '__main__':
     main()

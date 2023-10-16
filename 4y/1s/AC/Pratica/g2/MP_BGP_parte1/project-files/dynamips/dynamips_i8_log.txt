@@ -1,20 +1,12 @@
-Oct 12 12:39:26.612 HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
-Oct 12 12:39:26.613 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 55103.
-Oct 12 12:39:26.622 HYPERVISOR: exec_cmd: hypervisor version 
-Oct 12 12:39:26.622 HYPERVISOR: exec_cmd: hypervisor working_dir /home/rafael/GNS3/projects/MP_BGP_parte1/project-files/dynamips 
-Oct 12 12:39:26.622 GENERAL: working_dir=/home/rafael/GNS3/projects/MP_BGP_parte1/project-files/dynamips
-Oct 12 12:39:26.622 HYPERVISOR: exec_cmd: ethsw create Switch5 
-Oct 12 12:44:25.474 HYPERVISOR: exec_cmd: nio create_udp udp-7f11c409-e6ad-477f-91df-f66063f23ec5 10041 127.0.0.1 10040 
-Oct 12 12:44:25.475 HYPERVISOR: exec_cmd: ethsw add_nio Switch5 udp-7f11c409-e6ad-477f-91df-f66063f23ec5 
-Oct 12 12:44:25.489 HYPERVISOR: exec_cmd: ethsw set_access_port Switch5 udp-7f11c409-e6ad-477f-91df-f66063f23ec5 1 
-Oct 12 12:44:30.810 HYPERVISOR: exec_cmd: nio create_udp udp-27bbd7de-7da4-4444-bd4d-19b7b9b670b4 10044 127.0.0.1 10045 
-Oct 12 12:44:30.810 HYPERVISOR: exec_cmd: ethsw add_nio Switch5 udp-27bbd7de-7da4-4444-bd4d-19b7b9b670b4 
-Oct 12 12:44:30.829 HYPERVISOR: exec_cmd: ethsw set_access_port Switch5 udp-27bbd7de-7da4-4444-bd4d-19b7b9b670b4 1 
-Oct 12 12:47:51.386 HYPERVISOR: exec_cmd: ethsw set_access_port Switch5 udp-7f11c409-e6ad-477f-91df-f66063f23ec5 1 
-Oct 12 12:47:51.387 HYPERVISOR: exec_cmd: ethsw set_access_port Switch5 udp-27bbd7de-7da4-4444-bd4d-19b7b9b670b4 1 
-Oct 12 12:47:53.251 HYPERVISOR: exec_cmd: ethsw set_access_port Switch5 udp-7f11c409-e6ad-477f-91df-f66063f23ec5 1 
-Oct 12 12:47:53.251 HYPERVISOR: exec_cmd: ethsw set_access_port Switch5 udp-27bbd7de-7da4-4444-bd4d-19b7b9b670b4 1 
-Oct 13 21:20:51.540 HYPERVISOR: exec_cmd: ethsw delete Switch5 
-Oct 13 21:20:51.572 HYPERVISOR: exec_cmd: hypervisor stop 
-Oct 13 21:20:51.882 HYPERVISOR: Stopped.
-Oct 13 21:20:51.882 GENERAL: reset done.
+Oct 14 00:42:58.553 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Oct 14 00:42:58.554 HYPERVISOR: Started on IP = localhost, TCP port = 52722.
+Oct 14 00:42:59.036 HYPERVISOR: exec_cmd: hypervisor version 
+Oct 14 00:42:59.038 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\repol\Documents\github\MIECT\4y\1s\AC\Pratica\g2\MP_BGP_parte1\project-files\dynamips 
+Oct 14 00:42:59.038 GENERAL: working_dir=C:\Users\repol\Documents\github\MIECT\4y\1s\AC\Pratica\g2\MP_BGP_parte1\project-files\dynamips
+Oct 14 00:42:59.039 HYPERVISOR: exec_cmd: ethsw create Switch5 
+Oct 14 00:43:06.612 HYPERVISOR: exec_cmd: nio create_udp udp-74252ffb-fc94-4cab-a89b-e4c6653e5720 10041 127.0.0.1 10040 
+Oct 14 00:43:06.613 HYPERVISOR: exec_cmd: ethsw add_nio Switch5 udp-74252ffb-fc94-4cab-a89b-e4c6653e5720 
+Oct 14 00:43:06.633 HYPERVISOR: exec_cmd: ethsw set_access_port Switch5 udp-74252ffb-fc94-4cab-a89b-e4c6653e5720 1 
+Oct 14 00:43:06.726 HYPERVISOR: exec_cmd: nio create_udp udp-c24d7b51-68b2-4190-8b38-fee244b873af 10044 127.0.0.1 10045 
+Oct 14 00:43:06.726 HYPERVISOR: exec_cmd: ethsw add_nio Switch5 udp-c24d7b51-68b2-4190-8b38-fee244b873af 
+Oct 14 00:43:06.749 HYPERVISOR: exec_cmd: ethsw set_access_port Switch5 udp-c24d7b51-68b2-4190-8b38-fee244b873af 1 

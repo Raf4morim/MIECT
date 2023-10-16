@@ -1,14 +1,9 @@
-Oct 12 12:40:38.125 HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
-Oct 12 12:40:38.125 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 57187.
-Oct 12 12:40:38.134 HYPERVISOR: exec_cmd: hypervisor version 
-Oct 12 12:40:38.135 HYPERVISOR: exec_cmd: hypervisor working_dir /home/rafael/GNS3/projects/MP_BGP_parte1/project-files/dynamips 
-Oct 12 12:40:38.135 GENERAL: working_dir=/home/rafael/GNS3/projects/MP_BGP_parte1/project-files/dynamips
-Oct 12 12:40:38.135 HYPERVISOR: exec_cmd: ethsw create Switch8 
-Oct 12 12:44:36.973 HYPERVISOR: exec_cmd: nio create_udp udp-4f74d4f8-60ad-47a3-a7e8-f068dd6f123b 10048 127.0.0.1 10049 
-Oct 12 12:44:36.973 HYPERVISOR: exec_cmd: ethsw add_nio Switch8 udp-4f74d4f8-60ad-47a3-a7e8-f068dd6f123b 
-Oct 12 12:44:36.976 HYPERVISOR: exec_cmd: ethsw set_access_port Switch8 udp-4f74d4f8-60ad-47a3-a7e8-f068dd6f123b 1 
-Oct 12 12:50:32.823 HYPERVISOR: exec_cmd: ethsw set_access_port Switch8 udp-4f74d4f8-60ad-47a3-a7e8-f068dd6f123b 1 
-Oct 13 21:20:51.540 HYPERVISOR: exec_cmd: ethsw delete Switch8 
-Oct 13 21:20:51.545 HYPERVISOR: exec_cmd: hypervisor stop 
-Oct 13 21:20:51.824 HYPERVISOR: Stopped.
-Oct 13 21:20:51.824 GENERAL: reset done.
+Oct 14 00:43:01.856 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Oct 14 00:43:01.857 HYPERVISOR: Started on IP = localhost, TCP port = 52761.
+Oct 14 00:43:02.313 HYPERVISOR: exec_cmd: hypervisor version 
+Oct 14 00:43:02.313 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\repol\Documents\github\MIECT\4y\1s\AC\Pratica\g2\MP_BGP_parte1\project-files\dynamips 
+Oct 14 00:43:02.313 GENERAL: working_dir=C:\Users\repol\Documents\github\MIECT\4y\1s\AC\Pratica\g2\MP_BGP_parte1\project-files\dynamips
+Oct 14 00:43:02.313 HYPERVISOR: exec_cmd: ethsw create Switch8 
+Oct 14 00:43:07.138 HYPERVISOR: exec_cmd: nio create_udp udp-5e8f6a73-38f1-4ef6-b2ee-b8f1488378cc 10048 127.0.0.1 10049 
+Oct 14 00:43:07.138 HYPERVISOR: exec_cmd: ethsw add_nio Switch8 udp-5e8f6a73-38f1-4ef6-b2ee-b8f1488378cc 
+Oct 14 00:43:07.155 HYPERVISOR: exec_cmd: ethsw set_access_port Switch8 udp-5e8f6a73-38f1-4ef6-b2ee-b8f1488378cc 1 

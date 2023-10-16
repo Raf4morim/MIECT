@@ -1,13 +1,9 @@
-Oct 12 12:40:46.969 HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
-Oct 12 12:40:46.969 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 36369.
-Oct 12 12:40:46.978 HYPERVISOR: exec_cmd: hypervisor version 
-Oct 12 12:40:46.978 HYPERVISOR: exec_cmd: hypervisor working_dir /home/rafael/GNS3/projects/MP_BGP_parte1/project-files/dynamips 
-Oct 12 12:40:46.978 GENERAL: working_dir=/home/rafael/GNS3/projects/MP_BGP_parte1/project-files/dynamips
-Oct 12 12:40:46.978 HYPERVISOR: exec_cmd: ethsw create Switch10 
-Oct 12 12:41:40.653 HYPERVISOR: exec_cmd: nio create_udp udp-0f05e1b3-d3ce-403d-bee6-a141a2d2db00 10004 127.0.0.1 10005 
-Oct 12 12:41:40.653 HYPERVISOR: exec_cmd: ethsw add_nio Switch10 udp-0f05e1b3-d3ce-403d-bee6-a141a2d2db00 
-Oct 12 12:41:40.661 HYPERVISOR: exec_cmd: ethsw set_access_port Switch10 udp-0f05e1b3-d3ce-403d-bee6-a141a2d2db00 1 
-Oct 13 21:20:51.540 HYPERVISOR: exec_cmd: ethsw delete Switch10 
-Oct 13 21:20:51.562 HYPERVISOR: exec_cmd: hypervisor stop 
-Oct 13 21:20:51.695 HYPERVISOR: Stopped.
-Oct 13 21:20:51.695 GENERAL: reset done.
+Oct 14 00:43:03.095 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Oct 14 00:43:03.096 HYPERVISOR: Started on IP = localhost, TCP port = 52773.
+Oct 14 00:43:03.555 HYPERVISOR: exec_cmd: hypervisor version 
+Oct 14 00:43:03.556 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\repol\Documents\github\MIECT\4y\1s\AC\Pratica\g2\MP_BGP_parte1\project-files\dynamips 
+Oct 14 00:43:03.557 GENERAL: working_dir=C:\Users\repol\Documents\github\MIECT\4y\1s\AC\Pratica\g2\MP_BGP_parte1\project-files\dynamips
+Oct 14 00:43:03.557 HYPERVISOR: exec_cmd: ethsw create Switch10 
+Oct 14 00:43:04.540 HYPERVISOR: exec_cmd: nio create_udp udp-df558f8f-50a9-48de-a589-4d118218572b 10004 127.0.0.1 10005 
+Oct 14 00:43:04.541 HYPERVISOR: exec_cmd: ethsw add_nio Switch10 udp-df558f8f-50a9-48de-a589-4d118218572b 
+Oct 14 00:43:04.553 HYPERVISOR: exec_cmd: ethsw set_access_port Switch10 udp-df558f8f-50a9-48de-a589-4d118218572b 1 

@@ -1,20 +1,12 @@
-Oct 12 12:39:34.691 HYPERVISOR: Release 0.2.23-amd64/Linux (tag 2023010200)
-Oct 12 12:39:34.691 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 52043.
-Oct 12 12:39:34.700 HYPERVISOR: exec_cmd: hypervisor version 
-Oct 12 12:39:34.700 HYPERVISOR: exec_cmd: hypervisor working_dir /home/rafael/GNS3/projects/MP_BGP_parte1/project-files/dynamips 
-Oct 12 12:39:34.700 GENERAL: working_dir=/home/rafael/GNS3/projects/MP_BGP_parte1/project-files/dynamips
-Oct 12 12:39:34.700 HYPERVISOR: exec_cmd: ethsw create Switch6 
-Oct 12 12:44:51.712 HYPERVISOR: exec_cmd: nio create_udp udp-15433c28-438b-4c7d-9bc3-a6be53818f01 10056 127.0.0.1 10057 
-Oct 12 12:44:51.713 HYPERVISOR: exec_cmd: ethsw add_nio Switch6 udp-15433c28-438b-4c7d-9bc3-a6be53818f01 
-Oct 12 12:44:51.719 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-15433c28-438b-4c7d-9bc3-a6be53818f01 1 
-Oct 12 12:44:58.239 HYPERVISOR: exec_cmd: nio create_udp udp-7f3fdc5c-ccb2-4dd3-816f-b1350e301bd4 10060 127.0.0.1 10061 
-Oct 12 12:44:58.239 HYPERVISOR: exec_cmd: ethsw add_nio Switch6 udp-7f3fdc5c-ccb2-4dd3-816f-b1350e301bd4 
-Oct 12 12:44:58.249 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-7f3fdc5c-ccb2-4dd3-816f-b1350e301bd4 1 
-Oct 12 12:47:36.405 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-15433c28-438b-4c7d-9bc3-a6be53818f01 1 
-Oct 12 12:47:36.406 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-7f3fdc5c-ccb2-4dd3-816f-b1350e301bd4 1 
-Oct 12 12:48:53.754 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-15433c28-438b-4c7d-9bc3-a6be53818f01 1 
-Oct 12 12:48:53.760 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-7f3fdc5c-ccb2-4dd3-816f-b1350e301bd4 1 
-Oct 13 21:20:51.540 HYPERVISOR: exec_cmd: ethsw delete Switch6 
-Oct 13 21:20:51.570 HYPERVISOR: exec_cmd: hypervisor stop 
-Oct 13 21:20:51.949 HYPERVISOR: Stopped.
-Oct 13 21:20:51.949 GENERAL: reset done.
+Oct 14 00:42:59.197 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Oct 14 00:42:59.199 HYPERVISOR: Started on IP = localhost, TCP port = 52725.
+Oct 14 00:42:59.654 HYPERVISOR: exec_cmd: hypervisor version 
+Oct 14 00:42:59.656 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\repol\Documents\github\MIECT\4y\1s\AC\Pratica\g2\MP_BGP_parte1\project-files\dynamips 
+Oct 14 00:42:59.656 GENERAL: working_dir=C:\Users\repol\Documents\github\MIECT\4y\1s\AC\Pratica\g2\MP_BGP_parte1\project-files\dynamips
+Oct 14 00:42:59.657 HYPERVISOR: exec_cmd: ethsw create Switch6 
+Oct 14 00:43:07.351 HYPERVISOR: exec_cmd: nio create_udp udp-48950521-a3ae-446a-9d83-37770ef0e664 10056 127.0.0.1 10057 
+Oct 14 00:43:07.352 HYPERVISOR: exec_cmd: ethsw add_nio Switch6 udp-48950521-a3ae-446a-9d83-37770ef0e664 
+Oct 14 00:43:07.370 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-48950521-a3ae-446a-9d83-37770ef0e664 1 
+Oct 14 00:43:07.548 HYPERVISOR: exec_cmd: nio create_udp udp-af64d5a4-f173-402c-b60d-faef51881d85 10060 127.0.0.1 10061 
+Oct 14 00:43:07.553 HYPERVISOR: exec_cmd: ethsw add_nio Switch6 udp-af64d5a4-f173-402c-b60d-faef51881d85 
+Oct 14 00:43:07.556 HYPERVISOR: exec_cmd: ethsw set_access_port Switch6 udp-af64d5a4-f173-402c-b60d-faef51881d85 1 

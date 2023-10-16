@@ -1,0 +1,420 @@
+Introdução à redundância
+
+Protege os dados digitais através da introdução de redundância nos dados transmitidos.
+- Códigos de deteção de erros: permitem identificar certos tipos de erros
+- Códigos de correção de erros: podem corrigir certos tipos de erros
+
+Os Block codes permitem a correção automática de erros (FEC) para blocos de dados.
+- Código (n, k): são transmitidos n bits para k bits de informação
+- Exemplo mais simples: códigos de paridade
+- Existem muitos códigos diferentes: Hamming, cíclico, Reed Solomon, ...
+
+Os códigos convolucionais fornecem proteção para um fluxo contínuo de bits.
+- O ganho de codificação é n/k
+- Códigos Turbo: código convolucional com estimativa de canal
+
+
+
+
+
+Vários utilizadores podem partilhar o espetro
+
+Utilizadores diferentes utilizam
+Frequências portadoras diferentes
+
+
+
+
+Então, porque é que não enviamos sempre um sinal de elevada largura de banda?
+
+Os canais têm um limite para o tipo de sinais que podem transportar
+- A transmissão de sinais é boa apenas numa determinada gama de frequências
+- Os sinais fora dessa gama são distorcidos, por exemplo, atenuados
+
+A distorção pode dificultar a extração da informação pelo recetor
+- É vantajoso fazer corresponder o sinal ao canal
+- Limita o rendimento do canal
+
+
+
+
+Espalhamento de espetro
+
+Espalhar a transmissão por uma largura de banda maior
+- Não ponha todos os ovos no mesmo cesto!
+
+Bom para os militares: o empastelamento e a interceção tornam-se mais difíceis
+
+Também é útil para minimizar o impacto de uma frequência "má" em ambientes normais
+
+O que é que se pode ganhar com este aparente desperdício de espetro?
+- Imunidade a vários tipos de ruído e distorção multipercurso - Incluindo o empastelamento
+- Pode ser utilizado para esconder/encriptar sinais - Só o recetor que conhece o código SS pode recuperar o sinal
+- Vários utilizadores podem partilhar independentemente a mesma largura de banda superior com muito poucas interferências (mais tarde) - Acesso múltiplo por divisão de código (CDMA)
+
+
+
+
+Conceito de espetro alargado
+
+Entrada alimentada no codificador de canal
+- Produz um sinal analógico de largura de banda estreita em torno da frequência central
+
+Sinal modulado através de uma sequência de dígitos
+- Código/sequência de propagação
+- Tipicamente gerado por um gerador de números pseudonoise/pseudorandom - Não é efetivamente aleatório - Se o algoritmo for bom, os resultados passam testes razoáveis de aleatoriedade - É necessário conhecer o algoritmo e a semente para prever a sequência
+
+Aumenta significativamente a largura de banda
+- Espalha o espetro
+
+O recetor utiliza a mesma sequência para desmodular o sinal
+
+O sinal desmodulado é introduzido no descodificador de canal
+
+
+
+
+
+Satelite Networks
+
+Fundamentos
+❑ órbitas elípticas ou circulares
+❑ o tempo de rotação completa depende da distância satélite-terra
+❑ inclinação: ângulo entre a órbita e o equador
+❑ elevação: ângulo entre o satélite e o horizonte
+❑ LOS (Line of Sight) para o satélite necessário para a ligação
+- Necessidade de uma elevação elevada, menos absorção devido, por exemplo, a edifícios
+
+❑ Uplink: ligação estação de base - satélite
+
+❑ Ligação descendente: ligação satélite - estação de base
+
+❑ frequências tipicamente separadas para a ligação ascendente e descendente
+- transponder utilizado para envio/receção e deslocação de frequências
+- transponder transparente: apenas deslocação de frequências
+- transponder regenerativo: regeneração adicional do sinal
+
+
+
+
+
+
+
+Características das redes de satélites
+
+Efeitos da mobilidade por satélite
+- A topologia é dinâmica.
+- As mudanças na topologia são previsíveis e periódicas.
+- O tráfego é muito dinâmico e não homogéneo.
+- As transferências são necessárias.
+
+Limitações e capacidades dos satélites
+- A potência e a capacidade de processamento a bordo são limitadas.
+- A implementação da tecnologia de ponta é difícil.
+- Os satélites têm um carácter de difusão.
+
+Natureza das constelações de satélites
+- Atrasos de propagação mais elevados.
+- Número fixo de nós.
+- Estrutura altamente simétrica e uniforme.
+
+
+
+
+
+
+Ligações de transmissão por satélite
+- As estações terrestres comunicam enviando sinais para o satélite através de uma ligação ascendente
+- O satélite repete então esses sinais numa ligação descendente
+- A natureza de difusão da ligação descendente torna-a atractiva para serviços como a distribuição de programas de televisão
+
+
+
+
+
+
+As ligações ascendentes e descendentes de satélite podem funcionar em bandas de frequência diferentes:
+
+- A ligação ascendente é uma ligação altamente direcional, ponto a ponto
+- A ligação descendente pode ter uma área de cobertura que permite a cobertura de uma área substancial "spot beam".
+
+
+
+
+
+Tipos de órbitas de satélites
+
+Com base na inclinação, "i", sobre o plano equatorial:
+- Órbitas equatoriais acima do equador da Terra (i=0°)
+- Órbitas polares passam sobre ambos os pólos (i=90°)
+- Outras órbitas designadas por órbitas inclinadas (0°<i<90°)
+
+Baseadas na excentricidade
+- Circular com centro no centro da Terra
+- Elíptica com um foco no centro da Terra
+
+
+
+
+
+
+Tipos de redes baseadas em satélite
+
+Com base na altitude do satélite
+- GEO - órbitas geoestacionárias - 36000 Km = 22300 Milhas, equatoriais, latência elevada
+- MEO - órbitas terrestres médias - Largura de banda elevada, potência elevada, latência elevada
+- LEO - órbitas terrestres baixas - Baixa potência, baixa latência, mais satélites, pequena área de cobertura
+- VSAT - Satélites de abertura muito pequena - WANs privadas
+
+
+
+
+
+Satélites GEO
+- Sem handover
+- Atraso de propagação num sentido: 250 280 ms
+- 3 a 4 satélites para cobertura global
+- Principalmente utilizado na radiodifusão vídeo
+- Outras aplicações:
+- Previsão meteorológica, comunicações globais, aplicações militares
+- Vantagens: bem adaptado aos serviços de radiodifusão
+- Desvantagens: Atraso longo, elevada atenuação no espaço livre
+
+
+
+
+
+
+Satélites MEO
+- Um atraso de propagação num sentido: 100 130 ms
+- 10 a 15 satélites para cobertura global
+
+                  Handover pouco frequente
+- Período de órbita: ~6 horas
+- Utilizado principalmente na navegação - GPS, Galileu, Glonass
+- Comunicações: Inmarsat, ICO
+
+
+
+
+
+Exemplo MEO: GPS
+
+Sistema de Posicionamento Global
+- Desenvolvido pelo Departamento de Defesa dos EUA
+- Tornou-se totalmente operacional em 1993
+- Atualmente 31 satélites a 20.200 km. - Último almoço: março de 2008
+
+Funciona com base num princípio geométrico
+- "A posição de um ponto pode ser calculada se as distâncias entre esse ponto e três objectos com posições conhecidas puderem ser medidas"
+
+São necessários quatro satélites para calcular a posição
+- O quarto satélite é necessário para corrigir o relógio do recetor.
+
+Disponibilidade selectiva
+
+Glonass (russo): 24 satélites, 19.100 km
+
+Galileo (UE): 30 satélites, 23.222 km, em desenvolvimento (data prevista: 2013)
+
+Beidou (China): Atualmente experimental e limitado.
+
+
+
+
+
+
+LEO - órbitas terrestres baixas
+
+Órbita circular ou inclinada com < 1400 km de altitude
+- O satélite atravessa o céu de horizonte a horizonte em 5 a 15 minutos => necessita de transferência
+- As estações terrestres devem seguir o satélite ou ter antenas omnidireccionais
+- É necessária uma grande constelação de satélites para uma comunicação contínua (são necessários 66 satélites para cobrir a Terra)
+- Requer uma arquitetura complexa
+- Requer seguimento em terra
+
+
+
+
+
+
+
+Satélites LEO
+
+Atraso de propagação num sentido: 5 20 ms
+
+Mais de 32 satélites para cobertura global
+
+Handover frequente
+
+Período de órbita: ~2 horas
+
+Aplicações:
+- Observação da Terra - Fornecedores de imagens GoogleEarth (DigitalGlobe, etc.) - RASAT (Primeiro satélite a ser produzido exclusivamente na Turquia)
+
+- Comunicações - Globalstar, Iridium
+- Busca e salvamento (SAR) - COSPAS SARSAT
+
+
+
+
+
+
+
+
+NGSO - Órbitas Não Geoestacionárias
+
+A órbita deve evitar as cinturas de radiação de Van Allen:
+- Região de partículas carregadas que podem causar danos ao satélite
+- Ocorrem a - ~2000-4000 km e ~13000-25000 km
+
+
+
+
+
+
+
+
+HEO - Órbitas Altamente Elípticas
+
+As HEO (i = 63,4°) são adequadas para fornecer cobertura a altas latitudes (incluindo o Pólo Norte no hemisfério norte)
+
+Dependendo da órbita selecionada (por exemplo, Molniya, Tundra, etc.), dois ou três satélites são suficientes para uma cobertura em tempo contínuo da área de serviço.
+
+Todo o tráfego deve ser transferido periodicamente do satélite "de partida" para o satélite "de chegada" (Satellite Handover)
+
+
+
+
+
+
+Irídio
+
+66 satélites (6 aviões, 11 satélites por avião) e 10 sobresselentes.
+
+86,4˚ de inclinação: cobertura total
+
+Altitude: 780 km
+
+Ligações inter-satélites, processamento a bordo
+
+Tempo de visibilidade do satélite: 11,1 minutos
+
+Satélites lançados em 1997-98.
+
+A empresa inicial foi à falência
+- Tecnologicamente impecável, no entanto:
+- Muito caro; péssimo plano de negócios
+- Não pode competir com o GSM
+
+Atualmente, propriedade da Iridium satellite LLC.
+
+280.000 assinantes (em agosto de 2008)
+
+Contrato de vários anos com o Departamento de Defesa dos EUA.
+
+Colisão de satélites colisão de satélites (10 de fevereiro,
+
+
+
+
+
+
+
+
+Plataformas de alta altitude (HAPs)
+
+Plataformas aéreas não tripuladas
+
+Posição quase estacionária (a 17-22 km)
+
+Telecomunicações e vigilância
+
+Vantagens:
+- Cobrem áreas maiores do que as estações de base terrestres
+- Sem problemas de mobilidade como as LEO
+- Baixo atraso de propagação
+- Terminais de utilizador mais pequenos e mais baratos
+- Implantação fácil e progressiva
+
+Desvantagens:
+- Tecnologia de dirigível imatura
+- Controlo do movimento da plataforma
+
+
+
+
+
+
+
+
+HAP Satellite Integration
+
+- Os HAP têm vantagens significativas.
+- Os satélites continuam a representar a solução mais atractiva para os serviços de difusão e multicast
+- Devem ser considerados como tecnologias complementares.
+
+
+
+
+
+
+
+Satélites - Visão geral
+
+Os GEO têm uma boa capacidade de radiodifusão, mas um grande atraso de propagação.
+
+Os LEO oferecem baixa latência e baixos requisitos de potência terminal.
+
+Ligações inter-satélites e processamento a bordo para aumentar o desempenho e melhorar a utilização dos satélites
+- De espelhos voadores a encaminhadores inteligentes no céu.
+
+Grande problema com os LEO: Mobilidade dos satélites
+- Passagens frequentes de testemunho
+
+Outro problema importante dos satélites:
+- Inviabilidade de atualizar a tecnologia, após o lançamento do satélite
+
+
+
+
+
+
+
+
+
+
+Encaminhamento
+- Uma solução: ligações inter-satélites (ISL)
+❑Redução do número de gateways necessários
+❑Encaminhar as ligações ou os pacotes de dados dentro da rede de satélites durante o maior tempo possível
+❑Apenas é necessário um uplink e um downlink por direção para a ligação de dois telemóveis
+
+- Problemas:
+❑ focalização mais complexa das antenas entre satélites
+❑Elevada complexidade do sistema devido à deslocação dos encaminhadores
+❑Maior consumo de combustível
+❑ portanto, uma vida útil mais curta
+
+Iridium e Teledesic planeados com ISL
+
+Outros sistemas utilizam gateways e, adicionalmente, redes terrestres
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
