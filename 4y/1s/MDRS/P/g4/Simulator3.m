@@ -3,7 +3,7 @@
 % size uniforme distribuido [110 130]
 % tempo distribuido uniforme [16 24] ms
 
-function [PL_d,PL_v,APD_d,APD_v,MPD_d,MPD_v,TT] = Simulator3(lambda,C,f,P,n)
+function [PL_d, PL_v,APD_d,APD_v,MPD_d,MPD_v,TT] = Simulator3(lambda,C,f,P,n)
 % INPUT PARAMETERS:
 %  lambda - packet rate (packets/sec)
 %  C      - link bandwidth (Mbps)
@@ -56,16 +56,17 @@ for i = 1:n
 end
 
 %Similation loop:
-while TRANSMITTEDPACKETS<P               % Stopping criterium
+while TRANSMITTEDPACKETS_D+TRANSMITTEDPACKETS_V<P               % Stopping criterium
     Event_List= sortrows(Event_List,2);  % Order EventList by time
     Event= Event_List(1,1);              % Get first event and 
     Clock= Event_List(1,2);              %   and
     Packet_Size = Event_List(1,3);       %   associated
-    Packet_type = Event_List(1,5);       % tipo do pacote VOId ou DATA
+    Packet_type = Event_List(1,5);       % tipo do pacote VOIP ou DATA
     Arrival_Instant= Event_List(1,4);    %   parameters.
     Event_List(1,:)= [];                 % Eliminate first event
+    
     if Event == ARRIVAL         % If first event is an ARRIVAL
-        if Packet_Size == DATA
+        if Packet_type == DATA
             TOTALPACKETS_D= TOTALPACKETS_D+1;
             tmp= Clock + exprnd(1/lambda); % clock atual mais um tempo distribuido
             Event_List = [Event_List; ARRIVAL, tmp, GeneratePacketSize(), tmp, DATA];
@@ -82,14 +83,14 @@ while TRANSMITTEDPACKETS<P               % Stopping criterium
             end
         else
             TOTALPACKETS_V= TOTALPACKETS_V+1;
-            tmp= Clock + exprnd(1/lambda); % clock atual mais um tempo distribuido
-            Event_List = [Event_List; ARRIVAL, tmp, randi([110 130]), tmp, VOID];
+            tmp= Clock + unifrnd(0.016, 0.024); % clock atual mais um tempo distribuido
+            Event_List = [Event_List; ARRIVAL, tmp, randi([110 130]), tmp, VOIP];
             if STATE==0
                 STATE= 1;
-                Event_List = [Event_List; DEPARTURE, Clock + 8*Packet_Size/(C*10^6), Packet_Size, Clock, VOID];
+                Event_List = [Event_List; DEPARTURE, Clock + 8*Packet_Size/(C*10^6), Packet_Size, Clock, VOIP];
             else
                 if QUEUEOCCUPATION + Packet_Size <= f
-                    QUEUE= [QUEUE;Packet_Size , Clock, VOID];
+                    QUEUE= [QUEUE;Packet_Size , Clock, VOIP];
                     QUEUEOCCUPATION= QUEUEOCCUPATION + Packet_Size;
                 else
                     LOSTPACKETS_V= LOSTPACKETS_V + 1; % Se não couber é descartado
@@ -103,14 +104,7 @@ while TRANSMITTEDPACKETS<P               % Stopping criterium
             if Clock - Arrival_Instant > MAXDELAY_D
                 MAXDELAY_D= Clock - Arrival_Instant;
             end
-            TRANSMITTEDPACKETS= TRANSMITTEDPACKETS + 1;
-            if QUEUEOCCUPATION > 0 % QUEUE(1,1) TAMANHO DO PRIMEIRO PACOTE DA FILA DE ESPERA
-                Event_List = [Event_List; DEPARTURE, Clock + 8*QUEUE(1,1)/(C*10^6), QUEUE(1,1), QUEUE(1,2), QUEUE(1,3)];
-                QUEUEOCCUPATION= QUEUEOCCUPATION - QUEUE(1,1);
-                QUEUE(1,:)= []; % Depois elimina a linha do pacote
-            else
-                STATE= 0; % Quando n há pacotes para serem transmitidos passa para o estado 0
-            end
+            TRANSMITTEDPACKETS_D= TRANSMITTEDPACKETS_D + 1;
         else
             TRANSMITTEDBYTES_V= TRANSMITTEDBYTES_V + Packet_Size;
             DELAYS_V= DELAYS_V + (Clock - Arrival_Instant); % tempo atual menos o instante em que chegou ao sistema
@@ -131,15 +125,15 @@ while TRANSMITTEDPACKETS<P               % Stopping criterium
 end
 
 %Performance parameters determination:
-PL_D= 100*LOSTPACKETS_D/TOTALPACKETS_D;      % in %
-APD_D= 1000*DELAYS_D/TRANSMITTEDPACKETS_D;   % in milliseconds
-MPD_D= 1000*MAXDELAY_D;                    % in milliseconds
+PL_d= 100*LOSTPACKETS_D/TOTALPACKETS_D;      % in %
+APD_d= 1000*DELAYS_D/TRANSMITTEDPACKETS_D;   % in milliseconds
+MPD_d= 1000*MAXDELAY_D;                    % in milliseconds
 
-PL_V= 100*LOSTPACKETS_V/TOTALPACKETS_V;      % in %
-APD_V= 1000*DELAYS_V/TRANSMITTEDPACKETS_V;   % in milliseconds
-MPD_V= 1000*MAXDELAY_V;                    % in milliseconds
+PL_v= 100*LOSTPACKETS_V/TOTALPACKETS_V;      % in %
+APD_v= 1000*DELAYS_V/TRANSMITTEDPACKETS_V;   % in milliseconds
+MPD_v= 1000*MAXDELAY_V;                    % in milliseconds
 
-TT= 10^(-6)*TRANSMITTEDBYTES_V*8/Clock;  % in Mbps
+TT= 10^(-6)*(TRANSMITTEDBYTES_V+TRANSMITTEDBYTES_D)*8/Clock;  % in Mbps
 
 end
 
