@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "ammojs-typed": "github:giniedp/ammojs-typed",
-    "yuka": "^0.7.8"
-  }
-}
