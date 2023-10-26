@@ -6,7 +6,7 @@ import pyshark
 
 def pktHandler(timestamp,srcIP,dstIP,lengthIP,sampDelta,outfile):
     global scnets
-    global ssnets7/
+    global ssnets
     global npkts
     global T0
     global outc
