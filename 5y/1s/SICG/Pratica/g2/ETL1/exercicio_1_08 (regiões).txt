@@ -1,7 +1,0 @@
-N; Norte
-C; Centro
-S; Sul
-M; Madeira
-A; Açores
-GL; Grande Lisboa
-GP; Grande Porto

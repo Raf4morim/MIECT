@@ -1,0 +1,11 @@
+Produto; Descrição; PUC; PUV
+A; Base 10x10;12;18
+B; Tampo 10x10;15;17
+C; Face lateral 10x18;10;15
+D; Base 20x20;08;10
+E; Tampo 20x20;14;16
+F; Face lateral 10x20;12;16
+G; Face lateral 10x25;16;23
+H; Face lateral 10x30;18;24
+I; Face lateral 10x45;25;30
+J; Face lateral 10x60; 30; 35
