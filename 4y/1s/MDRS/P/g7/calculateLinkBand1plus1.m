@@ -11,8 +11,8 @@ function Loads= calculateLinkBand1plus1(nNodes,Links,T,sP,Solution)
                     aux(path(j),path(j-1))= aux(path(j),path(j-1)) + T(i,4);
                 end
             end
-            path= sP{2,i}{Solution(i)};
-            if ~isempty(path)
+            if ~isempty(sP{2,i})    % temos de fazer isto pq há 1 cell vazia
+                path= sP{2,i}{Solution(i)};
                 for j=2:length(path)
                     aux(path(j-1),path(j))= aux(path(j-1),path(j)) + T(i,3); 
                     aux(path(j),path(j-1))= aux(path(j),path(j-1)) + T(i,4);

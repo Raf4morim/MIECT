@@ -1,0 +1,4 @@
+(wlan.fc.type==0 && (wlan.fc.subtype == 0 || wlan.fc.subtype == 11 || wlan.fc.subtype==1)) || (wlan.fc.type==1 && wlan.fc.subtype==13) 
+
+
+&& wlan.sa_resolved == "90:e8:68:8e:06:4b"

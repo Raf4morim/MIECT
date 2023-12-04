@@ -24,7 +24,7 @@ function Loads= calculateLinkBand1to1(nNodes,Links,T,sP,Solution)
                         aux2(path(j-1),path(j))= aux2(path(j-1),path(j)) + T(i,3); 
                         aux2(path(j),path(j-1))= aux2(path(j),path(j-1)) + T(i,4);
                     end
-                elseif ~isempty(sP{2,i}{Solution(i)})
+                elseif ~isempty(sP{2,i})
                     path= sP{2,i}{Solution(i)};
                     for j=2:length(path)
                         aux2(path(j-1),path(j))= aux2(path(j-1),path(j)) + T(i,3); 
