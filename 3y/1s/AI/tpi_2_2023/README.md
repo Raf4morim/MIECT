@@ -13,3 +13,4 @@ Comandos para obter actualizações
 
 -- git merge --allow-unrelated-histories upstream/main
 
+Grade: 19,1
