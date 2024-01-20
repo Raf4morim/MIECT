@@ -1,0 +1,53 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"name": "broker",
+			"path": "broker"
+		},
+		{
+			"name": "geocache",
+			"path": "geocache"
+		},
+		{
+			"name": "userDevice",
+			"path": "userDevice"
+		},
+		{
+			"name": "boxOpener",
+			"path": "boxOpener"
+		}
+	],
+	"settings": {
+		"editor.formatOnSave": true,
+		"files.associations": {
+			"array": "cpp",
+			"string_view": "cpp",
+			"initializer_list": "cpp",
+			"utility": "cpp",
+			"system_error": "cpp",
+			"functional": "cpp",
+			"istream": "cpp",
+			"ostream": "cpp",
+			"tuple": "cpp",
+			"type_traits": "cpp",
+			"string": "cpp",
+			"deque": "cpp",
+			"unordered_map": "cpp",
+			"unordered_set": "cpp",
+			"vector": "cpp"
+		},
+		"cSpell.words": [
+			"APIP",
+			"BLEUUID",
+			"GPIO",
+			"LDRO",
+			"MOSI",
+			"NRESET",
+			"REDLED",
+			"RSSI"
+		]
+	}
+}

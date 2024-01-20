@@ -1,0 +1,77 @@
+Exam questions examples:
+
+1)
+	1- À medida que a tecnologia evoluiu, a quantidade de espectro e outros recursos precisos para fornecer um determinado nivel de serviços tem diminuido, permitindo implementar células mais pequenas.
+Além disso, à medida que os dispositivos móveis se tornaram mais comuns e as aplicações com uso intensivo de dados se tornaram mais comuns levou à procura por capacidade maior, levando a implementar células mais pequenas para atender a essa procura.
+Isso permite um uso mais eficiente do espectro e de outros recursos, bem como melhor cobertura e capacidade em áreas urbanas e densamente povoadas. 
+
+	2- Há 4 campos no header do pacote wifi pq wifi usa o protocolo MAC. O header MAC inclui 4 endereços, source address, destination address, transmiter address e BSSID.
+Estes campos são usados pelo protocolo MAC para determinar quais os dispositivos têm permissão para aceder ao wireless medium e para rotear os pacotes para o destino certo.
+	
+	3- Network Function Virtualization (NFV) pode trazer vários problemas para as redes de telecomunicações, incluindo:
+
+Complexidade: o NFV apresenta uma nova camada de abstração e virtualização, que pode tornar as redes mais complexas de gerenciar e solucionar problemas.
+
+Desempenho: funções de rede virtualizadas podem ter desempenho inferior ao de suas contrapartes baseadas em hardware, especialmente quando se trata de aplicativos de alta largura de banda ou baixa latência.
+
+Interoperabilidade: o NFV depende de uma variedade de tecnologias e fornecedores diferentes, o que pode levar a problemas de interoperabilidade e compatibilidade entre diferentes funções de rede virtualizada.
+
+Segurança: As funções de rede virtualizadas podem ser mais vulneráveis ​​a ataques, pois são executadas em servidores de uso geral que também são usados ​​para outros fins.
+
+Escalabilidade: o NFV pode exigir mais recursos para aumentar ou diminuir as funções de rede do que a infraestrutura de rede tradicional, o que pode dificultar o atendimento às necessidades de uma base de usuários em rápido crescimento ou redução.
+
+Dependência do ambiente da cloud: O desempenho e a confiabilidade das funções de rede virtualizada dependem da infraestrutura de nuvem subjacente e de seu gerenciamento.
+
+Licenciamento: as funções de rede virtualizadas podem exigir licenciamento diferente das funções de rede tradicionais, o que pode aumentar a complexidade e os custos.
+
+No geral, embora o NFV possa trazer muitos benefícios, como flexibilidade e economia de custos, é importante que as operadoras de telecomunicações considerem cuidadosamente esses possíveis problemas e tomem medidas para mitigá-los o máximo possível.
+
+	4 - O GTS em ZigBee serve para um dispositivo operar num canal dentro de uma porção da superframe. Ou seja, qnd um determinado dispositivo precisa de espaço para executar uma determina função ele envia um pedido para o coordinator e o msm consoante esse pedido e o espaço livre vai libertar espaço para ele.
+O msm ou o coordinator podem desalocar esse espaço. De salientar que para o dispositivo ter acesso ao GTS ele tem de estar a dar tracking ao beacon e caso ele perca a conexão com o coordinator tudo que ele tinha na GTS perde-se.
+
+Outra resposta(botAi): No Zigbee, o Guaranteed Time Slot (GTS) é um recurso que permite que um dispositivo reserve um tempo específico na rede para uso próprio. Este intervalo de tempo pode ser utilizado para enviar e receber dados, permitindo que o dispositivo tenha tempo garantido para comunicação, mesmo em uma rede ocupada.
+
+O objetivo do GTS é fornecer uma comunicação confiável e previsível para aplicações sensíveis ao tempo, como controle em tempo real, onde um atraso na comunicação pode causar problemas. Ele também permite que os dispositivos se comuniquem entre si de maneira mais eficiente, evitando colisões e reduzindo a chance de retransmissão.
+
+O GTS é normalmente utilizado por dispositivos mais ativos na rede, como sensores e atuadores, que precisam enviar e receber dados com frequência. Também pode ser usado por dispositivos que requerem comunicação de baixa latência, como dispositivos que controlam sistemas críticos.
+
+O padrão Zigbee define dois tipos de GTS: um GTS específico do dispositivo, que é reservado para um dispositivo específico, e um GTS compartilhado, que pode ser usado por vários dispositivos. A alocação do GTS é gerenciada pelo Zigbee Coordinator, que atribui o GTS aos dispositivos de acordo com suas necessidades e disponibilidade de slots na rede.
+
+
+2) 
+	1- BLE (Bluetooth Low Energy) é frequentemente dito não ser Bluetooth porque é uma versão diferente da tecnologia Bluetooth que é otimizada para baixo consumo de energia e projetada para uso em dispositivos IoT (Internet of Things) e outras aplicações que requerem baixas taxas de dados e bateria de longa duração.
+
+	2- Os sensores estão conectados às gateways em vez de conectados diretamente à internet por várias razões:
+Segurança: os gateways atuam como um intermediário seguro entre os sensores e a Internet, fornecendo uma camada adicional de segurança para proteção contra acesso não autorizado e violações de dados.
+
+Rede: os sensores geralmente têm recursos de rede limitados e podem não conseguir se conectar diretamente à Internet. Os gateways atuam como uma bridge, permitindo que os sensores se conectem à Internet por meio de uma conexão wireless ou sem fio.
+
+Gerenciamento de dados: os gateways podem coletar, agregar e pré-processar dados de vários sensores, reduzindo a quantidade de dados que precisam ser transmitidos pela Internet e reduzindo as demandas na conexão com a Internet.
+
+Consumo de energia: muitos dispositivos sensores são alimentados por bateria e têm recursos de energia limitados; conectá-los diretamente à Internet esgotaria suas baterias rapidamente. O gateway pode atuar como um intermediário entre o sensor e a internet, permitindo que o sensor fique no modo hibernação e acorde somente quando precisar enviar dados.
+
+Custo: conectar sensores diretamente à Internet pode ser caro, especialmente para implantações em larga escala. Gateways podem ser mais baratos para comprar e operar do que conexões de internet individuais para cada sensor.
+Escalabilidade: os gateways podem lidar com um grande número de sensores e podem ser facilmente expandidos à medida que o número de sensores aumenta.
+
+Em resumo, o uso de gateways para conectar sensores à Internet permite a transferência segura e eficiente de dados do sensor, pode reduzir o consumo de energia, o custo e permite fácil escalabilidade.
+	
+	3- LoRaWAN (Long Range Wide Area Network) foi desenvolvido para fornecer um protocolo e infraestrutura de rede para comunicações sem fio LoRa (Long Range). Embora a tecnologia LoRa seja capaz de fornecer comunicação sem fio de longo alcance, ela não inclui todos os elementos necessários para construir uma rede sem fio completa. O LoRaWAN preenche essa lacuna fornecendo um protocolo de comunicação projetado especificamente para redes de longa distância e baixo consumo de energia e um conjunto de servidores de rede que fornecem a infraestrutura necessária para gerenciar e controlar a rede.
+
+LoRaWAN define a forma como os dispositivos se comunicam entre si e com os servidores de rede, bem como a forma como os dados são transmitidos e recebidos. O protocolo inclui mecanismos para descoberta de dispositivos, comunicação segura e gerenciamento de rede, entre outras coisas.
+
+Além disso, as redes LoRaWAN são construídas no topo da camada física LoRa, mas foram criadas para fornecer uma solução de rede mais robusta e robusta do que apenas a tecnologia LoRa. O protocolo LoRaWAN é otimizado para baixo consumo de energia, baixo custo e baixa complexidade, o que o torna adequado para aplicações IoT, onde os dispositivos têm recursos de energia limitados e precisam se comunicar por longas distâncias.
+
+Em resumo, o LoRaWAN foi desenvolvido para fornecer um protocolo e infraestrutura de rede para construir uma rede sem fio completa sobre a tecnologia LoRa. Ele fornece os elementos necessários para gerenciar e controlar a rede, comunicação segura, descoberta de dispositivos e outros recursos que não estão presentes apenas no LoRa, tornando-o uma solução mais robusta e completa para IoT e outras redes de longa distância e baixo consumo de energia.
+
+3)
+	1- Altas taxas de dados: as redes 5G são projetadas para fornecer taxas de dados significativamente mais altas do que as gerações anteriores de redes móveis, permitindo download e streaming mais rápidos de arquivos grandes, bem como suporte para novos aplicativos, como realidade virtual e aumentada.
+Baixa latência: as redes 5G são projetadas para ter uma latência significativamente menor do que as gerações anteriores de redes móveis, permitindo aplicativos mais responsivos e interativos, como jogos, telemedicina e veículos autônomos.
+Alta capacidade: as redes 5G são projetadas para suportar um número muito maior de dispositivos e conexões do que as gerações anteriores de redes móveis, permitindo um uso mais eficiente do espectro e de outros recursos.
+Cobertura aprimorada: as redes 5G usam uma combinação de bandas de baixa e alta frequência para fornecer cobertura aprimorada, inclusive em áreas rurais e de difícil acesso, bem como em ambientes urbanos densos.
+Fatiamento de rede: as redes 5G permitem a criação de várias redes virtuais, chamadas fatias, cada uma com características e capacidades diferentes, para dar suporte a uma variedade de casos de uso e setores diferentes.
+Segurança aprimorada: as redes 5G incluem recursos de segurança integrados, como criptografia de ponta a ponta, sinalização segura e segurança em nível de rede para proteger dados e dispositivos contra acesso e ataques não autorizados.
+Flexibilidade: as redes 5G suportam diferentes modelos de implantação, incluindo arquitetura não autônoma (NSA) e autônoma (SA), o que permite uma implantação flexível e eficiente em diferentes cenários.
+Eficiência energética: as redes 5G são projetadas para serem mais eficientes energeticamente do que as gerações anteriores, isso é particularmente importante para dispositivos IoT que precisam operar com bateria por longos períodos de tempo.
+	
+	2- Seria preferivel usar BLE em vez de ZigBee para sensores de rede porquê, o ZigBee não existe para telémoveis nem para PC's, ou seja, o BLE é usado por mais dispositivos por isso é mais fácil haver dispositivos compativeis, o ZigBee é lower power mas o BLE consegue ser ainda mais low power, a nível de stack o BLE é mais simples que o ZigBee e, por fim, a nível de segurança o BLE é mais seguro que o ZigBee.
+

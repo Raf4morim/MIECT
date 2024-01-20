@@ -1,0 +1,107 @@
+1.
+	a- Com o passar dos anos há um maior número de dispositivos conectados à rede o q faz com q haja a necessidade de aumentar a capacidade da rede face ao número acrescido de dispositivos ligados à rede. E também devido ao crescimento do uso de aplicações e serviços de dados como é o caso de jogos online e streaming de vídeo, é necessário que as redes wireless suportem altas taxas de dados e baixa latência.
+
+	b- O WiFi aborda a questão da convivência de múltiplos bit-rates usando o protocolo CSMA/CA (Carrier Sense Multiple Access with Collision Avoidance). Ele funciona da seguinte maneira:
+
+Escuta antes de falar: Antes de transmitir dados, os dispositivos WiFi escutam o canal para verificar se outro dispositivo já está transmitindo. Se o canal estiver ocupado, o dispositivo aguarda até que ele esteja livre.
+Evitar colisão: Se dois dispositivos tentarem transmitir dados ao mesmo tempo, eles podem colidir e causar erros de transmissão. Para evitar isso, os dispositivos WiFi usam um mecanismo de evitação de colisão, que garante que apenas um dispositivo transmite de cada vez.
+Controlar taxa de transmissão: O WiFi permite que os dispositivos sejam configurados para operar em diferentes taxas de transmissão, o que é conhecido como modos de operação de taxa variável. Isso permite que os dispositivos transmitam a uma taxa mais alta em condições de sinal forte e a uma taxa mais baixa em condições de sinal fraco, para minimizar erros de transmissão.
+Controle de potência: O WiFi permite que dispositivos sejam configurados para transmitir com potência diferente, permitindo assim a convivência de dispositivos com diferentes taxas de transmissão.
+
+	c- Resolvida no outro teste
+
+	d- Não demos transdutor
+
+	e- Uma scatternet é basicamente uma conexão de vários piconets. Um slave numa piconet pode pertencer a outra piconet como slave ou como master. Se for como master vai ser criada uma scatternet
+
+	f- Em ZigBee com beacon, os beacons são periodicamente enviados, pelo coordinator, a indicar que há dados pendentes e quando o device recebe o beacon (está periodicamente à escuta deles), envia um request para o coordinator a perguntar pelos dados e dps o coordinator envia-os, se não houver dados os dispositivos podem ir para power saving mode, ou seja, com beacon há menos consumo de energia.
+Sem beacon, o coordinator tem de estar sempre acordado à escuta de pedidos (maior consumo de energia), e o device constantemente pergunta por dados para o coordinater. Se tiver dados pendentes, envia-os usando unslotted CSMA/CA, se não tiver dados pendentes, envia na msm uma frame mas com tamanho 0.
+
+	g- O GTP é um protocol de tunel baseado em UDP/TCP que pode ser usado no GSM/GPRS e UMTS e é identificado por um TEID. Tem duas principais funções, criação de tuneis virtuais entre dispositivos e roteamente de pacotes através da rede garantindo q a informação chegue ao destino e isso é feito através da utilização de ip's e identificadores de tunel q permitem q o protocolo consiga identificar os dispositivos/gateways de rede.
+
+	h- Acho q não demos.
+
+	i- No sistema GSM/GPRS, o circuito switch é usado para chamadas de voz e o packet switch é usado para dados. No UMTS (Universal Mobile Telecommunications System), que é a evolução do GSM, esses dois conceitos continuam a ser utilizados, mas são ampliados e melhorados.
+
+Circuito Switch: O circuito switch é usado para chamadas de voz e chamadas de vídeo no UMTS. Ele é baseado na tecnologia circuit-switched, que estabelece uma conexão dedicada entre os usuários para a duração da chamada. Isso garante uma qualidade de voz e vídeo consistente, mas pode levar a desperdício de recursos de rede quando a conexão não está em uso.
+Packet Switch: O packet switch é usado para dados no UMTS. Ele é baseado na tecnologia packet-switched, que permite que os dados sejam divididos em pacotes e transmitidos independentemente uns dos outros. Isso permite a melhor utilização dos recursos de rede, mas pode levar a variações na qualidade de serviço dependendo da carga de tráfego da rede.
+Além disso, o UMTS também inclui a tecnologia de múltiplas conexões, que permite que diferentes tipos de serviços (voz, vídeo, dados) possam ser fornecidos simultaneamente, melhorando a eficiência da rede e a qualidade de serviço para os usuários.
+	
+	j- Os NFV necessitam de menos hardware dedicado e por sua vez o custo é menor, há menos licenças, menos upgrades e menos técnicos para tratar dos problemas
+(botAI):
+Flexibilidade: NFV permite que as funções de rede sejam implementadas como software, em vez de hardware dedicado, o que torna mais fácil adicionar, remover ou atualizar funções de rede. Isso torna as redes mais flexíveis e escaláveis, permitindo que elas sejam adaptadas às necessidades cambiantes dos clientes.
+Economia de custos: NFV permite a virtualização de funções de rede, o que significa que muitos dispositivos físicos podem ser substituídos por menos dispositivos virtuais. Isso pode levar a economias significativas em termos de capital e despesas operacionais.
+Agilidade: NFV permite a implementação rápida de novas funções de rede e a criação de novos serviços, permitindo aos provedores de serviços serem mais ágeis e responder rapidamente às necessidades dos clientes.
+Escalabilidade: NFV permite a escalabilidade dinâmica das funções de rede, o que significa que elas podem ser aumentadas ou diminuídas de acordo com a demanda. Isso garante que a capacidade da rede seja utilizada de forma eficiente.
+Facilidade de gestão: NFV permite a gestão centralizada das funções de rede, o que torna mais fácil monitorar e controlar a rede. Isso pode melhorar a eficiência operacional e reduzir os custos de manutenção.
+melhorias na segurança: NFV permite a implementação de medidas de segurança virtualizadas, como firewall
+
+2.
+	a- Ao escolher uma tecnologia de comunicação para baixa velocidade, alguns critérios a serem considerados incluem:
+
+Alcance: A distância máxima que a tecnologia é capaz de cobrir é um fator importante a ser considerado. Tecnologias com alcance limitado podem não ser adequadas para aplicações em que os dispositivos precisam se comunicar a longas distâncias.
+Consumo de energia: A eficiência energética é um fator importante a ser considerado, especialmente quando aplicações envolvendo dispositivos com baterias limitadas. Tecnologias com baixo consumo de energia são ideais para aplicações que requerem dispositivos com longa duração de bateria.
+Taxa de transferência: A taxa de transferência de dados é um fator importante a ser considerado. Tecnologias com taxas de transferência mais altas são ideais para aplicações que requerem transferência de grandes quantidades de dados.
+Interferência: A capacidade de lidar com interferência é importante a ser considerada. Tecnologias com maior imunidade à interferência são ideais para aplicações em ambientes com alta densidade de dispositivos e onde a interferência é uma preocupação.
+Custo: O custo é um fator importante a ser considerado. Tecnologias mais baratas são ideais para aplicações em que o orçamento é limitado.
+	
+	b- Um esquema "report-only" de ligação de um sensor a uma plataforma tem algumas vantagens, incluindo:
+
+Simplicidade: Um esquema "report-only" é mais simples do que um esquema de bidirecional, pois o sensor apenas precisa enviar informações para a plataforma, sem precisar receber comandos ou confirmações. Isso pode ser vantajoso em aplicações onde a complexidade adicional de um esquema bidirecional não é necessária.
+Menor consumo de energia: Como o sensor apenas precisa enviar informações, ele consome menos energia do que se precisasse de estar sempre pronto para receber comandos ou confirmações. Isso é particularmente importante para aplicações com dispositivos de baixa potência ou baterias limitadas.
+Menor custo: Um esquema "report-only" geralmente requer menos componentes e é menos complexo do que um esquema bidirecional, o que pode resultar em custos menores para o desenvolvimento e implementação.
+Menos complexidade de software: Como o sensor apenas precisa enviar informações, o software do sensor é menos complexo do que se precisasse de incluir lógica para receber e processar comandos ou confirmações. Isso pode ser vantajoso em aplicações onde a complexidade adicional de software não é necessária.
+Maior escalabilidade: Como o sensor apenas precisa enviar informações, é mais fácil adicionar mais sensores à plataforma sem precisar se preocupar com a capacidade de processamento de comandos e confirmações. Isso é particularmente importante em aplicações com grandes redes de sensores.
+
+	c- Não demos
+
+	d- A cobertura geográfica é uma preocupação importante em redes de sensores sem fio (WSNs), pois afeta a capacidade dos sensores de se comunicar entre si e com a base. Existem principalmente três tipos de cobertura geográfica em WSNs:
+
+Cobertura de área: Refere-se à capacidade dos sensores de cobrir uma determinada área geográfica. Isso é importante para garantir que toda a área de interesse esteja coberta pelos sensores.
+Cobertura de profundidade: Refere-se à capacidade dos sensores de cobrir uma determinada profundidade geográfica. Isso é importante para aplicações subterrâneas ou subaquáticas, onde os sensores precisam ser capazes de cobrir grandes profundidades.
+Cobertura de volume: Refere-se à capacidade dos sensores de cobrir uma determinada região de volume. Isso é importante para aplicações em espaços fechados, como edifícios ou minas, onde os sensores precisam ser capazes de cobrir grandes volumes de espaço.
+
+	e- Não demos
+
+3.
+	a- As plataformas de suporte a Internet das Coisas (IoT) são sistemas que fornecem os recursos necessários para gerenciar e processar dados de dispositivos IoT. Elas permitem que os dispositivos sejam conectados e gerenciados remotamente, além de fornecer recursos para análise e processamento de dados.
+
+Conectividade: As plataformas de suporte a IoT fornecem mecanismos de conectividade para dispositivos IoT. Isso permite que os dispositivos sejam conectados à rede e sejam acessados remotamente.
+Gerenciamento de dispositivos: As plataformas de suporte a IoT fornecem recursos para gerenciar dispositivos IoT. Isso inclui coletar informações de status, atualizar firmware, configurar dispositivos e gerenciar sua segurança.
+Análise de dados: As plataformas de suporte a IoT fornecem recursos para coletar, armazenar e analisar dados de dispositivos IoT. Isso inclui processamento em tempo real, análise estatística, aprendizado de máquina e visualização de dados.
+Integração: As plataformas de suporte a IoT fornecem recursos para integrar dados de dispositivos IoT com outros sistemas, como sistemas de CRM, ERP ou outras plataformas de IoT.
+
+	b- As redes Zigbee foram projetadas para operar com baixo consumo de energia, o que permite uma utilização óptima de potência. Algumas das especificidades que contribuem para isso incluem:
+
+Modo de baixo consumo: O Zigbee tem um modo de baixo consumo que permite que os dispositivos sejam configurados para consumir menos energia quando não estiverem ativos. Isso é importante para aplicações com dispositivos de baixa potência ou baterias limitadas.
+Rede de baixa potência: Zigbee é uma rede de baixa potência, o que significa que os dispositivos transmitem sinais com potência muito menor do que outras tecnologias semelhantes, como o Bluetooth. Isso permite que os dispositivos consigam se comunicar com uma distância reduzida, mas ao mesmo tempo reduzem o consumo de energia.
+Gerenciamento de energia: Zigbee tem mecanismos de gerenciamento de energia que permitem aos dispositivos se adaptarem dinamicamente ao consumo de energia, como o ajuste da taxa de transmissão de acordo com a distância ou o uso de mecanismos de dormência para dispositivos que não estão ativamente envolvidos na comunicação.
+Garantia de tempo de slot: Zigbee tem uma característica chamada garantia de tempo de slot, que permite que os dispositivos transmitam dados em períodos específicos, o que evita conflitos de transmissão e ajuda a evitar desperdício de energia.
+Rede de malha: Zigbee é uma rede de malha, onde os dispositivos podem se comunicar entre si para aumentar a eficiência e alcance da comunicação, permitindo uma melhor cobertura e utilização da potência disponível.
+
+	c- O IMS (Sistema de suporte às redes de comunicação multimedia) é um padrão de arquitetura de rede que permite a integração de diferentes tipos de comunicação, como voz, vídeo e dados. Ele é composto por vários blocos constituintes, incluindo:
+
+Sistema de Registro: Responsável por autenticar e registrar os usuários no sistema IMS, permitindo que eles possam acessar os serviços disponíveis.
+Sistema de Gerenciamento de Sessão: Responsável por estabelecer, controlar e encerrar sessões de comunicação entre os usuários.
+Serviços de Comunicação: Fornecem os serviços de comunicação, como voz, vídeo e dados, que são acessíveis pelos usuários através do IMS.
+Gateway de Acesso: Responsável por prover a interconexão entre o IMS e redes externas, como redes PSTN e GSM.
+Sistema de Gerenciamento de Rede: Responsável por gerenciar e monitorar o funcionamento do IMS, incluindo a configuração, manutenção e solução de problemas.
+Sistemas de segurança: Responsáveis por prover segurança para as comunicações, autenticação e autorização para os usuários e serviços.
+
+
+Pergunta-> What is openFlow and what is it for?
+Resposta: 
+
+OpenFlow is a communication protocol used to control data flows in computer networks. It is designed to allow network administrators to explicitly program how packets of data are routed through a network, instead of relying on automatic routing.
+
+OpenFlow is based on a controller-switch architecture, where the controller is responsible for deciding how packets should be routed and the switch is responsible for forwarding packets according to the controller's instructions. This allows network administrators to explicitly program how packets should be routed, instead of relying on automatic routing.
+
+OpenFlow has several applications, including:
+
+Programmable routing: OpenFlow allows network administrators to explicitly program how packets should be routed, which can be useful in situations where automatic routing is not sufficient.
+Software-defined networks: OpenFlow is a key technology in software-defined networks (SDN), which allows network administrators to configure and manage networks in a centralized and programmatic way.
+Network experimentation: OpenFlow allows researchers to experiment with new routing algorithms and protocols in real networks, which can help improve the efficiency and security of networks.
+Resource optimization: OpenFlow allows network administrators to optimize the use of resources such as bandwidth and energy, ensuring that the network is used efficiently.
+Network Virtualization: OpenFlow is used to create virtual networks on top of a physical infrastructure, this allows network administrators to create multiple isolated networks that share the same physical resources, as well as to easily create, modify and remove network services and functions.
+	
+	
