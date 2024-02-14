@@ -1,0 +1,95 @@
+<mxfile host="app.diagrams.net" modified="2023-11-08T05:21:23.007Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="GzkyCUJdXaTxmIVzmHxr" version="22.0.8" type="device">
+  <diagram name="Página-1" id="OxinYrdZH_I9pxIbko2m">
+    <mxGraphModel dx="1050" dy="534" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#1b212c" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="PW9Pd9PKrRY_ZcG1lFa4-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;strokeColor=#FFFFFF;strokeWidth=3;" parent="1" source="PW9Pd9PKrRY_ZcG1lFa4-1" target="PW9Pd9PKrRY_ZcG1lFa4-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PW9Pd9PKrRY_ZcG1lFa4-4" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Conexão Segura&lt;br&gt;(End-to-End Encryption)&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#1b212c;fontColor=#ffffff;fontStyle=1" parent="PW9Pd9PKrRY_ZcG1lFa4-3" vertex="1" connectable="0">
+          <mxGeometry x="-0.1421" y="-1" relative="1" as="geometry">
+            <mxPoint x="-1" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PW9Pd9PKrRY_ZcG1lFa4-1" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Internet&lt;/font&gt;" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;labelBackgroundColor=#FFFFFF;fontColor=#1B212C;strokeColor=#FFFFFF;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="240" y="210" width="180" height="128.27" as="geometry" />
+        </mxCell>
+        <mxCell id="PW9Pd9PKrRY_ZcG1lFa4-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Servidor do Whatsapp&lt;/font&gt;" style="image;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Server_Desktop.svg;labelBackgroundColor=#1b212c;fontColor=#ffffff;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="284.35" width="91.3" height="115.73" as="geometry" />
+        </mxCell>
+        <mxCell id="PW9Pd9PKrRY_ZcG1lFa4-6" value="" style="fontColor=#0066CC;verticalAlign=top;verticalLabelPosition=bottom;labelPosition=center;align=center;html=1;outlineConnect=0;fillColor=#CCCCCC;strokeColor=#6881B3;gradientColor=none;gradientDirection=north;strokeWidth=2;shape=mxgraph.networks.mobile;" parent="1" vertex="1">
+          <mxGeometry x="150" y="338.27" width="50" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="PW9Pd9PKrRY_ZcG1lFa4-7" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Whatsapp2_colored_svg-128.png" parent="1" vertex="1">
+          <mxGeometry x="352" y="10" width="38" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="PW9Pd9PKrRY_ZcG1lFa4-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;entryX=0.13;entryY=0.77;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;strokeColor=#FFFFFF;strokeWidth=3;" parent="1" source="PW9Pd9PKrRY_ZcG1lFa4-6" target="PW9Pd9PKrRY_ZcG1lFa4-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="214.5" y="357.73" as="sourcePoint" />
+            <mxPoint x="214.5" y="281.73" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="175" y="310" />
+              <mxPoint x="263" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PW9Pd9PKrRY_ZcG1lFa4-10" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Conexão Segura&lt;br&gt;(End-to-End Encryption)&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#1b212c;fontColor=#ffffff;fontStyle=1" parent="PW9Pd9PKrRY_ZcG1lFa4-9" vertex="1" connectable="0">
+          <mxGeometry x="-0.1421" y="-1" relative="1" as="geometry">
+            <mxPoint x="-53" y="-37" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PW9Pd9PKrRY_ZcG1lFa4-18" value="" style="image;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Personal_Computer.svg;" parent="1" vertex="1">
+          <mxGeometry x="335.06" y="410" width="84.94" height="115.11" as="geometry" />
+        </mxCell>
+        <mxCell id="PW9Pd9PKrRY_ZcG1lFa4-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;exitX=0.666;exitY=-0.014;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.503;entryY=0.942;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#FFFFFF;strokeWidth=3;" parent="1" source="hO5CIzqYr5m2OEQFkm2I-2" target="PW9Pd9PKrRY_ZcG1lFa4-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="414.00143999999995" y="429.74093000000005" as="sourcePoint" />
+            <mxPoint x="426.04" y="170" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="332" y="332" />
+              <mxPoint x="331" y="332" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PW9Pd9PKrRY_ZcG1lFa4-20" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Conexão Segura&lt;br&gt;(End-to-End Encryption)&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#1b212c;fontColor=#ffffff;fontStyle=1" parent="PW9Pd9PKrRY_ZcG1lFa4-19" vertex="1" connectable="0">
+          <mxGeometry x="-0.1421" y="-1" relative="1" as="geometry">
+            <mxPoint x="2" y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PW9Pd9PKrRY_ZcG1lFa4-21" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Dispositivo comprometido &lt;br&gt;conectado ao Whatsapp &lt;br&gt;via QR Code&lt;/font&gt;" style="image;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Personal_Computer.svg;labelBackgroundColor=#1b212c;fontColor=#ffffff;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="490" y="330.72" width="84.94" height="115.11" as="geometry" />
+        </mxCell>
+        <mxCell id="PW9Pd9PKrRY_ZcG1lFa4-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;exitX=0.249;exitY=-0.03;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.96;entryY=0.7;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#ff0000;strokeWidth=3;" parent="1" source="PW9Pd9PKrRY_ZcG1lFa4-21" target="PW9Pd9PKrRY_ZcG1lFa4-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="584.00144" y="338.74093000000005" as="sourcePoint" />
+            <mxPoint x="501" y="240" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="511" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PW9Pd9PKrRY_ZcG1lFa4-23" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Conexão Segura&lt;br&gt;(End-to-End Encryption)&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBackgroundColor=#1b212c;fontColor=#ffffff;fontStyle=1" parent="PW9Pd9PKrRY_ZcG1lFa4-22" vertex="1" connectable="0">
+          <mxGeometry x="-0.1421" y="-1" relative="1" as="geometry">
+            <mxPoint x="38" y="-25" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hO5CIzqYr5m2OEQFkm2I-1" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Computadores conectados&lt;br&gt;ao Whatsapp via QR Code&lt;/font&gt;" style="image;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Personal_Computer.svg;labelBackgroundColor=#1b212c;fontColor=#ffffff;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="305.06" y="410" width="84.94" height="115.11" as="geometry" />
+        </mxCell>
+        <mxCell id="hO5CIzqYr5m2OEQFkm2I-2" value="" style="image;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Personal_Computer.svg;" parent="1" vertex="1">
+          <mxGeometry x="275.06" y="410" width="84.94" height="115.11" as="geometry" />
+        </mxCell>
+        <mxCell id="hO5CIzqYr5m2OEQFkm2I-3" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;br&gt;Telemóveis c/ Whatsapp&lt;/font&gt;" style="fontColor=#ffffff;verticalAlign=top;verticalLabelPosition=bottom;labelPosition=center;align=center;html=1;outlineConnect=0;fillColor=#CCCCCC;strokeColor=#6881B3;gradientColor=none;gradientDirection=north;strokeWidth=2;shape=mxgraph.networks.mobile;labelBackgroundColor=#1b212c;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="160" y="348.27" width="50" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="hO5CIzqYr5m2OEQFkm2I-4" value="" style="fontColor=#0066CC;verticalAlign=top;verticalLabelPosition=bottom;labelPosition=center;align=center;html=1;outlineConnect=0;fillColor=#CCCCCC;strokeColor=#6881B3;gradientColor=none;gradientDirection=north;strokeWidth=2;shape=mxgraph.networks.mobile;" parent="1" vertex="1">
+          <mxGeometry x="170" y="358.27" width="50" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="hO5CIzqYr5m2OEQFkm2I-5" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn2.iconfinder.com/data/icons/woothemes/PNG/intruder.png" parent="1" vertex="1">
+          <mxGeometry x="540" y="370.27" width="68" height="68" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

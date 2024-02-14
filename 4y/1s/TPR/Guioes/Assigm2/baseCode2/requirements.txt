@@ -1,0 +1,8 @@
+argparse
+netaddr
+pyshark
+numpy
+requests
+scipy
+matplotlib
+scikit-learn

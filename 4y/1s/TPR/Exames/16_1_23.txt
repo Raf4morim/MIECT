@@ -1,0 +1,16 @@
+a -> 
+
+
+Se n fosse ao nivel de rede
+
+Exfiltraçao por DNS
+Como se deteta transferencia de IP por DNS?
+
+no subdomain é que vai os bytes do upload
+
+Normalmente vem
+
+A 	192.X.X.X
+TXT	(texto codificado em base64)
+
+
