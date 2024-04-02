@@ -1,4 +1,4 @@
-cryptography==38.0.3
+cryptography==42.0.4
 hybrid_rsa_aes==0.3.0
 PyKCS11==1.5.11
 pyOpenSSL==23.0.0
