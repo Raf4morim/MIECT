@@ -1,0 +1,22 @@
+|parallel_encoder
+m[0] => x1.IN0
+m[0] => x2.IN0
+m[0] => x4.IN0
+m[0] => x[7].DATAIN
+m[1] => x4.IN1
+m[2] => x2.IN1
+m[2] => x6.IN1
+m[3] => x1.IN1
+m[3] => x3.IN1
+m[3] => x5.IN1
+m[3] => x7.IN1
+x[0] <= x7.DB_MAX_OUTPUT_PORT_TYPE
+x[1] <= x6.DB_MAX_OUTPUT_PORT_TYPE
+x[2] <= x5.DB_MAX_OUTPUT_PORT_TYPE
+x[3] <= x4.DB_MAX_OUTPUT_PORT_TYPE
+x[4] <= x3.DB_MAX_OUTPUT_PORT_TYPE
+x[5] <= x2.DB_MAX_OUTPUT_PORT_TYPE
+x[6] <= x1.DB_MAX_OUTPUT_PORT_TYPE
+x[7] <= m[0].DB_MAX_OUTPUT_PORT_TYPE
+
+

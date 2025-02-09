@@ -1,0 +1,9 @@
+source config
+echo "Transfering data to the Bench node."
+sshpass -f password ssh $bench_fname 'mkdir -p test/TheRopeGame'
+sshpass -f password ssh $bench_fname 'rm -rf test/TheRopeGame/*'
+sshpass -f password scp dirBench.zip $bench_fname:test/TheRopeGame
+echo "Decompressing data sent to the Bench node."
+sshpass -f password ssh $bench_fname 'cd test/TheRopeGame ; unzip -uq dirBench.zip'
+echo "Executing program at the Bench node."
+sshpass -f password ssh $bench_fname "cd test/TheRopeGame/dirBench ; java serverSide.main.ServerBench $bench_port $generalRepos $generalRepos_port"

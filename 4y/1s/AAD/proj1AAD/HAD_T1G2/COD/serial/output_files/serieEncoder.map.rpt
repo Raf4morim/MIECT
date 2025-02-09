@@ -1,0 +1,540 @@
+Analysis & Synthesis report for serieEncoder
+Sun Nov 13 13:56:51 2022
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Port Connectivity Checks: "ParReg_8bit:finalpr8"
+ 12. Port Connectivity Checks: "count3b:bc|flipFlopD:ff2"
+ 13. Port Connectivity Checks: "count3b:bc|flipFlopD:ff1"
+ 14. Port Connectivity Checks: "count3b:bc|flipFlopD:ff0"
+ 15. Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopD:ff7"
+ 16. Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopD:ff6"
+ 17. Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopD:ff5"
+ 18. Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopD:ff4"
+ 19. Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopD:ff3"
+ 20. Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopD:ff2"
+ 21. Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopD:ff1"
+ 22. Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopD:ff0"
+ 23. Port Connectivity Checks: "ParReg_8bit:pr8"
+ 24. Port Connectivity Checks: "flipFlopD:ff"
+ 25. Post-Synthesis Netlist Statistics for Top Partition
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Nov 13 13:56:51 2022       ;
+; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                      ; serieEncoder                                ;
+; Top-level Entity Name              ; serial_encoder                              ;
+; Family                             ; Cyclone IV GX                               ;
+; Total logic elements               ; 31                                          ;
+;     Total combinational functions  ; 30                                          ;
+;     Dedicated logic registers      ; 20                                          ;
+; Total registers                    ; 20                                          ;
+; Total pins                         ; 12                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total GXB Receiver Channel PCS     ; 0                                           ;
+; Total GXB Receiver Channel PMA     ; 0                                           ;
+; Total GXB Transmitter Channel PCS  ; 0                                           ;
+; Total GXB Transmitter Channel PMA  ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                            ; serial_encoder     ; serieEncoder       ;
+; Family name                                                      ; Cyclone IV GX      ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 8           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                             ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                      ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
+; control.vhd                      ; yes             ; User VHDL File  ; C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/control.vhd        ;         ;
+; simpleLogic.vhd                  ; yes             ; User VHDL File  ; C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/simpleLogic.vhd    ;         ;
+; serial_encoder.vhd               ; yes             ; User VHDL File  ; C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/serial_encoder.vhd ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++--------------------------+------------------+
+; Resource                 ; Usage            ;
++--------------------------+------------------+
+; I/O pins                 ; 12               ;
+;                          ;                  ;
+; DSP block 9-bit elements ; 0                ;
+;                          ;                  ;
+; Maximum fan-out node     ; clk~input        ;
+; Maximum fan-out          ; 15               ;
+; Total fan-out            ; 157              ;
+; Average fan-out          ; 2.12             ;
++--------------------------+------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------+----------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                ; Entity Name    ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------+----------------+--------------+
+; |serial_encoder            ; 30 (0)              ; 20 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0         ; 12   ; 0            ; |serial_encoder                                    ; serial_encoder ; work         ;
+;    |ParReg_8bit:finalpr8|  ; 8 (0)               ; 8 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|ParReg_8bit:finalpr8               ; ParReg_8bit    ; work         ;
+;       |flipFlopD:ff0|      ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|ParReg_8bit:finalpr8|flipFlopD:ff0 ; flipFlopD      ; work         ;
+;       |flipFlopD:ff1|      ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|ParReg_8bit:finalpr8|flipFlopD:ff1 ; flipFlopD      ; work         ;
+;       |flipFlopD:ff2|      ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|ParReg_8bit:finalpr8|flipFlopD:ff2 ; flipFlopD      ; work         ;
+;       |flipFlopD:ff3|      ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|ParReg_8bit:finalpr8|flipFlopD:ff3 ; flipFlopD      ; work         ;
+;       |flipFlopD:ff4|      ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|ParReg_8bit:finalpr8|flipFlopD:ff4 ; flipFlopD      ; work         ;
+;       |flipFlopD:ff5|      ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|ParReg_8bit:finalpr8|flipFlopD:ff5 ; flipFlopD      ; work         ;
+;       |flipFlopD:ff6|      ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|ParReg_8bit:finalpr8|flipFlopD:ff6 ; flipFlopD      ; work         ;
+;       |flipFlopD:ff7|      ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|ParReg_8bit:finalpr8|flipFlopD:ff7 ; flipFlopD      ; work         ;
+;    |ParReg_8bit:pr8|       ; 0 (0)               ; 8 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|ParReg_8bit:pr8                    ; ParReg_8bit    ; work         ;
+;       |flipFlopD:ff0|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|ParReg_8bit:pr8|flipFlopD:ff0      ; flipFlopD      ; work         ;
+;       |flipFlopD:ff1|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|ParReg_8bit:pr8|flipFlopD:ff1      ; flipFlopD      ; work         ;
+;       |flipFlopD:ff2|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|ParReg_8bit:pr8|flipFlopD:ff2      ; flipFlopD      ; work         ;
+;       |flipFlopD:ff3|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|ParReg_8bit:pr8|flipFlopD:ff3      ; flipFlopD      ; work         ;
+;       |flipFlopD:ff4|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|ParReg_8bit:pr8|flipFlopD:ff4      ; flipFlopD      ; work         ;
+;       |flipFlopD:ff5|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|ParReg_8bit:pr8|flipFlopD:ff5      ; flipFlopD      ; work         ;
+;       |flipFlopD:ff6|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|ParReg_8bit:pr8|flipFlopD:ff6      ; flipFlopD      ; work         ;
+;       |flipFlopD:ff7|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|ParReg_8bit:pr8|flipFlopD:ff7      ; flipFlopD      ; work         ;
+;    |control:con|           ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|control:con                        ; control        ; work         ;
+;       |gateNand2:nad2|     ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|control:con|gateNand2:nad2         ; gateNand2      ; work         ;
+;       |gateNand2:nad4|     ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|control:con|gateNand2:nad4         ; gateNand2      ; work         ;
+;       |gateNor2:nord|      ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|control:con|gateNor2:nord          ; gateNor2       ; work         ;
+;       |mem:CountMem|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|control:con|mem:CountMem           ; mem            ; work         ;
+;    |count3b:bc|            ; 2 (0)               ; 3 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|count3b:bc                         ; count3b        ; work         ;
+;       |flipFlopD:ff0|      ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|count3b:bc|flipFlopD:ff0           ; flipFlopD      ; work         ;
+;       |flipFlopD:ff1|      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|count3b:bc|flipFlopD:ff1           ; flipFlopD      ; work         ;
+;       |flipFlopD:ff2|      ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|count3b:bc|flipFlopD:ff2           ; flipFlopD      ; work         ;
+;    |flipFlopD:ff|          ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|flipFlopD:ff                       ; flipFlopD      ; work         ;
+;    |gateAnd8:and8|         ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|gateAnd8:and8                      ; gateAnd8       ; work         ;
+;       |gateAnd2:bit0|      ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|gateAnd8:and8|gateAnd2:bit0        ; gateAnd2       ; work         ;
+;       |gateAnd2:bit2|      ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|gateAnd8:and8|gateAnd2:bit2        ; gateAnd2       ; work         ;
+;       |gateAnd2:bit6|      ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|gateAnd8:and8|gateAnd2:bit6        ; gateAnd2       ; work         ;
+;       |gateAnd2:bit7|      ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|gateAnd8:and8|gateAnd2:bit7        ; gateAnd2       ; work         ;
+;    |gateXor8:xor8|         ; 9 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|gateXor8:xor8                      ; gateXor8       ; work         ;
+;       |gateXor2:bit0|      ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|gateXor8:xor8|gateXor2:bit0        ; gateXor2       ; work         ;
+;       |gateXor2:bit1|      ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|gateXor8:xor8|gateXor2:bit1        ; gateXor2       ; work         ;
+;       |gateXor2:bit2|      ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|gateXor8:xor8|gateXor2:bit2        ; gateXor2       ; work         ;
+;       |gateXor2:bit3|      ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|gateXor8:xor8|gateXor2:bit3        ; gateXor2       ; work         ;
+;       |gateXor2:bit4|      ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|gateXor8:xor8|gateXor2:bit4        ; gateXor2       ; work         ;
+;       |gateXor2:bit5|      ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|gateXor8:xor8|gateXor2:bit5        ; gateXor2       ; work         ;
+;       |gateXor2:bit6|      ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|gateXor8:xor8|gateXor2:bit6        ; gateXor2       ; work         ;
+;       |gateXor2:bit7|      ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|gateXor8:xor8|gateXor2:bit7        ; gateXor2       ; work         ;
+;    |validOutput:validOut|  ; 1 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|validOutput:validOut               ; validOutput    ; work         ;
+;       |gateOr2:or2|        ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |serial_encoder|validOutput:validOut|gateOr2:or2   ; gateOr2        ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------+----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; count3b:bc|flipFlopD:ff0|nQ           ; Merged with count3b:bc|flipFlopD:ff0|Q ;
+; Total Number of Removed Registers = 1 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 20    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 20    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; ParReg_8bit:finalpr8|flipFlopD:ff0|Q   ; 1       ;
+; ParReg_8bit:finalpr8|flipFlopD:ff1|Q   ; 1       ;
+; ParReg_8bit:finalpr8|flipFlopD:ff2|Q   ; 1       ;
+; ParReg_8bit:finalpr8|flipFlopD:ff3|Q   ; 1       ;
+; ParReg_8bit:finalpr8|flipFlopD:ff4|Q   ; 1       ;
+; ParReg_8bit:finalpr8|flipFlopD:ff5|Q   ; 1       ;
+; ParReg_8bit:finalpr8|flipFlopD:ff6|Q   ; 1       ;
+; ParReg_8bit:finalpr8|flipFlopD:ff7|Q   ; 1       ;
+; Total number of inverted registers = 8 ;         ;
++----------------------------------------+---------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "ParReg_8bit:finalpr8" ;
++------+-------+----------+------------------------+
+; Port ; Type  ; Severity ; Details                ;
++------+-------+----------+------------------------+
+; nrst ; Input ; Info     ; Stuck at VCC           ;
++------+-------+----------+------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "count3b:bc|flipFlopD:ff2"                                                           ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; nset ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; nq   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "count3b:bc|flipFlopD:ff1"                                                           ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; nset ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; nq   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "count3b:bc|flipFlopD:ff0" ;
++------+-------+----------+----------------------------+
+; Port ; Type  ; Severity ; Details                    ;
++------+-------+----------+----------------------------+
+; nset ; Input ; Info     ; Stuck at VCC               ;
++------+-------+----------+----------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopD:ff7"                                                      ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; nq   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopD:ff6"                                                      ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; nq   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopD:ff5"                                                      ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; nq   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopD:ff4"                                                      ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; nq   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopD:ff3"                                                      ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; nq   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopD:ff2"                                                      ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; nq   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopD:ff1"                                                      ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; nq   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ParReg_8bit:pr8|flipFlopD:ff0"                                                      ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; nq   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------+
+; Port Connectivity Checks: "ParReg_8bit:pr8" ;
++------+-------+----------+-------------------+
+; Port ; Type  ; Severity ; Details           ;
++------+-------+----------+-------------------+
+; nset ; Input ; Info     ; Stuck at VCC      ;
++------+-------+----------+-------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "flipFlopD:ff"                                                                       ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; nset ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; nq   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 12                          ;
+; cycloneiii_ff         ; 20                          ;
+;     CLR               ; 20                          ;
+; cycloneiii_lcell_comb ; 38                          ;
+;     normal            ; 38                          ;
+;         1 data inputs ; 17                          ;
+;         2 data inputs ; 6                           ;
+;         3 data inputs ; 5                           ;
+;         4 data inputs ; 10                          ;
+;                       ;                             ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 2.07                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Sun Nov 13 13:56:36 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off serieEncoder -c serieEncoder
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 10 design units, including 5 entities, in source file control.vhd
+    Info (12022): Found design unit 1: flipFlopD-behavior File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/control.vhd Line: 11
+    Info (12022): Found design unit 2: ParReg_8bit-structure File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/control.vhd Line: 40
+    Info (12022): Found design unit 3: count3b-structure File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/control.vhd Line: 70
+    Info (12022): Found design unit 4: mem-behavior File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/control.vhd Line: 110
+    Info (12022): Found design unit 5: control-structure File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/control.vhd Line: 146
+    Info (12023): Found entity 1: flipFlopD File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/control.vhd Line: 5
+    Info (12023): Found entity 2: ParReg_8bit File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/control.vhd Line: 32
+    Info (12023): Found entity 3: count3b File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/control.vhd Line: 64
+    Info (12023): Found entity 4: mem File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/control.vhd Line: 105
+    Info (12023): Found entity 5: control File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/control.vhd Line: 136
+Info (12021): Found 16 design units, including 8 entities, in source file simplelogic.vhd
+    Info (12022): Found design unit 1: gateAnd2-logicFunction File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/simpleLogic.vhd Line: 9
+    Info (12022): Found design unit 2: gateNand2-logicFunction File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/simpleLogic.vhd Line: 22
+    Info (12022): Found design unit 3: gateNor2-logicFunction File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/simpleLogic.vhd Line: 35
+    Info (12022): Found design unit 4: gateXor2-logicFunction File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/simpleLogic.vhd Line: 48
+    Info (12022): Found design unit 5: gateOr2-logicFunction File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/simpleLogic.vhd Line: 61
+    Info (12022): Found design unit 6: gateAnd8-structure File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/simpleLogic.vhd Line: 74
+    Info (12022): Found design unit 7: gateXor8-structure File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/simpleLogic.vhd Line: 98
+    Info (12022): Found design unit 8: validOutput-structure File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/simpleLogic.vhd Line: 122
+    Info (12023): Found entity 1: gateAnd2 File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/simpleLogic.vhd Line: 4
+    Info (12023): Found entity 2: gateNand2 File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/simpleLogic.vhd Line: 17
+    Info (12023): Found entity 3: gateNor2 File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/simpleLogic.vhd Line: 30
+    Info (12023): Found entity 4: gateXor2 File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/simpleLogic.vhd Line: 43
+    Info (12023): Found entity 5: gateOr2 File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/simpleLogic.vhd Line: 56
+    Info (12023): Found entity 6: gateAnd8 File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/simpleLogic.vhd Line: 69
+    Info (12023): Found entity 7: gateXor8 File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/simpleLogic.vhd Line: 93
+    Info (12023): Found entity 8: validOutput File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/simpleLogic.vhd Line: 117
+Info (12021): Found 2 design units, including 1 entities, in source file serial_encoder.vhd
+    Info (12022): Found design unit 1: serial_encoder-structure File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/serial_encoder.vhd Line: 24
+    Info (12023): Found entity 1: serial_encoder File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/serial_encoder.vhd Line: 16
+Info (12021): Found 0 design units, including 0 entities, in source file store.vhd
+Info (12127): Elaborating entity "serial_encoder" for the top level hierarchy
+Info (12128): Elaborating entity "flipFlopD" for hierarchy "flipFlopD:ff" File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/serial_encoder.vhd Line: 67
+Info (12128): Elaborating entity "gateAnd8" for hierarchy "gateAnd8:and8" File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/serial_encoder.vhd Line: 69
+Info (12128): Elaborating entity "gateAnd2" for hierarchy "gateAnd8:and8|gateAnd2:bit7" File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/simpleLogic.vhd Line: 80
+Info (12128): Elaborating entity "gateXor8" for hierarchy "gateXor8:xor8" File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/serial_encoder.vhd Line: 70
+Info (12128): Elaborating entity "gateXor2" for hierarchy "gateXor8:xor8|gateXor2:bit7" File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/simpleLogic.vhd Line: 104
+Info (12128): Elaborating entity "ParReg_8bit" for hierarchy "ParReg_8bit:pr8" File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/serial_encoder.vhd Line: 71
+Info (12128): Elaborating entity "count3b" for hierarchy "count3b:bc" File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/serial_encoder.vhd Line: 72
+Info (12128): Elaborating entity "control" for hierarchy "control:con" File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/serial_encoder.vhd Line: 73
+Info (12128): Elaborating entity "mem" for hierarchy "control:con|mem:CountMem" File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/control.vhd Line: 162
+Info (12128): Elaborating entity "gateNand2" for hierarchy "control:con|gateNand2:nad1" File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/control.vhd Line: 163
+Info (12128): Elaborating entity "gateNor2" for hierarchy "control:con|gateNor2:nord" File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/control.vhd Line: 167
+Info (12128): Elaborating entity "validOutput" for hierarchy "validOutput:validOut" File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/serial_encoder.vhd Line: 76
+Info (12128): Elaborating entity "gateOr2" for hierarchy "validOutput:validOut|gateOr2:or2" File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/simpleLogic.vhd Line: 134
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276004): RAM logic "control:con|mem:CountMem|prog" is uninferred due to inappropriate RAM size File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/control.vhd Line: 114
+Info (13000): Registers with preset signals will power-up high File: C:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/control.vhd Line: 8
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 52 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 9 output pins
+    Info (21061): Implemented 40 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4891 megabytes
+    Info: Processing ended: Sun Nov 13 13:56:51 2022
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:19
+
+

@@ -1,0 +1,420 @@
+|full_parallel_decoder
+y[0] => d[7].IN1
+y[0] => m_bit_decoder:b2v_inst18.y7
+y[0] => m_bit_decoder:b2v_inst5.y7
+y[0] => m_bit_decoder:b2v_inst6.y7
+y[1] => d[6].IN1
+y[1] => m_bit_decoder:b2v_inst18.y5
+y[1] => m_bit_decoder:b2v_inst5.y6
+y[1] => m_bit_decoder:b2v_inst6.y5
+y[2] => d[5].IN1
+y[2] => m_bit_decoder:b2v_inst18.y3
+y[2] => m_bit_decoder:b2v_inst5.y5
+y[2] => m_bit_decoder:b2v_inst6.y6
+y[3] => d[4].IN1
+y[3] => m_bit_decoder:b2v_inst18.y1
+y[3] => m_bit_decoder:b2v_inst5.y4
+y[3] => m_bit_decoder:b2v_inst6.y4
+y[4] => d[3].IN1
+y[4] => m_bit_decoder:b2v_inst18.y6
+y[4] => m_bit_decoder:b2v_inst5.y3
+y[4] => m_bit_decoder:b2v_inst6.y3
+y[5] => d[2].IN1
+y[5] => m_bit_decoder:b2v_inst18.y4
+y[5] => m_bit_decoder:b2v_inst5.y2
+y[5] => m_bit_decoder:b2v_inst6.y1
+y[6] => d[1].IN1
+y[6] => m_bit_decoder:b2v_inst18.y2
+y[6] => m_bit_decoder:b2v_inst5.y1
+y[6] => m_bit_decoder:b2v_inst6.y2
+y[7] => d[0].IN1
+y[7] => m_bit_decoder:b2v_inst18.y0
+y[7] => m_bit_decoder:b2v_inst5.y0
+y[7] => m_bit_decoder:b2v_inst6.y0
+valid << valid_ALTERA_SYNTHESIZED.DB_MAX_OUTPUT_PORT_TYPE
+m[0] << m_ALTERA_SYNTHESIZED.DB_MAX_OUTPUT_PORT_TYPE
+m[1] << m_ALTERA_SYNTHESIZED[1].DB_MAX_OUTPUT_PORT_TYPE
+m[2] << m_ALTERA_SYNTHESIZED[2].DB_MAX_OUTPUT_PORT_TYPE
+m[3] << m_ALTERA_SYNTHESIZED[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|partial_encoder:b2v_inst
+m1 => x3.IN0
+m1 => x5.IN0
+m1 => x7.IN1
+m1 => z[6].DATAIN
+m2 => x3.IN1
+m2 => x6.IN0
+m2 => z[5].DATAIN
+m3 => x5.IN1
+m3 => x6.IN1
+m3 => z[3].DATAIN
+z[0] <= x7.DB_MAX_OUTPUT_PORT_TYPE
+z[1] <= x6.DB_MAX_OUTPUT_PORT_TYPE
+z[2] <= x5.DB_MAX_OUTPUT_PORT_TYPE
+z[3] <= m3.DB_MAX_OUTPUT_PORT_TYPE
+z[4] <= x3.DB_MAX_OUTPUT_PORT_TYPE
+z[5] <= m2.DB_MAX_OUTPUT_PORT_TYPE
+z[6] <= m1.DB_MAX_OUTPUT_PORT_TYPE
+z[7] <= <GND>
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15
+d[0] => halfAdder_1bit:hA00.cI
+d[1] => halfAdder_1bit:hA00.a
+d[2] => halfAdder_1bit:hA01.cI
+d[3] => halfAdder_1bit:hA01.a
+d[4] => halfAdder_1bit:hA02.cI
+d[5] => halfAdder_1bit:hA02.a
+d[6] => halfAdder_1bit:hA03.cI
+d[7] => halfAdder_1bit:hA03.a
+c[0] <= fullAdderWoCI_3bit:fA20.s[0]
+c[1] <= fullAdderWoCI_3bit:fA20.s[1]
+c[2] <= fullAdderWoCI_3bit:fA20.s[2]
+c[3] <= fullAdderWoCI_3bit:fA20.cO
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|halfAdder_1bit:hA00
+a => gateXOr2:xor20.x1
+a => gateAnd2:and20.x1
+cI => gateXOr2:xor20.x0
+cI => gateAnd2:and20.x0
+s <= gateXOr2:xor20.y
+cO <= gateAnd2:and20.y
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|halfAdder_1bit:hA00|gateXOr2:xor20
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|halfAdder_1bit:hA00|gateAnd2:and20
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|halfAdder_1bit:hA01
+a => gateXOr2:xor20.x1
+a => gateAnd2:and20.x1
+cI => gateXOr2:xor20.x0
+cI => gateAnd2:and20.x0
+s <= gateXOr2:xor20.y
+cO <= gateAnd2:and20.y
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|halfAdder_1bit:hA01|gateXOr2:xor20
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|halfAdder_1bit:hA01|gateAnd2:and20
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|halfAdder_1bit:hA02
+a => gateXOr2:xor20.x1
+a => gateAnd2:and20.x1
+cI => gateXOr2:xor20.x0
+cI => gateAnd2:and20.x0
+s <= gateXOr2:xor20.y
+cO <= gateAnd2:and20.y
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|halfAdder_1bit:hA02|gateXOr2:xor20
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|halfAdder_1bit:hA02|gateAnd2:and20
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|halfAdder_1bit:hA03
+a => gateXOr2:xor20.x1
+a => gateAnd2:and20.x1
+cI => gateXOr2:xor20.x0
+cI => gateAnd2:and20.x0
+s <= gateXOr2:xor20.y
+cO <= gateAnd2:and20.y
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|halfAdder_1bit:hA03|gateXOr2:xor20
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|halfAdder_1bit:hA03|gateAnd2:and20
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_2bit:fA10
+a[0] => halfAdder_1bit:hA0.a
+a[1] => fullAdderCLA_1bit:fA0.a
+b[0] => halfAdder_1bit:hA0.cI
+b[1] => fullAdderCLA_1bit:fA0.b
+s[0] <= halfAdder_1bit:hA0.s
+s[1] <= fullAdderCLA_1bit:fA0.s
+cO <= fullAdderCLA_1bit:fA0.cO
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_2bit:fA10|halfAdder_1bit:hA0
+a => gateXOr2:xor20.x1
+a => gateAnd2:and20.x1
+cI => gateXOr2:xor20.x0
+cI => gateAnd2:and20.x0
+s <= gateXOr2:xor20.y
+cO <= gateAnd2:and20.y
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_2bit:fA10|halfAdder_1bit:hA0|gateXOr2:xor20
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_2bit:fA10|halfAdder_1bit:hA0|gateAnd2:and20
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_2bit:fA10|fullAdderCLA_1bit:fA0
+a => gateXOr2:xor20.x0
+a => gateAnd2:and20.x0
+b => gateXOr2:xor20.x1
+b => gateAnd2:and20.x1
+cI => gateXOr2:xor21.x0
+s <= gateXOr2:xor21.y
+cO <= gateAnd2:and20.y
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_2bit:fA10|fullAdderCLA_1bit:fA0|gateXOr2:xor20
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_2bit:fA10|fullAdderCLA_1bit:fA0|gateXOr2:xor21
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_2bit:fA10|fullAdderCLA_1bit:fA0|gateAnd2:and20
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_2bit:fA11
+a[0] => halfAdder_1bit:hA0.a
+a[1] => fullAdderCLA_1bit:fA0.a
+b[0] => halfAdder_1bit:hA0.cI
+b[1] => fullAdderCLA_1bit:fA0.b
+s[0] <= halfAdder_1bit:hA0.s
+s[1] <= fullAdderCLA_1bit:fA0.s
+cO <= fullAdderCLA_1bit:fA0.cO
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_2bit:fA11|halfAdder_1bit:hA0
+a => gateXOr2:xor20.x1
+a => gateAnd2:and20.x1
+cI => gateXOr2:xor20.x0
+cI => gateAnd2:and20.x0
+s <= gateXOr2:xor20.y
+cO <= gateAnd2:and20.y
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_2bit:fA11|halfAdder_1bit:hA0|gateXOr2:xor20
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_2bit:fA11|halfAdder_1bit:hA0|gateAnd2:and20
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_2bit:fA11|fullAdderCLA_1bit:fA0
+a => gateXOr2:xor20.x0
+a => gateAnd2:and20.x0
+b => gateXOr2:xor20.x1
+b => gateAnd2:and20.x1
+cI => gateXOr2:xor21.x0
+s <= gateXOr2:xor21.y
+cO <= gateAnd2:and20.y
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_2bit:fA11|fullAdderCLA_1bit:fA0|gateXOr2:xor20
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_2bit:fA11|fullAdderCLA_1bit:fA0|gateXOr2:xor21
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_2bit:fA11|fullAdderCLA_1bit:fA0|gateAnd2:and20
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_3bit:fA20
+a[0] => halfAdder_1bit:hA0.a
+a[1] => fullAdder_1bit:fA10.a
+a[2] => fullAdderCLA_1bit:fA11.a
+b[0] => halfAdder_1bit:hA0.cI
+b[1] => fullAdder_1bit:fA10.b
+b[2] => fullAdderCLA_1bit:fA11.b
+s[0] <= halfAdder_1bit:hA0.s
+s[1] <= fullAdder_1bit:fA10.s
+s[2] <= fullAdderCLA_1bit:fA11.s
+cO <= fullAdderCLA_1bit:fA11.cO
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_3bit:fA20|halfAdder_1bit:hA0
+a => gateXOr2:xor20.x1
+a => gateAnd2:and20.x1
+cI => gateXOr2:xor20.x0
+cI => gateAnd2:and20.x0
+s <= gateXOr2:xor20.y
+cO <= gateAnd2:and20.y
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_3bit:fA20|halfAdder_1bit:hA0|gateXOr2:xor20
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_3bit:fA20|halfAdder_1bit:hA0|gateAnd2:and20
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_3bit:fA20|fullAdder_1bit:fA10
+a => gateXOr2:xor20.x0
+a => gateAnd2:and21.x0
+b => gateXOr2:xor20.x1
+b => gateAnd2:and21.x1
+cI => gateXOr2:xor21.x0
+cI => gateAnd2:and20.x0
+s <= gateXOr2:xor21.y
+cO <= gateOr2:or20.y
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_3bit:fA20|fullAdder_1bit:fA10|gateXOr2:xor20
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_3bit:fA20|fullAdder_1bit:fA10|gateXOr2:xor21
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_3bit:fA20|fullAdder_1bit:fA10|gateAnd2:and20
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_3bit:fA20|fullAdder_1bit:fA10|gateAnd2:and21
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_3bit:fA20|fullAdder_1bit:fA10|gateOr2:or20
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_3bit:fA20|fullAdderCLA_1bit:fA11
+a => gateXOr2:xor20.x0
+a => gateAnd2:and20.x0
+b => gateXOr2:xor20.x1
+b => gateAnd2:and20.x1
+cI => gateXOr2:xor21.x0
+s <= gateXOr2:xor21.y
+cO <= gateAnd2:and20.y
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_3bit:fA20|fullAdderCLA_1bit:fA11|gateXOr2:xor20
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_3bit:fA20|fullAdderCLA_1bit:fA11|gateXOr2:xor21
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|popCounter_8bitParallelOpt:b2v_inst15|fullAdderWoCI_3bit:fA20|fullAdderCLA_1bit:fA11|gateAnd2:and20
+x0 => y.IN0
+x1 => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|m_bit_decoder:b2v_inst18
+y0 => c0.IN0
+y1 => c0.IN1
+y2 => c1.IN0
+y3 => c1.IN1
+y4 => c2.IN0
+y5 => c2.IN1
+y6 => c3.IN0
+y7 => c3.IN1
+m_is_one <= is_one.DB_MAX_OUTPUT_PORT_TYPE
+m_is_error <= m_is_error.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|m_bit_decoder:b2v_inst5
+y0 => c0.IN0
+y1 => c0.IN1
+y2 => c1.IN0
+y3 => c1.IN1
+y4 => c2.IN0
+y5 => c2.IN1
+y6 => c3.IN0
+y7 => c3.IN1
+m_is_one <= is_one.DB_MAX_OUTPUT_PORT_TYPE
+m_is_error <= m_is_error.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|full_parallel_decoder|m_bit_decoder:b2v_inst6
+y0 => c0.IN0
+y1 => c0.IN1
+y2 => c1.IN0
+y3 => c1.IN1
+y4 => c2.IN0
+y5 => c2.IN1
+y6 => c3.IN0
+y7 => c3.IN1
+m_is_one <= is_one.DB_MAX_OUTPUT_PORT_TYPE
+m_is_error <= m_is_error.DB_MAX_OUTPUT_PORT_TYPE
+
+

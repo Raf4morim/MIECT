@@ -1,0 +1,154 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/repol/Documents/GitHub/projetoAAD/HAD_T1G2/COD/serial/simulation/qsim
+Ehard_block
+Z1 w1668347982
+Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z3 DPx9 cycloneiv 19 cycloneiv_atom_pack 0 22 ]lnLY_M[kb3fWjbKaDc;_1
+Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z7 DPx9 cycloneiv 20 cycloneiv_components 0 22 J>QEYeEXjZb^Cnb3?e1D40
+!i122 10
+R0
+Z8 8serieEncoder.vho
+Z9 FserieEncoder.vho
+l0
+L35 1
+V5mcF]JUg7TS^l0EMa_h4A1
+!s100 Q?IbEnM>aW3cc=hi`GCc71
+Z10 OV;C;2020.1;71
+32
+Z11 !s110 1668347983
+!i10b 1
+Z12 !s108 1668347983.000000
+Z13 !s90 -work|work|serieEncoder.vho|
+Z14 !s107 serieEncoder.vho|
+!i113 1
+Z15 o-work work
+Z16 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 10 hard_block 0 22 5mcF]JUg7TS^l0EMa_h4A1
+!i122 10
+l65
+L51 20
+VMkbPfL8S?h^i>Mg3GSGD`1
+!s100 O>:lWQfHCcIaXgQ<=Tgn10
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Eserial_encoder
+R1
+R3
+R7
+R2
+Z17 DPx6 altera 11 dffeas_pack 0 22 dc5N=DKXMMTVYdUQ@D3FA2
+R4
+R5
+R6
+Z18 DPx6 altera 28 altera_primitives_components 0 22 ca:ehlQAg4;_gVV:^8MAg3
+!i122 10
+R0
+R8
+R9
+l0
+L80 1
+VZ85FH=?Ab;TTCV^;NNK0S2
+!s100 K`H0A7a[i[hfF5Tzz=Sdn2
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Astructure
+R3
+R7
+R2
+R17
+R4
+R5
+R6
+R18
+DEx4 work 14 serial_encoder 0 22 Z85FH=?Ab;TTCV^;NNK0S2
+!i122 10
+l208
+L105 1146
+VPVLV^;06d4=`kI7N[jSC=1
+!s100 jjf@FMgXXblo[hYDF6U010
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Eserial_encoder_vhd_vec_tst
+Z19 w1668347980
+R5
+R6
+!i122 11
+R0
+Z20 8Waveform.vwf.vht
+Z21 FWaveform.vwf.vht
+l0
+L32 1
+VGNYPTTMh66[@E9^QF0jFf1
+!s100 oBb[=AWoiRXlHd7hnKenF1
+R10
+32
+Z22 !s110 1668347984
+!i10b 1
+R12
+Z23 !s90 -work|work|Waveform.vwf.vht|
+Z24 !s107 Waveform.vwf.vht|
+!i113 1
+R15
+R16
+Aserial_encoder_arch
+R5
+R6
+Z25 DEx4 work 26 serial_encoder_vhd_vec_tst 0 22 GNYPTTMh66[@E9^QF0jFf1
+!i122 11
+l51
+Z26 L34 76
+Z27 VOoSc:g@kTd@C4BX>=[GXQ0
+Z28 !s100 4jHaS<NN0HS6SgZKYTQVL3
+R10
+32
+R22
+!i10b 1
+R12
+R23
+R24
+!i113 1
+R15
+R16

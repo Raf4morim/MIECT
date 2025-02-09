@@ -1,0 +1,22 @@
+|encParalelo
+m[0] => x1.IN0
+m[0] => x3.IN1
+m[0] => x5.IN1
+m[0] => x7.IN1
+m[1] => x2.IN0
+m[1] => x6.IN1
+m[2] => x4.IN0
+m[3] => x1.IN1
+m[3] => x2.IN1
+m[3] => x4.IN1
+m[3] => saida[0].DATAIN
+saida[0] <= m[3].DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= x1.DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= x2.DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= x3.DB_MAX_OUTPUT_PORT_TYPE
+saida[4] <= x4.DB_MAX_OUTPUT_PORT_TYPE
+saida[5] <= x5.DB_MAX_OUTPUT_PORT_TYPE
+saida[6] <= x6.DB_MAX_OUTPUT_PORT_TYPE
+saida[7] <= x7.DB_MAX_OUTPUT_PORT_TYPE
+
+
