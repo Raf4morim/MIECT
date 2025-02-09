@@ -1,0 +1,6 @@
+save ~/Downloads/result.txt
+get snmp.ireasoning.com sysUpTime
+if $ err sound
+sleep 5
+getnext snmp.ireasoning.com sysLocation
+if $ err sound

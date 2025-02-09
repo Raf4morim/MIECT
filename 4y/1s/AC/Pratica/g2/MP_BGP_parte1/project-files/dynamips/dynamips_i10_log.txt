@@ -1,0 +1,37 @@
+Oct 14 00:42:59.813 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Oct 14 00:42:59.815 HYPERVISOR: Started on IP = localhost, TCP port = 52728.
+Oct 14 00:43:00.288 HYPERVISOR: exec_cmd: hypervisor version 
+Oct 14 00:43:00.290 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\repol\Documents\github\MIECT\4y\1s\AC\Pratica\g2\MP_BGP_parte1\project-files\dynamips 
+Oct 14 00:43:00.291 GENERAL: working_dir=C:\Users\repol\Documents\github\MIECT\4y\1s\AC\Pratica\g2\MP_BGP_parte1\project-files\dynamips
+Oct 14 00:43:00.291 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\repol\Documents\github\MIECT\4y\1s\AC\Pratica\g2\MP_BGP_parte1\project-files\dynamips\2200815e-a4f2-4646-8b26-c8e55a4bfc64 
+Oct 14 00:43:00.293 GENERAL: working_dir=C:\Users\repol\Documents\github\MIECT\4y\1s\AC\Pratica\g2\MP_BGP_parte1\project-files\dynamips\2200815e-a4f2-4646-8b26-c8e55a4bfc64
+Oct 14 00:43:00.293 HYPERVISOR: exec_cmd: vm create RouterA 4 c7200 
+Oct 14 00:43:00.329 VM: VM RouterA created.
+Oct 14 00:43:00.332 HYPERVISOR: exec_cmd: vm set_con_tcp_port RouterA 5009 
+Oct 14 00:43:00.332 HYPERVISOR: exec_cmd: c7200 get_mac_addr RouterA 
+Oct 14 00:43:00.333 HYPERVISOR: exec_cmd: vm get_status RouterA 
+Oct 14 00:43:00.333 HYPERVISOR: exec_cmd: vm slot_add_binding RouterA 0 0 C7200-IO-FE 
+Oct 14 00:43:00.336 HYPERVISOR: exec_cmd: vm set_disk0 RouterA 0 
+Oct 14 00:43:00.337 HYPERVISOR: exec_cmd: vm set_exec_area RouterA 64 
+Oct 14 00:43:00.340 HYPERVISOR: exec_cmd: vm set_ios RouterA C:/Users/repol/GNS3/images/IOS/c7200-advipservicesk9-mz.152-4.S5.image 
+Oct 14 00:43:00.341 HYPERVISOR: exec_cmd: c7200 set_mac_addr RouterA ca04.1f70.0000 
+Oct 14 00:43:00.343 HYPERVISOR: exec_cmd: vm set_nvram RouterA 512 
+Oct 14 00:43:00.345 HYPERVISOR: exec_cmd: vm set_ram RouterA 512 
+Oct 14 00:43:00.346 HYPERVISOR: exec_cmd: vm get_status RouterA 
+Oct 14 00:43:00.347 HYPERVISOR: exec_cmd: vm slot_remove_binding RouterA 0 0 
+Oct 14 00:43:00.348 HYPERVISOR: exec_cmd: vm get_status RouterA 
+Oct 14 00:43:00.349 HYPERVISOR: exec_cmd: vm slot_add_binding RouterA 0 0 C7200-IO-2FE 
+Oct 14 00:43:00.351 HYPERVISOR: exec_cmd: vm get_status RouterA 
+Oct 14 00:43:00.351 HYPERVISOR: exec_cmd: vm slot_add_binding RouterA 1 0 PA-2FE-TX 
+Oct 14 00:43:03.666 HYPERVISOR: exec_cmd: nio create_udp udp-5ac0cfe2-8b2e-4b79-899f-e061dd127000 10002 127.0.0.1 10003 
+Oct 14 00:43:04.443 HYPERVISOR: exec_cmd: vm slot_add_nio_binding RouterA 0 0 udp-5ac0cfe2-8b2e-4b79-899f-e061dd127000 
+Oct 14 00:43:04.444 HYPERVISOR: exec_cmd: vm get_status RouterA 
+Oct 14 00:43:04.566 HYPERVISOR: exec_cmd: nio create_udp udp-9732b0b0-b3a1-4406-918b-46bea8d253ab 10006 127.0.0.1 10007 
+Oct 14 00:43:04.571 HYPERVISOR: exec_cmd: vm slot_add_nio_binding RouterA 0 1 udp-9732b0b0-b3a1-4406-918b-46bea8d253ab 
+Oct 14 00:43:04.572 HYPERVISOR: exec_cmd: vm get_status RouterA 
+Oct 14 00:43:04.650 HYPERVISOR: exec_cmd: nio create_udp udp-9e10a75b-282a-4da0-bc11-524cb0ca5135 10010 127.0.0.1 10011 
+Oct 14 00:43:04.656 HYPERVISOR: exec_cmd: vm slot_add_nio_binding RouterA 1 0 udp-9e10a75b-282a-4da0-bc11-524cb0ca5135 
+Oct 14 00:43:04.657 HYPERVISOR: exec_cmd: vm get_status RouterA 
+Oct 14 00:43:07.578 HYPERVISOR: exec_cmd: nio create_udp udp-23f3ea0d-4ad4-4133-8717-6152f9010be3 10062 127.0.0.1 10063 
+Oct 14 00:43:07.587 HYPERVISOR: exec_cmd: vm slot_add_nio_binding RouterA 1 1 udp-23f3ea0d-4ad4-4133-8717-6152f9010be3 
+Oct 14 00:43:07.588 HYPERVISOR: exec_cmd: vm get_status RouterA 

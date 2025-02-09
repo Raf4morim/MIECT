@@ -1,0 +1,3 @@
+Pratica/g2/MP_BGP_parte1/project-files/dynamips/c7200-advipservicesk9-mz.152-4.S5.image-512.ghost filter=lfs diff=lfs merge=lfs -text
+Pratica/g5/VXLAN_parte1.gns3/project-files/dynamips/c7200-advipservicesk9-mz.152-4.S5.image-512.ghost filter=lfs diff=lfs merge=lfs -text
+Pratica/g5/VXLAN_parte1.gns3/project-files/dynamips/3a7cf8b1-9d08-42db-aeb9-905b1128a308/c7200_i1_iomem filter=lfs diff=lfs merge=lfs -text

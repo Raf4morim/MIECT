@@ -1,0 +1,9 @@
+Oct 14 00:43:02.469 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Oct 14 00:43:02.470 HYPERVISOR: Started on IP = localhost, TCP port = 52769.
+Oct 14 00:43:02.934 HYPERVISOR: exec_cmd: hypervisor version 
+Oct 14 00:43:02.941 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\repol\Documents\github\MIECT\4y\1s\AC\Pratica\g2\MP_BGP_parte1\project-files\dynamips 
+Oct 14 00:43:02.941 GENERAL: working_dir=C:\Users\repol\Documents\github\MIECT\4y\1s\AC\Pratica\g2\MP_BGP_parte1\project-files\dynamips
+Oct 14 00:43:02.944 HYPERVISOR: exec_cmd: ethsw create Switch9 
+Oct 14 00:43:03.646 HYPERVISOR: exec_cmd: nio create_udp udp-ba783c91-3649-47b1-9be3-01c5300c2777 10000 127.0.0.1 10001 
+Oct 14 00:43:03.647 HYPERVISOR: exec_cmd: ethsw add_nio Switch9 udp-ba783c91-3649-47b1-9be3-01c5300c2777 
+Oct 14 00:43:03.653 HYPERVISOR: exec_cmd: ethsw set_access_port Switch9 udp-ba783c91-3649-47b1-9be3-01c5300c2777 1 

@@ -1,0 +1,12 @@
+Oct 14 00:42:56.049 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Oct 14 00:42:56.051 HYPERVISOR: Started on IP = localhost, TCP port = 52710.
+Oct 14 00:42:56.510 HYPERVISOR: exec_cmd: hypervisor version 
+Oct 14 00:42:56.511 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\repol\Documents\github\MIECT\4y\1s\AC\Pratica\g2\MP_BGP_parte1\project-files\dynamips 
+Oct 14 00:42:56.511 GENERAL: working_dir=C:\Users\repol\Documents\github\MIECT\4y\1s\AC\Pratica\g2\MP_BGP_parte1\project-files\dynamips
+Oct 14 00:42:56.513 HYPERVISOR: exec_cmd: ethsw create Switch1 
+Oct 14 00:43:05.269 HYPERVISOR: exec_cmd: nio create_udp udp-eeebf7ed-e3d7-45a9-967d-d569d27512a1 10017 127.0.0.1 10016 
+Oct 14 00:43:05.269 HYPERVISOR: exec_cmd: ethsw add_nio Switch1 udp-eeebf7ed-e3d7-45a9-967d-d569d27512a1 
+Oct 14 00:43:05.283 HYPERVISOR: exec_cmd: ethsw set_access_port Switch1 udp-eeebf7ed-e3d7-45a9-967d-d569d27512a1 1 
+Oct 14 00:43:06.468 HYPERVISOR: exec_cmd: nio create_udp udp-342ebee2-684e-472c-a83d-a8bb4004e6ed 10036 127.0.0.1 10037 
+Oct 14 00:43:06.469 HYPERVISOR: exec_cmd: ethsw add_nio Switch1 udp-342ebee2-684e-472c-a83d-a8bb4004e6ed 
+Oct 14 00:43:06.480 HYPERVISOR: exec_cmd: ethsw set_access_port Switch1 udp-342ebee2-684e-472c-a83d-a8bb4004e6ed 1 
