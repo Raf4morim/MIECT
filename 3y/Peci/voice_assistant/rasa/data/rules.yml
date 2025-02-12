@@ -1,0 +1,174 @@
+version: "3.1"
+
+rules:
+
+- rule: Cumprimentar sempre que a pessoa cumprimenta
+  steps:
+  - intent: cumprimentar
+  - action: utter_greet
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: despedir
+  - action: utter_goodbye
+
+- rule: Mostrar planos de exercicios sempre que a pessoa pedir
+  steps:
+  - intent: request_planos_exercicios
+  - action: utter_understand_planos
+  - action: action_mostrar_planos_exercicios
+  - action: utter_exercicios
+
+- rule: Comecar sempre que a pessoa pedir
+  steps:
+  - intent: request_comecar
+  - action: utter_comecar
+  - action: action_comecar
+
+- rule: Voltar atras sempre que a pessoa pedir
+  steps:
+  - intent: request_voltar
+  - action: utter_voltar
+  - action: action_voltar
+
+- rule: Voltar para a pagina inicial sempre que a pessoa pedir
+  steps:
+  - intent: request_pagina_inicial
+  - action: utter_pagina_inicial
+  - action: action_pagina_inicial
+
+- rule: Avancar sempre que a pessoa pedir
+  steps:
+  - intent: request_avancar
+  - action: utter_avancar
+  - action: action_avancar
+
+- rule: Wake up sempre que alguem chamar
+  steps:
+  - intent: wake_up
+  - action: utter_greet
+
+- rule: Terminar sempre que pedir
+  steps:
+  - intent: request_terminar
+  - action: utter_terminar
+  - action: action_terminar
+
+- rule: responder "de nada" sempre que alguém agradecer
+  steps:
+  - intent: agradecer
+  - action: utter_agradecer
+
+- rule: dizer siiii sempre que alguém falar do Ronaldo
+  steps:
+  - intent: ronaldo
+  - action: utter_ronaldo
+
+- rule: ativar form_name
+  steps:
+    - intent: request_change_username
+    - action: action_reset_name
+    - slot_was_set:
+      - requested_slot: username
+    - action: form_name
+    - active_loop: form_name
+
+- rule: mudar nome de utilizador
+  condition:
+    - active_loop: form_name
+  steps:
+    - action: form_name
+    - active_loop: null
+    - slot_was_set:
+      - requested_slot: null
+    - action: utter_submit
+    - action: utter_slots_values
+
+- rule: ativar form_opcao
+  steps:
+    - intent: request_selecionar_opcao
+    - action: action_reset_opcao
+    - slot_was_set:
+      - requested_slot: opcao
+    - action: form_opcao
+    - active_loop: form_opcao
+
+- rule: selecionar opcao
+  condition:
+    - active_loop: form_opcao
+  steps:
+    - action: form_opcao
+    - active_loop: null
+    - slot_was_set:
+      - requested_slot: null
+    - action: utter_understand_opcao
+    - action: action_selecionar_opcao
+
+- rule: virar a camara para a esquerda
+  steps:
+  - intent: request_virar_camara_esquerda
+  - action: utter_understand_virar_camara_esquerda
+  - action: action_virar_camara_esquerda
+
+- rule: virar a camara para a direita
+  steps:
+  - intent: request_virar_camara_direita
+  - action: utter_understand_virar_camara_direita
+  - action: action_virar_camara_direita
+
+- rule: virar a camara para cima
+  steps:
+  - intent: request_virar_camara_cima
+  - action: utter_understand_virar_camara_cima
+  - action: action_virar_camara_cima
+
+- rule: virar a camara para baixo
+  steps:
+  - intent: request_virar_camara_baixo
+  - action: utter_understand_virar_camara_baixo
+  - action: action_virar_camara_baixo
+
+- rule: scroll up
+  steps:
+  - intent: request_scroll_up
+  - action: action_scroll_up
+
+- rule: scroll down
+  steps:
+  - intent: request_scroll_down
+  - action: action_scroll_down
+
+- rule: mostrar todos os exercicios
+  steps:
+  - intent: request_todos_exercicios
+  - action: utter_understand_exercicios
+  - action: action_mostrar_todos_exercicios
+  - action: utter_todos_exercicios
+
+- rule: play video
+  steps:
+  - intent: request_play
+  - action: action_play
+  - action: utter_understand_play
+
+- rule: pausar
+  steps:
+  - intent: request_pause
+  - action: action_pause
+  - action: utter_understand_pause
+
+- rule: replay video
+  steps:
+  - intent: request_replay
+  - action: action_replay
+  - action: utter_understand_replay
+
+- rule: confirmar
+  steps:
+  - intent: response_afirmar
+  - action: action_afirmar
+
+- rule: negar
+  steps:
+  - intent: response_negar
+  - action: action_negar

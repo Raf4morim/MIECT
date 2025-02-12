@@ -1,0 +1,113 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: egs-touristguide
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongodb-data
+  namespace: egs-touristguide
+spec:
+  storageClassName: longhorn
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb
+  namespace: egs-touristguide
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongodb
+  template:
+    metadata:
+      labels:
+        app: mongodb
+    spec:
+      containers:
+        - name: mongodb
+          image: mongo
+          ports:
+            - containerPort: 27017
+          volumeMounts:
+            - name: mongodb-data
+              mountPath: /var/lib/mongodb
+            - name: init-db-script
+              mountPath: /docker-entrypoint-initdb.d
+      volumes:
+        - name: mongodb-data
+          persistentVolumeClaim:
+            claimName: mongodb-data
+        - name: init-db-script
+          configMap:
+            name: mongo-db-init
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: poi-mongodb-service
+  namespace: egs-touristguide
+spec:
+  selector:
+    app: mongodb
+  ports:
+    - protocol: TCP
+      port: 27017
+      targetPort: 27017
+  clusterIP: None
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: poi-app
+  namespace: egs-touristguide
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: poi-app
+  template:
+    metadata:
+      labels:
+        app: poi-app
+    spec:
+      containers:
+        - name: poi-app
+          image: registry.deti/egs-touristguide/poi:v1
+          env:
+            - name: MONGODB_URI
+              value: "mongodb://poi-mongodb-service:27017/poi-database"
+            - name: DB_NAME
+              value: "poi_database"
+            - name: COLLECTION_NAME
+              value: "POIs"
+            - name: COLLECTION_APIKEYS
+              value: "apiKeys"
+          ports:
+            - containerPort: 4000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: poi-app-service
+  namespace: egs-touristguide
+spec:
+  selector:
+    app: poi-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 4000
+  type: LoadBalancer

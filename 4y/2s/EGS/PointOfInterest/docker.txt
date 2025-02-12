@@ -1,0 +1,10 @@
+docker build -t poi-finder .
+docker images
+docker compose up
+
+docker system prune --all
+
+docker ps
+docker logs <id container>
+
+"Tigas:6c3dda3016f15d9c270d284642da5c9f"

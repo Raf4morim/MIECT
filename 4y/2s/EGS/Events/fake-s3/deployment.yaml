@@ -1,0 +1,37 @@
+# AmazonS3 deployment
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: amazons3-service
+  namespace: egs-touristguide
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: amazons3-service
+  template:
+    metadata:
+      labels:
+        app: amazons3-service
+    spec:
+      containers:
+      - name: amazons3-service
+        image: registry.deti/egs-touristguide/amazons3:v5
+        ports:
+        - containerPort: 5000
+
+# AmazonS3 service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: amazons3-app-service
+  namespace: egs-touristguide
+spec:
+  ports:
+  - port: 81
+    targetPort: 5000
+  selector:
+    app: amazons3-service
+  type: LoadBalancer

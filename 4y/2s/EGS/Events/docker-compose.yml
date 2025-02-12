@@ -1,0 +1,49 @@
+services:
+  app:
+    container_name: event-service
+    build:
+      context: ./event-service
+      dockerfile: Dockerfile
+    ports:
+      - '1000:1000'
+    volumes:
+      - event-logs:/app/event-logs
+    networks:
+      - app-network
+    env_file:
+      - ./event-service/.env
+    depends_on:
+      - mongo
+      - amazons3
+
+  mongo:
+    image: mongo
+    container_name: mongo-event
+    ports:
+      - '27017:27017'
+    volumes:
+      - event-data:/var/lib/mongodb
+      - ./event-service/database/init-db.js:/docker-entrypoint-initdb.d/init-db.js
+    networks:
+      - app-network
+
+  amazons3:
+    container_name: amazons3-service
+    build:
+      context: ./fake-s3
+      dockerfile: Dockerfile
+    ports:
+      - '2000:2000'
+    volumes:
+      - fake-s3:/app/fake-s3
+    networks:
+      - app-network
+
+volumes:
+  event-logs:
+  event-data:
+  fake-s3:
+
+networks:
+  app-network:
+    driver: bridge

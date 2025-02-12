@@ -1,0 +1,156 @@
+<Page
+    x:Class="GymHome.VideoPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GymHome"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="White"
+    Loaded="Page_Loaded">
+
+    <Page.Resources>
+        <DataTemplate x:Key="CameraVideoTemplate">
+            <WebView2 Source="{Binding}" Width="200" Height="200"/>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Fill="LightBlue" Grid.ColumnSpan="3"/>
+        <Button VerticalAlignment="Center"
+                Command="{Binding GoBackCommand}"
+                BorderBrush="AliceBlue"
+                BorderThickness="3">
+            <TextBlock Text="Voltar"
+                           Foreground="Black"
+                           FontSize="30"/>
+        </Button>
+        <Grid Grid.Column="1"
+              VerticalAlignment="Center"
+              HorizontalAlignment="Center"
+              >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button VerticalAlignment="Center"
+                Grid.Column="0"
+                Command="{Binding PreviousVideoCommand}"
+                Visibility="{Binding NextPrevBtnsVisibility}">
+                <TextBlock Text="Anterior"
+                       Foreground="Black"
+                       FontSize="20"
+                />
+            </Button>
+            <TextBlock Foreground="Black" 
+                   Text="{Binding Title}"
+                   TextWrapping="WrapWholeWords"
+                   Grid.Column="1"
+                   VerticalAlignment="Center"
+                   Style="{StaticResource TitleTextBlockStyle}"
+                   Padding="20"
+                   />
+            <Button VerticalAlignment="Center"
+                Grid.Column="2"
+                    Command="{Binding NextVideoCommand}"
+                Visibility="{Binding NextPrevBtnsVisibility}">
+                <TextBlock Text="Proximo"
+                       Foreground="Black"
+                       FontSize="20"
+                />
+            </Button>
+        </Grid>
+
+
+        <ContentControl Content="{Binding MediaPlayerElement}"
+                        HorizontalAlignment="Stretch"
+                        Grid.ColumnSpan="3"
+                        Grid.Row="1"/>
+
+        <Grid Grid.Row="1"
+              Visibility="{Binding NextVideoPromptVisibility}"
+              Grid.ColumnSpan="3">
+            <StackPanel Orientation="Vertical"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Background="LightBlue"
+                        Padding="20"
+                        CornerRadius="10">
+                <TextBlock Foreground="Black"
+                           FontSize="30"
+                           HorizontalAlignment="Center"
+                           Text="{Binding PromptMessage}">
+                </TextBlock>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center">
+                    <Button Command="{Binding NextVideoCommand}"
+                            CornerRadius="10"
+                            Background="LightSkyBlue"
+                            Margin="0,0,20,0">
+                        <TextBlock Foreground="Black"
+                                   FontSize="20">
+                            Sim
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding ClosePromptCommand}"
+                            CornerRadius="10"
+                            Background="LightSkyBlue">
+                        <TextBlock Foreground="Black"
+                                   FontSize="20">
+                            Nao
+                        </TextBlock>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <InfoBar
+            Title="A processar:"
+            Message="{Binding Message}"
+            Grid.Row="1"
+            Grid.ColumnSpan="3"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Left"
+            IsOpen="{Binding IsOpen}"
+            Foreground="Black"
+            Background="LightBlue"
+            IsClosable="False"
+            CornerRadius="5"
+            Margin="10,0,0,10">
+        </InfoBar>
+
+        <Image Source="{Binding MicrofoneImageSource}"
+               Grid.Column="2"
+               Grid.Row="1"
+               Width="50"
+               VerticalAlignment="Bottom"
+               HorizontalAlignment="Right"
+               Margin="0 0 10 10"
+               />
+
+        <GridView Grid.Column="2"
+                  Grid.RowSpan="2"
+                  HorizontalAlignment="Right"
+                  VerticalAlignment="Top"
+                  ItemsSource="{Binding Streams}"
+                  ItemTemplate="{StaticResource CameraVideoTemplate}">
+            <GridView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <ItemsWrapGrid Orientation="Horizontal"
+                                   MaximumRowsOrColumns="{Binding NoOfCols}"/>
+                </ItemsPanelTemplate>
+            </GridView.ItemsPanel>
+        </GridView>
+    </Grid>
+    
+</Page>

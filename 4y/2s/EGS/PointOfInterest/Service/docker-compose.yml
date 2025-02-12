@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+ 
+  mongodb:
+    image: mongo
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/var/lib/mongodb
+      - ./database/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js
+    networks:
+      - backend
+
+  app:
+    build: .
+    container_name: POIfinder
+    ports:
+      - "4000:4000"
+    environment:
+      MONGODB_URI: ${MONGODB_URI}
+      DB_NAME: ${DB_NAME}
+      COLLECTION_NAME: ${COLLECTION_NAME}
+      COLLECTION_APIKEYS: ${COLLECTION_APIKEYS}
+    depends_on:
+      - mongodb
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
+
+volumes:
+  mongodb_data:

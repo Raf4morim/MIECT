@@ -1,0 +1,105 @@
+{
+    "intents" : [
+        {
+            "tag" : "greeting",
+            "patterns" : [
+                "Olá",
+                "Oi",
+                "Tudo bem?",
+                "Boas",
+                "Bom dia",
+                "Boa tarde",
+                "Boa noite"
+            ],
+            "responses" : [
+                "Olá, como posso ajudar?",
+                "Olá, em que posso ajudar?",
+                "Olá!",
+                "Em que posso ajudar?"
+            ]
+        },
+        {
+            "tag" : "name",
+            "patterns" : [
+                "Como te chamas?",
+                "Qual é o teu nome?",
+                "Como te posso chamar?"
+            ],
+            "responses" : [
+                "Chamo-me Maria!"
+            ]
+        },
+        {
+            "tag" : "Ronaldo",
+            "patterns" : [
+                "Ronaldo",
+                "Cristiano Ronaldo"
+            ],
+            "responses" : [
+                "SIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII!"
+            ]
+        },
+        {
+            "tag" : "planos",
+            "patterns" : [
+                "planos de exercícios",
+                "plano",
+                "exercício",
+                "exercícios"
+            ],
+            "responses" : [
+                "aqui estão os seus planos de exercício"
+            ]
+        },
+        {
+            "tag" : "avaliar",
+            "patterns" : [
+                "quero avaliar o meu plano",
+                "avaliar plano",
+                "avaliar",
+                "avaliação",
+                "avaliações"
+            ],
+            "responses" : [
+                "Quantas estrelas quer dar?"
+            ]
+        },
+        {
+            "tag" : "parar",
+            "patterns" : [
+                "parar",
+                "parar plano",
+                "parar exercício",
+                "parar exercícios"
+            ],
+            "responses" : [
+                "okay"
+            ]
+        },
+        {
+            "tag" : "piadas",
+            "patterns" : [
+                "diz-me uma piada",
+                "conta-me uma piada",
+                "diz uma piada",
+                "conta uma piada",
+                "piada",
+                "conta-me uma anedota",
+                "conta uma anedota",
+                "diz-me uma anedota",
+                "diz uma anedota",
+                "anedota"
+            ],
+            "responses" : [
+                "Como as enzimas se reproduzem? Umas enzimas das outras.",
+                "Por que o virus da gripe não tem amigos? Porque ele e uma ma influenza.",
+                "Para onde o mamao vai passar ferias? papaia",
+                "Porque é que o contorcionista esta sempre cansado? Porque ele trabalha a dobrar.",
+                "Como se chama um cao sem patas? Nao se chama, vai-se buscar",
+                "Porque e que o panado se divorciou? Porque a mulher nao servia panada",
+                "Como se chama uma estrela triste que cai do ceu? Uma estrela carente"
+            ]
+        }
+
+    ]
+}

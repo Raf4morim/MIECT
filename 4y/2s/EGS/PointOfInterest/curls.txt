@@ -1,0 +1,49 @@
+FIND POIS:
+
+curl -X POST http://localhost:4000/graphql \
+-H "Content-Type: application/json" \
+-d '{"query":"query findPOIs { searchPointsOfInterest( apiKey: \"Tigas:4712b0a1d771938c04e5cba078b0a889\", searchInput: { locationName: \"Portugal\" } ) { _id name location { coordinates } locationName street postcode description category thumbnail event_ids } }"}'
+
+CREATE POIS:
+
+curl -X POST http://localhost:4000/graphql \
+-H "Content-Type: application/json" \
+-d '{
+  "query": "mutation exCreation { createPointOfInterest( apiKey: \"Tigas:4712b0a1d771938c04e5cba078b0a889\", input: { name: \"New POI\", location: { type: \"Point\", coordinates: [-8.5, 40.232] }, locationName: \"Some Location Name\", description: \"Some brief description\", thumbnail: \"https://example.com/praia-da-marinha-thumbnail.jpg\", event_ids: [ \"newEvent1\", \"newEvent2\" ] }) { poi { _id name location { coordinates } locationName street postcode description category thumbnail event_ids } message } }"
+}'
+
+OUTRO EX DE CREATE:
+curl -X POST http://localhost:4000/graphql \
+-H "Content-Type: application/json" \
+-d '{
+  "query": "mutation exCreation { createPointOfInterest(apiKey: \"Tigas:4712b0a1d771938c04e5cba078b0a889\", input: { name: \"New Point of Interest4\", location: { type: \"Point\", coordinates: [-8.906590, 40.132760] }, locationName: \"Some Location Name\", category: \"Beach\", street: \"di stritz\", postcode: \"622738\", description: \"Some brief description\", thumbnail: \"https://example.com/praia-da-marinha-thumbnail.jpg\", event_ids: [\"newEvent1\", \"nemEvent2\"] }) { poi { _id } message } }"
+}'
+
+
+
+
+UPDATE POIS:
+
+curl -X POST http://localhost:4000/graphql \
+-H "Content-Type: application/json" \
+-d '{
+  "query": "mutation exUpdate { updatePointOfInterest( apiKey: \"Tigas:4712b0a1d771938c04e5cba078b0a889\", _id: \"66146fc092cc6d0cb1d3a4d9\", input: { name: \"Updated name\" }) { _id name location { coordinates } locationName street postcode description category thumbnail event_ids } }"
+}'
+
+DELETE POIS:
+
+curl -X POST http://localhost:4000/graphql \
+-H "Content-Type: application/json" \
+-d '{
+  "query": "mutation exDelete { deletePointOfInterest( apiKey: \"Tigas:4712b0a1d771938c04e5cba078b0a889\", _id: \"6615cf8b87785ea0174b1d43\") }"
+}'
+
+CREATE AND RECOVER API
+
+curl -X POST http://localhost:4000/graphql \
+-H "Content-Type: application/json" \
+-d '{"query":"mutation createApiKey { generateApiKey( clientName: \"Tigas\", password: \"1234\" ) }"}'
+
+curl -X POST http://localhost:4000/graphql \
+-H "Content-Type: application/json" \
+-d '{"query":"query recoverApiKey { recoverApiKey( clientName: \"Tigas\", password: \"1234\" ) }"}'

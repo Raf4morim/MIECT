@@ -1,0 +1,238 @@
+version: "3.1"
+
+nlu:
+- intent: wake_up
+  examples: |
+    - hey maria
+    - oi maria
+    - olá maria
+    - bom dia maria
+    - boa tarde maria
+    - boa noite maria
+    - maria
+
+- intent: request_change_username
+  examples: |
+    - Quero mudar o meu username
+    - Quero mudar o meu nome
+    - Quero mudar o meu nome de utilizador
+    - Quero alterar o meu nome de utilizador
+
+- intent: ask_username
+  examples: |
+    - o meu nome é [Rafael](username)
+    - sou o [Rafael](username)
+    - chamo-me [Rafael](username)
+    - [Rafael](username)
+
+- intent: cumprimentar
+  examples: |
+    - oi
+    - olá
+    - bom dia
+    - boa tarde
+    - boa noite
+    - hey
+    - tudo bem?
+
+- intent: despedir
+  examples: |
+    - adeus
+    - até logo
+    - até amanhã
+    - tchau
+    - xau
+    - desligar
+
+- intent: response_afirmar
+  examples: |
+    - sim
+    - s
+    - yes
+    - y
+    - yeah
+    - yep
+    - ya
+
+- intent: response_negar
+  examples: |
+    - não
+    - n
+    - no
+    - acho que não
+    - não me parece
+
+- intent: request_planos_exercicios
+  examples: |
+    - planos de exercícios
+    - mostra-me os meus planos de exercícios
+    - planos
+    - mostra-me os meus planos
+    - mostrar planos
+    - mostrar-me os meus planos
+    - mostrar planos de exercícios
+    - planos de treino
+    - mostra-me os meus planos de treino
+    - mostrar planos de treino
+
+- intent: request_selecionar_opcao
+  examples: |
+    - selecionar uma opção
+    - selecionar opção
+    - escolher uma opção
+    - escolher opção
+    - quero escolher uma opção
+    - quero escolher opção
+    - quero selecionar uma opção
+    - quero selecionar opção
+
+- intent: response_selecionar_opcao
+  examples: |
+    - [um](opcao)
+    - [dois](opcao)
+    - [três](opcao)
+    - [quatro](opcao)
+    - [cinco](opcao)
+    - [seis](opcao)
+    - [sete](opcao)
+    - [oito](opcao)
+    - [nove](opcao)
+    - [dez](opcao)
+
+- intent: request_comecar
+  examples: |
+    - começar
+    - iniciar
+    - começar o plano
+    - iniciar o plano
+
+- intent: request_voltar
+  examples: |
+    - voltar
+    - voltar atrás
+    - voltar para trás
+    - andar para trás
+
+- intent: request_pagina_inicial
+  examples: |
+    - página inicial
+    - página principal
+    - voltar para a página inicial
+    - voltar página inicial
+    - voltar para a página principal
+    - voltar página principal
+    - voltar para o início
+    - voltar inicio
+    - voltar para inicio
+    - sair 
+
+- intent: agradecer
+  examples: |
+    - obrigado
+    - obrigada
+
+- intent: request_terminar
+  examples: |
+    - terminar
+    - acabar
+    - parar
+
+- intent: ronaldo
+  examples: |
+    - ronaldo
+    - cr7
+    - cristiano ronaldo
+    - ronaldo
+
+- intent: request_virar_camara_esquerda
+  examples: |
+    - virar a câmara para a esquerda
+    - virar a câmara esquerda
+
+- intent: request_virar_camara_direita
+  examples: |
+    - virar a câmara para a direita
+    - virar a câmara direita
+
+- intent: request_virar_camara_cima
+  examples: |
+    - virar a câmara para cima
+    - virar a câmara cima
+    - subir câmara
+    - subir a câmara
+
+- intent: request_virar_camara_baixo
+  examples: |
+    - virar a câmara para baixo
+    - virar a câmara baixo
+    - descer câmara
+    - descer a câmara
+
+- intent: request_scroll_up
+  examples: |
+    - scroll up
+    - scroll para cima
+    - subir
+    - subir a página
+
+- intent: request_scroll_down
+  examples: |
+    - scroll down
+    - scroll para baixo
+    - descer
+    - descer a página
+
+- intent: request_todos_exercicios
+  examples: |
+    - todos os exercícios
+    - mostrar exercícios
+    - mostrar-me os exercícios
+    - mostrar todos os exercícios
+    - mostrar-me todos os exercícios
+    - exercicios
+
+- intent: request_play
+  examples: |
+    - play
+    - iniciar o vídeo
+    - iniciar vídeo
+    - iniciar 
+    - reproduzir
+    - reproduzir o vídeo
+    - reproduzir vídeo
+
+- intent: request_pause
+  examples: |
+    - pause
+    - parar o vídeo
+    - parar vídeo
+    - parar
+    - parar de reproduzir
+    - parar de reproduzir o vídeo
+    - parar de reproduzir vídeo
+    - stop
+
+- intent: request_replay
+  examples: |
+    - replay
+    - voltar ao início
+    - voltar ao inicio
+    - voltar para o início
+    - voltar para o inicio
+    - voltar para o inicio do vídeo
+    - reiniciar
+    - reiniciar o vídeo
+    - reiniciar vídeo
+    - recomeçar
+    - recomeçar o vídeo
+    - recomeçar vídeo
+
+- intent: request_avancar
+  examples: |
+    - próximo
+    - seguinte
+    - andar para a frente
+    - andar para frente
+    - avançar
+    - próximo exercício
+    - avançar exercício

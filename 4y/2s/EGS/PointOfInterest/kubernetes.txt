@@ -1,0 +1,24 @@
+docker buildx build --platform linux/amd64 --network=host -t registry.deti/egs-touristguide/poi:v3 .
+docker push registry.deti/egs-touristguide/poi:v3
+kubectl create configmap mongo-db-init --from-file=init-mongo.js=./database/init-mongo.js -n egs-touristguide
+kubectl apply -f deployment.yaml -n egs-touristguide
+
+
+kubectl delete configmap mongo-db-init -n egs-touristguide
+kubectl delete pod <nome-do-pod> -n egs-touristguide 
+
+kubectl exec -it mongodb-77b886584f-8nd84 -n egs-touristguide -- /bin/bash
+mongosh < init-mongo.js
+
+kubectl get pods -n egs-touristguide
+kubectl logs <name_pod> -n egs-touristguide
+kubectl logs traefik-f4564c4f4-sfkhg -n kube-system
+
+kubectl exec -it $(kubectl get pod -l app=poi-app -n egs-touristguide -o jsonpath='{.items[0].metadata.name}') -n egs-touristguide -- curl -X POST http://srv2-deti.ua.pt/graphql -H "Content-Type: application/json" -d '{
+    "query": "query findPOIs { searchPointsOfInterest(searchInput: {}, apiKey: \"Tigas:4712b0a1d771938c04e5cba078b0a889\") { _id name location { coordinates } locationName street postcode description category thumbnail event_ids } }"
+}'
+
+kubectl exec -it $(kubectl get pod -l app=poi-app -n egs-touristguide -o jsonpath='{.items[0].metadata.name}') -n egs-touristguide -- curl -X POST http://localhost:4000/graphql -H "Content-Type: application/json" -d '{
+    "query": "query findPOIs { searchPointsOfInterest(searchInput: {}, apiKey: \"Tigas:4712b0a1d771938c04e5cba078b0a889\") { _id name location { coordinates } locationName street postcode description category thumbnail event_ids } }"
+}'
+

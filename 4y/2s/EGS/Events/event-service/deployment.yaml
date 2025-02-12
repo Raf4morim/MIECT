@@ -1,0 +1,132 @@
+####################################### MONGO #######################################
+# Persistent volume claim for mongo
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name:  mongo-event
+  namespace: egs-touristguide
+spec:
+  storageClassName: longhorn
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+
+# Mongo deployment
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo-event
+  namespace: egs-touristguide
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongo-event
+  template:
+    metadata:
+      labels:
+        app: mongo-event
+    spec:
+      containers:
+        - name: mongo-event
+          image: mongo
+          ports:
+            - containerPort: 27017
+          volumeMounts:
+            - name: mongo-event
+              mountPath: /var/lib/mongodb
+            - name: init-db-script
+              mountPath: /docker-entrypoint-initdb.d
+      volumes:
+        - name: mongo-event
+          persistentVolumeClaim:
+            claimName: mongo-event
+        - name: init-db-script
+          configMap:
+            name: mongo-event-init
+
+# Mongo service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: event-mongo-service
+  namespace: egs-touristguide
+spec:
+  selector:
+    app: mongo-event
+  ports:
+    - protocol: TCP
+      port: 27018
+      targetPort: 27017
+
+####################################### EVENTS #######################################
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: event-service-config
+  namespace: egs-touristguide
+data:
+  API_NAME: 'Event_Service'
+  API_PORT: '1000'
+  API_SECRET: 'Aq@Z%&6h9vRU/9Z5Oy!3z6`X0^M.kv'
+  DATABASE_NAME: 'Event_Service'
+  DATABASE_URI: 'mongodb://event-mongo-service:27018/Event_Service'
+  AMAZONS3_SERVICE_ACCESS_KEY_ID: 'ft}+[2b~yRqVvL%9J$B%)^c!f8MF~Y'
+  AMAZONS3_SERVICE_SECRET_ACCESS_KEY: 'f+jQ9_lY(5=AR|UBPCU&E?$Xz|zeC*'
+  AMAZONS3_SERVICE_REGION: 'eu-west-1'
+  AMAZONS3_SERVICE_BUCKET: 'Event_Service'
+  AMAZONS3_SERVICE_URL: 'http://amazons3-app-service:81'
+  CALENDAR_SERVICE_KEY: '7d4d3351-64b9-4d0a-918c-419828a941d3'
+  CALENDAR_SERVICE_URL: 'http://calendar-app-service'
+  CALENDAR_SERVICE_PORT: '84'
+  POI_SERVICE_KEY: 'Tigas:4712b0a1d771938c04e5cba078b0a889'
+  POI_SERVICE_URL: 'http://poi-app-service'
+  POI_SERVICE_PORT: '83'
+
+# Event deployment
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: event-service
+  namespace: egs-touristguide
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: event-service
+  template:
+    metadata:
+      labels:
+        app: event-service
+    spec:
+      containers:
+      - name: event-service
+        image: registry.deti/egs-touristguide/event:v16
+        ports:
+        - containerPort: 1000
+        envFrom:
+          - configMapRef:
+              name: event-service-config
+
+# Event service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: event-app-service
+  namespace: egs-touristguide
+spec:
+  selector:
+    app: event-service
+  ports:
+    - protocol: TCP
+      port: 82
+      targetPort: 1000
+  type: LoadBalancer

@@ -1,0 +1,18 @@
+pkg/*
+*.gem
+.bundle
+tmp
+test_root
+
+# Don't check in RVM/rbenv files
+.ruby-version
+
+# RubyMine
+.idea
+
+# Don't check in the Gemfile.lock
+Gemfile.lock
+
+.DS_Store
+.rvmrc
+root/*
