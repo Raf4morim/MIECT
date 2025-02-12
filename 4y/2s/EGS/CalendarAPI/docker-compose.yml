@@ -1,0 +1,43 @@
+version: '3'
+services:
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: storeDB
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./database/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql    
+    networks:
+      - app-network
+ 
+      
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      DB_HOST: ${DB_HOST}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_DATABASE: ${DB_DATABASE}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET}
+      CALLBACK_URL: https://www.touristguide.work.gd/oauth2callback
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  db_data:

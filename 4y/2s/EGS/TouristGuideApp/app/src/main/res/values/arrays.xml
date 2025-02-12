@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="location_names">
+        <item>New York</item>
+        <item>London</item>
+        <item>Paris</item>
+        <!-- Adicione mais itens conforme necessário -->
+    </string-array>
+</resources>

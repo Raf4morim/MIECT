@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">touristGuide_app</string>
+    <string name="clear_button_label">Clear</string>
+    <string name="back"><![CDATA[<-]]></string>
+    <string name="forward"><![CDATA[->]]></string>
+    <string name="thur">THUR</string>
+    <string name="wed">WED</string>
+    <string name="tue">TUE</string>
+    <string name="mon">MON</string>
+    <string name="sun">SUN</string>
+    <string name="sat">SAT</string>
+    <string name="fri">FRI</string>
+    <string name="feb_2024">Feb 2024</string>
+    <string name="weekly">WEEKLY</string>
+    <string name="feb_2021">Feb 2021</string>
+
+    <string name="my_map_api_key">AIzaSyB2QzCu5SSZjhQJP0wieUuMGvObMleuTFI</string>
+    <string name="ip">grupo4-egs-deti.ua.pt</string>
+    <string name="title">title</string>
+    <string name="description">Description</string>
+    <string name="miami">Miami</string>
+    <string name="contact">Contact</string>
+    <string name="nature">Nature</string>
+    <string name="_25">25</string>
+    <string name="_20">20</string>
+    <string name="list_of_events">List of events</string>
+    <string name="see_all">See all</string>
+    <string name="home">Home</string>
+    <string name="search_a_location">Search a location</string>
+    <string name="discover_the_best_place_to_visit">Discover the Best Place To Visit</string>
+    <string name="rafael_amorim">Rafael Amorim</string>
+    <string name="welcome_back">Welcome back</string>
+    <string name="events_per_day">Events per day</string>
+
+</resources>

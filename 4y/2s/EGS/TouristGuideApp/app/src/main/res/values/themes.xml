@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.touristGuide_app" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+<!--         <item name="android:statusBarColor">#575757</item>-->
+    </style>
+
+    <style name="touristGuide_app" parent="Base.Theme.touristGuide_app" />
+</resources>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minWidth="300dp"
+    android:minHeight="500dp">
+
+        <TextView
+            android:id="@+id/textViewLocationName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Pick a location to visit:"
+            android:textColor="#333333"
+
+            android:textSize="18sp"
+
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.151"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnPin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            app:backgroundTint="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewLocationName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textViewLocationName"
+            app:maxImageSize="30dp"
+            app:srcCompat="@drawable/pin"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/textViewRadius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Define a radius to find one place:"
+            android:textColor="#333333"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/textViewLocationName"
+            app:layout_constraintTop_toBottomOf="@+id/textViewLocationName" />
+
+
+    <!-- width a 0dp fica com a largura dos de baixo -->
+    <SeekBar
+        android:id="@+id/seekBarRadius"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:progress="0"
+        app:layout_constraintEnd_toEndOf="@+id/viewCat"
+        app:layout_constraintStart_toStartOf="@+id/textViewRadius"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRadius" />
+
+    <TextView
+        android:id="@+id/textViewPostcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="City"
+        android:textColor="#333333"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textViewRadius"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarRadius" />
+<!--    android:hint="XXXX-XXX"
+    android:inputType="number"-->
+    <EditText
+        android:id="@+id/editTextLocationName"
+        android:layout_width="125dp"
+        android:layout_height="40dp"
+
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewPostcode"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="@+id/textViewPostcode" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/viewCat"
+        app:layout_constraintStart_toStartOf="@+id/textViewPostcode"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPostcode">
+
+        <TextView
+            android:id="@+id/CabecalhoCategoryHzt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Category"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/ConteudoCategoryHzt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="See all"
+            android:textColor="@color/orange"
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/viewCat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:clipToPadding="false"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <!-- Botão para aplicar o filtro -->
+    <Button
+        android:id="@+id/btnApplyFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@android:dimen/notification_large_icon_height"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="@android:dimen/notification_large_icon_height"
+        android:layout_marginBottom="16dp"
+        android:text="Apply Filter"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/orange"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewCat" />
+</androidx.constraintlayout.widget.ConstraintLayout>
