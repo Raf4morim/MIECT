@@ -22,11 +22,12 @@ jobs:
         run: |
           mkdir -p public
           cp -r 3y/2s/IHC/PraticAssigment2/Theme/* public/
+          ls -la public  # Adiciona um comando para listar os arquivos e verificar se foram copiados
 
       - name: Upload do artefato para o GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: public
+          path: ./public
 
       - name: Implantar no GitHub Pages
         uses: actions/deploy-pages@v2
