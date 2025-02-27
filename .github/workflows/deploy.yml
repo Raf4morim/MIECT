@@ -54,7 +54,7 @@ jobs:
           fi
 
       - name: Aguardar 10 segundos para garantir que o artefato esteja disponível
-        run: sleep 10
+        run: sleep 50
 
       - name: Implantar no GitHub Pages
         uses: actions/deploy-pages@v2
