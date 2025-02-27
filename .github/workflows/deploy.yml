@@ -53,10 +53,3 @@ jobs:
             exit 1
           fi
 
-      - name: Aguardar 10 segundos para garantir que o artefato esteja disponível
-        run: sleep 50
-
-      - name: Implantar no GitHub Pages
-        uses: actions/deploy-pages@v2
-        with:
-          artifact_name: github-pages
