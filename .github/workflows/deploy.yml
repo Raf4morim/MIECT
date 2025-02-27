@@ -24,11 +24,21 @@ jobs:
           cp -r 3y/2s/IHC/PraticAssigment2/Theme/* public/
           ls -la public  # Lista os arquivos para depuração
 
+      - name: Verificar conteúdo do diretório public
+        run: |
+          echo "Conteúdo do diretório public:"
+          ls -R public
+
       - name: Upload do artefato para o GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
           name: github-pages  # Define explicitamente o nome do artefato
+
+      - name: Verificar artefato enviado
+        run: |
+          echo "Artefatos enviados:"
+          ls -R public
 
       - name: Implantar no GitHub Pages
         uses: actions/deploy-pages@v2
