@@ -1,0 +1,32 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Dispara sempre que houver um push na branch main
+  workflow_dispatch:  # Permite execução manual do fluxo de trabalho
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Criar diretório de build
+        run: |
+          mkdir -p public
+          cp -r 3y/2s/IHC/PraticAssigment2/Theme/* public/
+
+      - name: Upload do artefato para o GitHub Pages
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: public
+
+      - name: Implantar no GitHub Pages
+        uses: actions/deploy-pages@v2
