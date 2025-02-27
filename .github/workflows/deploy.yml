@@ -43,6 +43,19 @@ jobs:
           path: ./public
           name: github-pages
 
+      - name: Verificar artefato enviado
+        run: |
+          echo "Artefatos enviados:"
+          ls -R public
+          echo "Verificando se o artefato foi enviado..."
+          if [ -z "$(ls -A public)" ]; then
+            echo "Erro: O diretório public está vazio!"
+            exit 1
+          fi
+
+      - name: Aguardar 10 segundos para garantir que o artefato esteja disponível
+        run: sleep 10
+
       - name: Implantar no GitHub Pages
         uses: actions/deploy-pages@v2
         with:
