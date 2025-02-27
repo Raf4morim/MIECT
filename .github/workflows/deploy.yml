@@ -24,7 +24,7 @@ jobs:
           cp -r 3y/2s/IHC/PraticAssigment2/Theme/* public/
 
       - name: Upload do artefato para o GitHub Pages
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: public
 
