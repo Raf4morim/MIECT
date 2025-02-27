@@ -3,8 +3,8 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Dispara sempre que houver um push na branch main
-  workflow_dispatch:  # Permite execução manual do fluxo de trabalho
+      - main
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -18,29 +18,32 @@ jobs:
       - name: Checkout do repositório
         uses: actions/checkout@v4
 
+      - name: Verificar diretório de origem
+        run: |
+          echo "Contents of source directory:"
+          ls -R 3y/2s/IHC/PraticAssigment2/Theme/
+
       - name: Criar diretório de build
         run: |
           mkdir -p public
           cp -r 3y/2s/IHC/PraticAssigment2/Theme/* public/
-          ls -la public  # Lista os arquivos para depuração
-
-      - name: Verificar conteúdo do diretório public
-        run: |
-          echo "Conteúdo do diretório public:"
+          echo "Contents of public directory:"
           ls -R public
+
+      - name: Verificar se o diretório public está vazio
+        run: |
+          if [ -z "$(ls -A public)" ]; then
+            echo "Error: public directory is empty!"
+            exit 1
+          fi
 
       - name: Upload do artefato para o GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
-          name: github-pages  # Define explicitamente o nome do artefato
-
-      - name: Verificar artefato enviado
-        run: |
-          echo "Artefatos enviados:"
-          ls -R public
+          name: github-pages
 
       - name: Implantar no GitHub Pages
         uses: actions/deploy-pages@v2
         with:
-          artifact_name: github-pages  # Garante que o deploy usa o nome correto
+          artifact_name: github-pages
