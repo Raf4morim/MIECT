@@ -20,15 +20,27 @@ jobs:
 
       - name: Criar diretório de build
         run: |
-          mkdir -p public
-          cp -r 3y/2s/IHC/PraticAssigment2/Theme/* public/
+          mkdir -p public/IHC
+          mkdir -p public/ICG
+
+          # Copiar os ficheiros do IHC
+          cp -r 3y/2s/IHC/PraticAssigment2/Theme/* public/IHC/
+
+          # Copiar os ficheiros do ICG
+          cp -r 3y/2s/ICG/Proj/* public/ICG/
+
           echo "Contents of public directory:"
           ls -R public
 
-      - name: Verificar se o diretório public está vazio
+      - name: Verificar se os diretórios estão vazios
         run: |
-          if [ -z "$(ls -A public)" ]; then
-            echo "Error: public directory is empty!"
+          if [ -z "$(ls -A public/IHC)" ]; then
+            echo "Error: IHC directory is empty!"
+            exit 1
+          fi
+
+          if [ -z "$(ls -A public/ICG)" ]; then
+            echo "Error: ICG directory is empty!"
             exit 1
           fi
 
