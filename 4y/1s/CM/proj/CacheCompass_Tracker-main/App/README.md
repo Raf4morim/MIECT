@@ -9,7 +9,7 @@ For this implementation, we selected Android Studio as our development environme
 
 ## Login Page
 
-![Login Page](/App/images/loginPage.png "Login Page")
+![Login Page](images/loginPage.png "Login Page")
 
 ### Database access
 
@@ -70,7 +70,7 @@ public void openMainRoom(short userId) {
 
 The next image shown is the layout of the main game page.
 <!-- TODO Change image-->
-![Main Page](/App/images/main_page.png "Main Page")
+![Main Page](images/main_page.png "Main Page")
 
 ### RSSI with Scans and GATT Connection
 
