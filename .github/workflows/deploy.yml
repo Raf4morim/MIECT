@@ -22,6 +22,7 @@ jobs:
         run: |
           mkdir -p public/IHC
           mkdir -p public/ICG
+          mkdir -p public/Labi
 
           # Copiar os ficheiros do IHC
           cp -r 3y/2s/IHC/PraticAssigment2/Theme/* public/IHC/
@@ -29,20 +30,20 @@ jobs:
           # Copiar os ficheiros do ICG
           cp -r 3y/2s/ICG/Proj/* public/ICG/
 
+          # Copiar os ficheiros do Labi
+          cp -r 1y/Labi/1s/Proj2/* public/Labi/
+
           echo "Contents of public directory:"
           ls -R public
 
       - name: Verificar se os diretórios estão vazios
         run: |
-          if [ -z "$(ls -A public/IHC)" ]; then
-            echo "Error: IHC directory is empty!"
-            exit 1
-          fi
-
-          if [ -z "$(ls -A public/ICG)" ]; then
-            echo "Error: ICG directory is empty!"
-            exit 1
-          fi
+          for dir in IHC ICG Labi; do
+            if [ -z "$(ls -A public/$dir)" ]; then
+              echo "Error: $dir directory is empty!"
+              exit 1
+            fi
+          done
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
