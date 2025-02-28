@@ -211,7 +211,7 @@ Uma vez que criámos uma aplicação e website que "atende" vários utilizadores
 
 Sempre que uma conta é criada, esta é registada na base dados e associada a um id. Na aplicação insegura o url respetivo à página de um perfil contém o id dessa conta, logo um atacante pode aceder a contas de outros utilizadores alterando o id.
 
-![Foto_url_id](/analysis/images/url.png)
+![Foto_url_id](./images/url.png)
 
 ### Código desenvolvido
 
