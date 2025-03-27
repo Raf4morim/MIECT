@@ -3,20 +3,20 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main      # O workflow é acionado automaticamente
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: read  # Permite ler os arquivos do repositório.
+  pages: write    # Permite escrever (atualizar) o conteúdo no GitHub Pages.
+  id-token: write # Permite autenticação segura para ações do GitHub.
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout do repositório
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4   # Clonar o repositório na máquina de execução.
 
       - name: Criar diretório de build
         run: |
@@ -49,9 +49,9 @@ jobs:
         uses: actions/configure-pages@v4
 
       - name: Upload do artefato para o GitHub Pages
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v3  # para enviar a pasta public como um artefato que será usado para o deploy.
         with:
           path: ./public
 
       - name: Deploy para GitHub Pages
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v4           # para publicar o site no GitHub Pages.
